@@ -1,0 +1,19 @@
+{
+  "name": "@spacereanode/react",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "React bindings for the SpacereaNode runtime",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "dependencies": {
+    "@spacereanode/core": "workspace:*"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "license": "MIT"
+}
