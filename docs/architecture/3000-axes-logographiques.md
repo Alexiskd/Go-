@@ -1,0 +1,3333 @@
+# 3 000 axes fonctionnels supplémentaires
+
+> Extension du catalogue initial de 200 axes. Cette spécification ajoute exactement 3 000 axes, numérotés AX-0201 à AX-3200. Avec le catalogue initial, le programme comporte 3 200 axes.
+
+## Règles
+
+- Le vocabulaire logographique reste fermé aux 15 signes déjà définis dans le registre central.
+- Les signes indiquent les domaines sémantiques ; ils ne créent pas de nouveaux glyphes ni de nouveaux identifiants JavaScript.
+- Les identifiants, fichiers, variables et noms de paquets restent ASCII pour la compatibilité technique.
+- Tous les axes ci-dessous sont des objectifs de conception, non des fonctions déclarées comme déjà implémentées.
+- Chaque axe devra être décliné en contrat d'entrée/sortie, invariants, erreurs, tests et critères de performance adaptés.
+- Les modèles physiques exigent unités, repères, époques, hypothèses, sources et incertitudes explicitement documentés.
+
+## Catalogue
+
+### 21 · Géodésie ellipsoïdale · ⌖ / ◎
+
+Périmètre : ellipsoïdes, géoïdes et hauteurs.
+
+- **AX-0201 — définition et validation du contrat de la structure de données : ellipsoïdes, géoïdes et hauteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0202 — conversion et normalisation de la structure de données : ellipsoïdes, géoïdes et hauteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0203 — analyse et contrôle de cohérence de la structure de données : ellipsoïdes, géoïdes et hauteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0204 — optimisation et exécution de la structure de données : ellipsoïdes, géoïdes et hauteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0205 — export et traçabilité de la structure de données : ellipsoïdes, géoïdes et hauteurs ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0206 — définition et validation du contrat de la métadonnées et provenance : ellipsoïdes, géoïdes et hauteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0207 — conversion et normalisation de la métadonnées et provenance : ellipsoïdes, géoïdes et hauteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0208 — analyse et contrôle de cohérence de la métadonnées et provenance : ellipsoïdes, géoïdes et hauteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0209 — optimisation et exécution de la métadonnées et provenance : ellipsoïdes, géoïdes et hauteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0210 — export et traçabilité de la métadonnées et provenance : ellipsoïdes, géoïdes et hauteurs ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0211 — définition et validation du contrat de la paramètres et unités : ellipsoïdes, géoïdes et hauteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0212 — conversion et normalisation de la paramètres et unités : ellipsoïdes, géoïdes et hauteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0213 — analyse et contrôle de cohérence de la paramètres et unités : ellipsoïdes, géoïdes et hauteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0214 — optimisation et exécution de la paramètres et unités : ellipsoïdes, géoïdes et hauteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0215 — export et traçabilité de la paramètres et unités : ellipsoïdes, géoïdes et hauteurs ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0216 — définition et validation du contrat de la géométrie et repérage : ellipsoïdes, géoïdes et hauteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0217 — conversion et normalisation de la géométrie et repérage : ellipsoïdes, géoïdes et hauteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0218 — analyse et contrôle de cohérence de la géométrie et repérage : ellipsoïdes, géoïdes et hauteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0219 — optimisation et exécution de la géométrie et repérage : ellipsoïdes, géoïdes et hauteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0220 — export et traçabilité de la géométrie et repérage : ellipsoïdes, géoïdes et hauteurs ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0221 — définition et validation du contrat de la qualité et incertitude : ellipsoïdes, géoïdes et hauteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0222 — conversion et normalisation de la qualité et incertitude : ellipsoïdes, géoïdes et hauteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0223 — analyse et contrôle de cohérence de la qualité et incertitude : ellipsoïdes, géoïdes et hauteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0224 — optimisation et exécution de la qualité et incertitude : ellipsoïdes, géoïdes et hauteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0225 — export et traçabilité de la qualité et incertitude : ellipsoïdes, géoïdes et hauteurs ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0226 — définition et validation du contrat de la index et recherche : ellipsoïdes, géoïdes et hauteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0227 — conversion et normalisation de la index et recherche : ellipsoïdes, géoïdes et hauteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0228 — analyse et contrôle de cohérence de la index et recherche : ellipsoïdes, géoïdes et hauteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0229 — optimisation et exécution de la index et recherche : ellipsoïdes, géoïdes et hauteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0230 — export et traçabilité de la index et recherche : ellipsoïdes, géoïdes et hauteurs ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0231 — définition et validation du contrat de la échantillonnage et interpolation : ellipsoïdes, géoïdes et hauteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0232 — conversion et normalisation de la échantillonnage et interpolation : ellipsoïdes, géoïdes et hauteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0233 — analyse et contrôle de cohérence de la échantillonnage et interpolation : ellipsoïdes, géoïdes et hauteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0234 — optimisation et exécution de la échantillonnage et interpolation : ellipsoïdes, géoïdes et hauteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0235 — export et traçabilité de la échantillonnage et interpolation : ellipsoïdes, géoïdes et hauteurs ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0236 — définition et validation du contrat de la visualisation et niveaux de détail : ellipsoïdes, géoïdes et hauteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0237 — conversion et normalisation de la visualisation et niveaux de détail : ellipsoïdes, géoïdes et hauteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0238 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : ellipsoïdes, géoïdes et hauteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0239 — optimisation et exécution de la visualisation et niveaux de détail : ellipsoïdes, géoïdes et hauteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0240 — export et traçabilité de la visualisation et niveaux de détail : ellipsoïdes, géoïdes et hauteurs ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0241 — définition et validation du contrat de la stockage et diffusion : ellipsoïdes, géoïdes et hauteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0242 — conversion et normalisation de la stockage et diffusion : ellipsoïdes, géoïdes et hauteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0243 — analyse et contrôle de cohérence de la stockage et diffusion : ellipsoïdes, géoïdes et hauteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0244 — optimisation et exécution de la stockage et diffusion : ellipsoïdes, géoïdes et hauteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0245 — export et traçabilité de la stockage et diffusion : ellipsoïdes, géoïdes et hauteurs ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0246 — définition et validation du contrat de la tests et conformité : ellipsoïdes, géoïdes et hauteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0247 — conversion et normalisation de la tests et conformité : ellipsoïdes, géoïdes et hauteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0248 — analyse et contrôle de cohérence de la tests et conformité : ellipsoïdes, géoïdes et hauteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0249 — optimisation et exécution de la tests et conformité : ellipsoïdes, géoïdes et hauteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0250 — export et traçabilité de la tests et conformité : ellipsoïdes, géoïdes et hauteurs ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 22 · Projections cartographiques · ⌖ / ⇄
+
+Périmètre : projections, grilles et distorsions.
+
+- **AX-0251 — définition et validation du contrat de la structure de données : projections, grilles et distorsions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0252 — conversion et normalisation de la structure de données : projections, grilles et distorsions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0253 — analyse et contrôle de cohérence de la structure de données : projections, grilles et distorsions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0254 — optimisation et exécution de la structure de données : projections, grilles et distorsions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0255 — export et traçabilité de la structure de données : projections, grilles et distorsions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0256 — définition et validation du contrat de la métadonnées et provenance : projections, grilles et distorsions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0257 — conversion et normalisation de la métadonnées et provenance : projections, grilles et distorsions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0258 — analyse et contrôle de cohérence de la métadonnées et provenance : projections, grilles et distorsions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0259 — optimisation et exécution de la métadonnées et provenance : projections, grilles et distorsions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0260 — export et traçabilité de la métadonnées et provenance : projections, grilles et distorsions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0261 — définition et validation du contrat de la paramètres et unités : projections, grilles et distorsions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0262 — conversion et normalisation de la paramètres et unités : projections, grilles et distorsions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0263 — analyse et contrôle de cohérence de la paramètres et unités : projections, grilles et distorsions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0264 — optimisation et exécution de la paramètres et unités : projections, grilles et distorsions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0265 — export et traçabilité de la paramètres et unités : projections, grilles et distorsions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0266 — définition et validation du contrat de la géométrie et repérage : projections, grilles et distorsions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0267 — conversion et normalisation de la géométrie et repérage : projections, grilles et distorsions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0268 — analyse et contrôle de cohérence de la géométrie et repérage : projections, grilles et distorsions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0269 — optimisation et exécution de la géométrie et repérage : projections, grilles et distorsions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0270 — export et traçabilité de la géométrie et repérage : projections, grilles et distorsions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0271 — définition et validation du contrat de la qualité et incertitude : projections, grilles et distorsions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0272 — conversion et normalisation de la qualité et incertitude : projections, grilles et distorsions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0273 — analyse et contrôle de cohérence de la qualité et incertitude : projections, grilles et distorsions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0274 — optimisation et exécution de la qualité et incertitude : projections, grilles et distorsions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0275 — export et traçabilité de la qualité et incertitude : projections, grilles et distorsions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0276 — définition et validation du contrat de la index et recherche : projections, grilles et distorsions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0277 — conversion et normalisation de la index et recherche : projections, grilles et distorsions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0278 — analyse et contrôle de cohérence de la index et recherche : projections, grilles et distorsions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0279 — optimisation et exécution de la index et recherche : projections, grilles et distorsions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0280 — export et traçabilité de la index et recherche : projections, grilles et distorsions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0281 — définition et validation du contrat de la échantillonnage et interpolation : projections, grilles et distorsions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0282 — conversion et normalisation de la échantillonnage et interpolation : projections, grilles et distorsions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0283 — analyse et contrôle de cohérence de la échantillonnage et interpolation : projections, grilles et distorsions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0284 — optimisation et exécution de la échantillonnage et interpolation : projections, grilles et distorsions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0285 — export et traçabilité de la échantillonnage et interpolation : projections, grilles et distorsions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0286 — définition et validation du contrat de la visualisation et niveaux de détail : projections, grilles et distorsions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0287 — conversion et normalisation de la visualisation et niveaux de détail : projections, grilles et distorsions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0288 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : projections, grilles et distorsions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0289 — optimisation et exécution de la visualisation et niveaux de détail : projections, grilles et distorsions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0290 — export et traçabilité de la visualisation et niveaux de détail : projections, grilles et distorsions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0291 — définition et validation du contrat de la stockage et diffusion : projections, grilles et distorsions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0292 — conversion et normalisation de la stockage et diffusion : projections, grilles et distorsions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0293 — analyse et contrôle de cohérence de la stockage et diffusion : projections, grilles et distorsions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0294 — optimisation et exécution de la stockage et diffusion : projections, grilles et distorsions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0295 — export et traçabilité de la stockage et diffusion : projections, grilles et distorsions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0296 — définition et validation du contrat de la tests et conformité : projections, grilles et distorsions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0297 — conversion et normalisation de la tests et conformité : projections, grilles et distorsions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0298 — analyse et contrôle de cohérence de la tests et conformité : projections, grilles et distorsions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0299 — optimisation et exécution de la tests et conformité : projections, grilles et distorsions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0300 — export et traçabilité de la tests et conformité : projections, grilles et distorsions ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 23 · Référentiels planétaires · ☉ / ☾ / ⌖
+
+Périmètre : repères liés aux corps et époques.
+
+- **AX-0301 — définition et validation du contrat de la structure de données : repères liés aux corps et époques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0302 — conversion et normalisation de la structure de données : repères liés aux corps et époques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0303 — analyse et contrôle de cohérence de la structure de données : repères liés aux corps et époques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0304 — optimisation et exécution de la structure de données : repères liés aux corps et époques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0305 — export et traçabilité de la structure de données : repères liés aux corps et époques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0306 — définition et validation du contrat de la métadonnées et provenance : repères liés aux corps et époques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0307 — conversion et normalisation de la métadonnées et provenance : repères liés aux corps et époques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0308 — analyse et contrôle de cohérence de la métadonnées et provenance : repères liés aux corps et époques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0309 — optimisation et exécution de la métadonnées et provenance : repères liés aux corps et époques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0310 — export et traçabilité de la métadonnées et provenance : repères liés aux corps et époques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0311 — définition et validation du contrat de la paramètres et unités : repères liés aux corps et époques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0312 — conversion et normalisation de la paramètres et unités : repères liés aux corps et époques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0313 — analyse et contrôle de cohérence de la paramètres et unités : repères liés aux corps et époques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0314 — optimisation et exécution de la paramètres et unités : repères liés aux corps et époques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0315 — export et traçabilité de la paramètres et unités : repères liés aux corps et époques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0316 — définition et validation du contrat de la géométrie et repérage : repères liés aux corps et époques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0317 — conversion et normalisation de la géométrie et repérage : repères liés aux corps et époques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0318 — analyse et contrôle de cohérence de la géométrie et repérage : repères liés aux corps et époques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0319 — optimisation et exécution de la géométrie et repérage : repères liés aux corps et époques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0320 — export et traçabilité de la géométrie et repérage : repères liés aux corps et époques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0321 — définition et validation du contrat de la qualité et incertitude : repères liés aux corps et époques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0322 — conversion et normalisation de la qualité et incertitude : repères liés aux corps et époques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0323 — analyse et contrôle de cohérence de la qualité et incertitude : repères liés aux corps et époques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0324 — optimisation et exécution de la qualité et incertitude : repères liés aux corps et époques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0325 — export et traçabilité de la qualité et incertitude : repères liés aux corps et époques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0326 — définition et validation du contrat de la index et recherche : repères liés aux corps et époques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0327 — conversion et normalisation de la index et recherche : repères liés aux corps et époques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0328 — analyse et contrôle de cohérence de la index et recherche : repères liés aux corps et époques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0329 — optimisation et exécution de la index et recherche : repères liés aux corps et époques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0330 — export et traçabilité de la index et recherche : repères liés aux corps et époques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0331 — définition et validation du contrat de la échantillonnage et interpolation : repères liés aux corps et époques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0332 — conversion et normalisation de la échantillonnage et interpolation : repères liés aux corps et époques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0333 — analyse et contrôle de cohérence de la échantillonnage et interpolation : repères liés aux corps et époques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0334 — optimisation et exécution de la échantillonnage et interpolation : repères liés aux corps et époques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0335 — export et traçabilité de la échantillonnage et interpolation : repères liés aux corps et époques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0336 — définition et validation du contrat de la visualisation et niveaux de détail : repères liés aux corps et époques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0337 — conversion et normalisation de la visualisation et niveaux de détail : repères liés aux corps et époques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0338 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : repères liés aux corps et époques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0339 — optimisation et exécution de la visualisation et niveaux de détail : repères liés aux corps et époques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0340 — export et traçabilité de la visualisation et niveaux de détail : repères liés aux corps et époques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0341 — définition et validation du contrat de la stockage et diffusion : repères liés aux corps et époques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0342 — conversion et normalisation de la stockage et diffusion : repères liés aux corps et époques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0343 — analyse et contrôle de cohérence de la stockage et diffusion : repères liés aux corps et époques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0344 — optimisation et exécution de la stockage et diffusion : repères liés aux corps et époques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0345 — export et traçabilité de la stockage et diffusion : repères liés aux corps et époques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0346 — définition et validation du contrat de la tests et conformité : repères liés aux corps et époques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0347 — conversion et normalisation de la tests et conformité : repères liés aux corps et époques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0348 — analyse et contrôle de cohérence de la tests et conformité : repères liés aux corps et époques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0349 — optimisation et exécution de la tests et conformité : repères liés aux corps et époques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0350 — export et traçabilité de la tests et conformité : repères liés aux corps et époques ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 24 · Astrométrie et catalogues · ☉ / ⌖
+
+Périmètre : positions célestes et paramètres astrométriques.
+
+- **AX-0351 — définition et validation du contrat de la structure de données : positions célestes et paramètres astrométriques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0352 — conversion et normalisation de la structure de données : positions célestes et paramètres astrométriques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0353 — analyse et contrôle de cohérence de la structure de données : positions célestes et paramètres astrométriques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0354 — optimisation et exécution de la structure de données : positions célestes et paramètres astrométriques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0355 — export et traçabilité de la structure de données : positions célestes et paramètres astrométriques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0356 — définition et validation du contrat de la métadonnées et provenance : positions célestes et paramètres astrométriques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0357 — conversion et normalisation de la métadonnées et provenance : positions célestes et paramètres astrométriques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0358 — analyse et contrôle de cohérence de la métadonnées et provenance : positions célestes et paramètres astrométriques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0359 — optimisation et exécution de la métadonnées et provenance : positions célestes et paramètres astrométriques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0360 — export et traçabilité de la métadonnées et provenance : positions célestes et paramètres astrométriques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0361 — définition et validation du contrat de la paramètres et unités : positions célestes et paramètres astrométriques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0362 — conversion et normalisation de la paramètres et unités : positions célestes et paramètres astrométriques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0363 — analyse et contrôle de cohérence de la paramètres et unités : positions célestes et paramètres astrométriques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0364 — optimisation et exécution de la paramètres et unités : positions célestes et paramètres astrométriques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0365 — export et traçabilité de la paramètres et unités : positions célestes et paramètres astrométriques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0366 — définition et validation du contrat de la géométrie et repérage : positions célestes et paramètres astrométriques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0367 — conversion et normalisation de la géométrie et repérage : positions célestes et paramètres astrométriques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0368 — analyse et contrôle de cohérence de la géométrie et repérage : positions célestes et paramètres astrométriques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0369 — optimisation et exécution de la géométrie et repérage : positions célestes et paramètres astrométriques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0370 — export et traçabilité de la géométrie et repérage : positions célestes et paramètres astrométriques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0371 — définition et validation du contrat de la qualité et incertitude : positions célestes et paramètres astrométriques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0372 — conversion et normalisation de la qualité et incertitude : positions célestes et paramètres astrométriques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0373 — analyse et contrôle de cohérence de la qualité et incertitude : positions célestes et paramètres astrométriques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0374 — optimisation et exécution de la qualité et incertitude : positions célestes et paramètres astrométriques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0375 — export et traçabilité de la qualité et incertitude : positions célestes et paramètres astrométriques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0376 — définition et validation du contrat de la index et recherche : positions célestes et paramètres astrométriques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0377 — conversion et normalisation de la index et recherche : positions célestes et paramètres astrométriques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0378 — analyse et contrôle de cohérence de la index et recherche : positions célestes et paramètres astrométriques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0379 — optimisation et exécution de la index et recherche : positions célestes et paramètres astrométriques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0380 — export et traçabilité de la index et recherche : positions célestes et paramètres astrométriques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0381 — définition et validation du contrat de la échantillonnage et interpolation : positions célestes et paramètres astrométriques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0382 — conversion et normalisation de la échantillonnage et interpolation : positions célestes et paramètres astrométriques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0383 — analyse et contrôle de cohérence de la échantillonnage et interpolation : positions célestes et paramètres astrométriques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0384 — optimisation et exécution de la échantillonnage et interpolation : positions célestes et paramètres astrométriques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0385 — export et traçabilité de la échantillonnage et interpolation : positions célestes et paramètres astrométriques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0386 — définition et validation du contrat de la visualisation et niveaux de détail : positions célestes et paramètres astrométriques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0387 — conversion et normalisation de la visualisation et niveaux de détail : positions célestes et paramètres astrométriques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0388 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : positions célestes et paramètres astrométriques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0389 — optimisation et exécution de la visualisation et niveaux de détail : positions célestes et paramètres astrométriques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0390 — export et traçabilité de la visualisation et niveaux de détail : positions célestes et paramètres astrométriques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0391 — définition et validation du contrat de la stockage et diffusion : positions célestes et paramètres astrométriques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0392 — conversion et normalisation de la stockage et diffusion : positions célestes et paramètres astrométriques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0393 — analyse et contrôle de cohérence de la stockage et diffusion : positions célestes et paramètres astrométriques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0394 — optimisation et exécution de la stockage et diffusion : positions célestes et paramètres astrométriques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0395 — export et traçabilité de la stockage et diffusion : positions célestes et paramètres astrométriques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0396 — définition et validation du contrat de la tests et conformité : positions célestes et paramètres astrométriques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0397 — conversion et normalisation de la tests et conformité : positions célestes et paramètres astrométriques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0398 — analyse et contrôle de cohérence de la tests et conformité : positions célestes et paramètres astrométriques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0399 — optimisation et exécution de la tests et conformité : positions célestes et paramètres astrométriques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0400 — export et traçabilité de la tests et conformité : positions célestes et paramètres astrométriques ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 25 · Mécanique orbitale avancée · ☉ / ◎ / ⚙
+
+Périmètre : états orbitaux et variables dynamiques.
+
+- **AX-0401 — définition et validation du contrat de la structure de données : états orbitaux et variables dynamiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0402 — conversion et normalisation de la structure de données : états orbitaux et variables dynamiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0403 — analyse et contrôle de cohérence de la structure de données : états orbitaux et variables dynamiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0404 — optimisation et exécution de la structure de données : états orbitaux et variables dynamiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0405 — export et traçabilité de la structure de données : états orbitaux et variables dynamiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0406 — définition et validation du contrat de la métadonnées et provenance : états orbitaux et variables dynamiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0407 — conversion et normalisation de la métadonnées et provenance : états orbitaux et variables dynamiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0408 — analyse et contrôle de cohérence de la métadonnées et provenance : états orbitaux et variables dynamiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0409 — optimisation et exécution de la métadonnées et provenance : états orbitaux et variables dynamiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0410 — export et traçabilité de la métadonnées et provenance : états orbitaux et variables dynamiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0411 — définition et validation du contrat de la paramètres et unités : états orbitaux et variables dynamiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0412 — conversion et normalisation de la paramètres et unités : états orbitaux et variables dynamiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0413 — analyse et contrôle de cohérence de la paramètres et unités : états orbitaux et variables dynamiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0414 — optimisation et exécution de la paramètres et unités : états orbitaux et variables dynamiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0415 — export et traçabilité de la paramètres et unités : états orbitaux et variables dynamiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0416 — définition et validation du contrat de la géométrie et repérage : états orbitaux et variables dynamiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0417 — conversion et normalisation de la géométrie et repérage : états orbitaux et variables dynamiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0418 — analyse et contrôle de cohérence de la géométrie et repérage : états orbitaux et variables dynamiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0419 — optimisation et exécution de la géométrie et repérage : états orbitaux et variables dynamiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0420 — export et traçabilité de la géométrie et repérage : états orbitaux et variables dynamiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0421 — définition et validation du contrat de la qualité et incertitude : états orbitaux et variables dynamiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0422 — conversion et normalisation de la qualité et incertitude : états orbitaux et variables dynamiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0423 — analyse et contrôle de cohérence de la qualité et incertitude : états orbitaux et variables dynamiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0424 — optimisation et exécution de la qualité et incertitude : états orbitaux et variables dynamiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0425 — export et traçabilité de la qualité et incertitude : états orbitaux et variables dynamiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0426 — définition et validation du contrat de la index et recherche : états orbitaux et variables dynamiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0427 — conversion et normalisation de la index et recherche : états orbitaux et variables dynamiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0428 — analyse et contrôle de cohérence de la index et recherche : états orbitaux et variables dynamiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0429 — optimisation et exécution de la index et recherche : états orbitaux et variables dynamiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0430 — export et traçabilité de la index et recherche : états orbitaux et variables dynamiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0431 — définition et validation du contrat de la échantillonnage et interpolation : états orbitaux et variables dynamiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0432 — conversion et normalisation de la échantillonnage et interpolation : états orbitaux et variables dynamiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0433 — analyse et contrôle de cohérence de la échantillonnage et interpolation : états orbitaux et variables dynamiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0434 — optimisation et exécution de la échantillonnage et interpolation : états orbitaux et variables dynamiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0435 — export et traçabilité de la échantillonnage et interpolation : états orbitaux et variables dynamiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0436 — définition et validation du contrat de la visualisation et niveaux de détail : états orbitaux et variables dynamiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0437 — conversion et normalisation de la visualisation et niveaux de détail : états orbitaux et variables dynamiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0438 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : états orbitaux et variables dynamiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0439 — optimisation et exécution de la visualisation et niveaux de détail : états orbitaux et variables dynamiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0440 — export et traçabilité de la visualisation et niveaux de détail : états orbitaux et variables dynamiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0441 — définition et validation du contrat de la stockage et diffusion : états orbitaux et variables dynamiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0442 — conversion et normalisation de la stockage et diffusion : états orbitaux et variables dynamiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0443 — analyse et contrôle de cohérence de la stockage et diffusion : états orbitaux et variables dynamiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0444 — optimisation et exécution de la stockage et diffusion : états orbitaux et variables dynamiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0445 — export et traçabilité de la stockage et diffusion : états orbitaux et variables dynamiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0446 — définition et validation du contrat de la tests et conformité : états orbitaux et variables dynamiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0447 — conversion et normalisation de la tests et conformité : états orbitaux et variables dynamiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0448 — analyse et contrôle de cohérence de la tests et conformité : états orbitaux et variables dynamiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0449 — optimisation et exécution de la tests et conformité : états orbitaux et variables dynamiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0450 — export et traçabilité de la tests et conformité : états orbitaux et variables dynamiques ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 26 · Perturbations orbitales · ☉ / ⚙
+
+Périmètre : forces gravitationnelles et non gravitationnelles.
+
+- **AX-0451 — définition et validation du contrat de la structure de données : forces gravitationnelles et non gravitationnelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0452 — conversion et normalisation de la structure de données : forces gravitationnelles et non gravitationnelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0453 — analyse et contrôle de cohérence de la structure de données : forces gravitationnelles et non gravitationnelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0454 — optimisation et exécution de la structure de données : forces gravitationnelles et non gravitationnelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0455 — export et traçabilité de la structure de données : forces gravitationnelles et non gravitationnelles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0456 — définition et validation du contrat de la métadonnées et provenance : forces gravitationnelles et non gravitationnelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0457 — conversion et normalisation de la métadonnées et provenance : forces gravitationnelles et non gravitationnelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0458 — analyse et contrôle de cohérence de la métadonnées et provenance : forces gravitationnelles et non gravitationnelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0459 — optimisation et exécution de la métadonnées et provenance : forces gravitationnelles et non gravitationnelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0460 — export et traçabilité de la métadonnées et provenance : forces gravitationnelles et non gravitationnelles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0461 — définition et validation du contrat de la paramètres et unités : forces gravitationnelles et non gravitationnelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0462 — conversion et normalisation de la paramètres et unités : forces gravitationnelles et non gravitationnelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0463 — analyse et contrôle de cohérence de la paramètres et unités : forces gravitationnelles et non gravitationnelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0464 — optimisation et exécution de la paramètres et unités : forces gravitationnelles et non gravitationnelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0465 — export et traçabilité de la paramètres et unités : forces gravitationnelles et non gravitationnelles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0466 — définition et validation du contrat de la géométrie et repérage : forces gravitationnelles et non gravitationnelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0467 — conversion et normalisation de la géométrie et repérage : forces gravitationnelles et non gravitationnelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0468 — analyse et contrôle de cohérence de la géométrie et repérage : forces gravitationnelles et non gravitationnelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0469 — optimisation et exécution de la géométrie et repérage : forces gravitationnelles et non gravitationnelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0470 — export et traçabilité de la géométrie et repérage : forces gravitationnelles et non gravitationnelles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0471 — définition et validation du contrat de la qualité et incertitude : forces gravitationnelles et non gravitationnelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0472 — conversion et normalisation de la qualité et incertitude : forces gravitationnelles et non gravitationnelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0473 — analyse et contrôle de cohérence de la qualité et incertitude : forces gravitationnelles et non gravitationnelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0474 — optimisation et exécution de la qualité et incertitude : forces gravitationnelles et non gravitationnelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0475 — export et traçabilité de la qualité et incertitude : forces gravitationnelles et non gravitationnelles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0476 — définition et validation du contrat de la index et recherche : forces gravitationnelles et non gravitationnelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0477 — conversion et normalisation de la index et recherche : forces gravitationnelles et non gravitationnelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0478 — analyse et contrôle de cohérence de la index et recherche : forces gravitationnelles et non gravitationnelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0479 — optimisation et exécution de la index et recherche : forces gravitationnelles et non gravitationnelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0480 — export et traçabilité de la index et recherche : forces gravitationnelles et non gravitationnelles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0481 — définition et validation du contrat de la échantillonnage et interpolation : forces gravitationnelles et non gravitationnelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0482 — conversion et normalisation de la échantillonnage et interpolation : forces gravitationnelles et non gravitationnelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0483 — analyse et contrôle de cohérence de la échantillonnage et interpolation : forces gravitationnelles et non gravitationnelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0484 — optimisation et exécution de la échantillonnage et interpolation : forces gravitationnelles et non gravitationnelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0485 — export et traçabilité de la échantillonnage et interpolation : forces gravitationnelles et non gravitationnelles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0486 — définition et validation du contrat de la visualisation et niveaux de détail : forces gravitationnelles et non gravitationnelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0487 — conversion et normalisation de la visualisation et niveaux de détail : forces gravitationnelles et non gravitationnelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0488 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : forces gravitationnelles et non gravitationnelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0489 — optimisation et exécution de la visualisation et niveaux de détail : forces gravitationnelles et non gravitationnelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0490 — export et traçabilité de la visualisation et niveaux de détail : forces gravitationnelles et non gravitationnelles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0491 — définition et validation du contrat de la stockage et diffusion : forces gravitationnelles et non gravitationnelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0492 — conversion et normalisation de la stockage et diffusion : forces gravitationnelles et non gravitationnelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0493 — analyse et contrôle de cohérence de la stockage et diffusion : forces gravitationnelles et non gravitationnelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0494 — optimisation et exécution de la stockage et diffusion : forces gravitationnelles et non gravitationnelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0495 — export et traçabilité de la stockage et diffusion : forces gravitationnelles et non gravitationnelles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0496 — définition et validation du contrat de la tests et conformité : forces gravitationnelles et non gravitationnelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0497 — conversion et normalisation de la tests et conformité : forces gravitationnelles et non gravitationnelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0498 — analyse et contrôle de cohérence de la tests et conformité : forces gravitationnelles et non gravitationnelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0499 — optimisation et exécution de la tests et conformité : forces gravitationnelles et non gravitationnelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0500 — export et traçabilité de la tests et conformité : forces gravitationnelles et non gravitationnelles ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 27 · Intégrateurs numériques · ⚙ / ⏱
+
+Périmètre : schémas d'intégration et contrôle d'erreur.
+
+- **AX-0501 — définition et validation du contrat de la structure de données : schémas d'intégration et contrôle d'erreur ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0502 — conversion et normalisation de la structure de données : schémas d'intégration et contrôle d'erreur ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0503 — analyse et contrôle de cohérence de la structure de données : schémas d'intégration et contrôle d'erreur ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0504 — optimisation et exécution de la structure de données : schémas d'intégration et contrôle d'erreur ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0505 — export et traçabilité de la structure de données : schémas d'intégration et contrôle d'erreur ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0506 — définition et validation du contrat de la métadonnées et provenance : schémas d'intégration et contrôle d'erreur ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0507 — conversion et normalisation de la métadonnées et provenance : schémas d'intégration et contrôle d'erreur ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0508 — analyse et contrôle de cohérence de la métadonnées et provenance : schémas d'intégration et contrôle d'erreur ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0509 — optimisation et exécution de la métadonnées et provenance : schémas d'intégration et contrôle d'erreur ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0510 — export et traçabilité de la métadonnées et provenance : schémas d'intégration et contrôle d'erreur ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0511 — définition et validation du contrat de la paramètres et unités : schémas d'intégration et contrôle d'erreur ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0512 — conversion et normalisation de la paramètres et unités : schémas d'intégration et contrôle d'erreur ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0513 — analyse et contrôle de cohérence de la paramètres et unités : schémas d'intégration et contrôle d'erreur ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0514 — optimisation et exécution de la paramètres et unités : schémas d'intégration et contrôle d'erreur ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0515 — export et traçabilité de la paramètres et unités : schémas d'intégration et contrôle d'erreur ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0516 — définition et validation du contrat de la géométrie et repérage : schémas d'intégration et contrôle d'erreur ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0517 — conversion et normalisation de la géométrie et repérage : schémas d'intégration et contrôle d'erreur ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0518 — analyse et contrôle de cohérence de la géométrie et repérage : schémas d'intégration et contrôle d'erreur ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0519 — optimisation et exécution de la géométrie et repérage : schémas d'intégration et contrôle d'erreur ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0520 — export et traçabilité de la géométrie et repérage : schémas d'intégration et contrôle d'erreur ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0521 — définition et validation du contrat de la qualité et incertitude : schémas d'intégration et contrôle d'erreur ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0522 — conversion et normalisation de la qualité et incertitude : schémas d'intégration et contrôle d'erreur ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0523 — analyse et contrôle de cohérence de la qualité et incertitude : schémas d'intégration et contrôle d'erreur ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0524 — optimisation et exécution de la qualité et incertitude : schémas d'intégration et contrôle d'erreur ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0525 — export et traçabilité de la qualité et incertitude : schémas d'intégration et contrôle d'erreur ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0526 — définition et validation du contrat de la index et recherche : schémas d'intégration et contrôle d'erreur ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0527 — conversion et normalisation de la index et recherche : schémas d'intégration et contrôle d'erreur ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0528 — analyse et contrôle de cohérence de la index et recherche : schémas d'intégration et contrôle d'erreur ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0529 — optimisation et exécution de la index et recherche : schémas d'intégration et contrôle d'erreur ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0530 — export et traçabilité de la index et recherche : schémas d'intégration et contrôle d'erreur ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0531 — définition et validation du contrat de la échantillonnage et interpolation : schémas d'intégration et contrôle d'erreur ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0532 — conversion et normalisation de la échantillonnage et interpolation : schémas d'intégration et contrôle d'erreur ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0533 — analyse et contrôle de cohérence de la échantillonnage et interpolation : schémas d'intégration et contrôle d'erreur ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0534 — optimisation et exécution de la échantillonnage et interpolation : schémas d'intégration et contrôle d'erreur ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0535 — export et traçabilité de la échantillonnage et interpolation : schémas d'intégration et contrôle d'erreur ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0536 — définition et validation du contrat de la visualisation et niveaux de détail : schémas d'intégration et contrôle d'erreur ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0537 — conversion et normalisation de la visualisation et niveaux de détail : schémas d'intégration et contrôle d'erreur ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0538 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : schémas d'intégration et contrôle d'erreur ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0539 — optimisation et exécution de la visualisation et niveaux de détail : schémas d'intégration et contrôle d'erreur ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0540 — export et traçabilité de la visualisation et niveaux de détail : schémas d'intégration et contrôle d'erreur ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0541 — définition et validation du contrat de la stockage et diffusion : schémas d'intégration et contrôle d'erreur ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0542 — conversion et normalisation de la stockage et diffusion : schémas d'intégration et contrôle d'erreur ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0543 — analyse et contrôle de cohérence de la stockage et diffusion : schémas d'intégration et contrôle d'erreur ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0544 — optimisation et exécution de la stockage et diffusion : schémas d'intégration et contrôle d'erreur ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0545 — export et traçabilité de la stockage et diffusion : schémas d'intégration et contrôle d'erreur ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0546 — définition et validation du contrat de la tests et conformité : schémas d'intégration et contrôle d'erreur ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0547 — conversion et normalisation de la tests et conformité : schémas d'intégration et contrôle d'erreur ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0548 — analyse et contrôle de cohérence de la tests et conformité : schémas d'intégration et contrôle d'erreur ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0549 — optimisation et exécution de la tests et conformité : schémas d'intégration et contrôle d'erreur ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0550 — export et traçabilité de la tests et conformité : schémas d'intégration et contrôle d'erreur ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 28 · Éclipses et occultations · ☉ / ☾ / ◎
+
+Périmètre : alignements, contacts et ombres.
+
+- **AX-0551 — définition et validation du contrat de la structure de données : alignements, contacts et ombres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0552 — conversion et normalisation de la structure de données : alignements, contacts et ombres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0553 — analyse et contrôle de cohérence de la structure de données : alignements, contacts et ombres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0554 — optimisation et exécution de la structure de données : alignements, contacts et ombres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0555 — export et traçabilité de la structure de données : alignements, contacts et ombres ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0556 — définition et validation du contrat de la métadonnées et provenance : alignements, contacts et ombres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0557 — conversion et normalisation de la métadonnées et provenance : alignements, contacts et ombres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0558 — analyse et contrôle de cohérence de la métadonnées et provenance : alignements, contacts et ombres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0559 — optimisation et exécution de la métadonnées et provenance : alignements, contacts et ombres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0560 — export et traçabilité de la métadonnées et provenance : alignements, contacts et ombres ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0561 — définition et validation du contrat de la paramètres et unités : alignements, contacts et ombres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0562 — conversion et normalisation de la paramètres et unités : alignements, contacts et ombres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0563 — analyse et contrôle de cohérence de la paramètres et unités : alignements, contacts et ombres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0564 — optimisation et exécution de la paramètres et unités : alignements, contacts et ombres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0565 — export et traçabilité de la paramètres et unités : alignements, contacts et ombres ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0566 — définition et validation du contrat de la géométrie et repérage : alignements, contacts et ombres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0567 — conversion et normalisation de la géométrie et repérage : alignements, contacts et ombres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0568 — analyse et contrôle de cohérence de la géométrie et repérage : alignements, contacts et ombres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0569 — optimisation et exécution de la géométrie et repérage : alignements, contacts et ombres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0570 — export et traçabilité de la géométrie et repérage : alignements, contacts et ombres ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0571 — définition et validation du contrat de la qualité et incertitude : alignements, contacts et ombres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0572 — conversion et normalisation de la qualité et incertitude : alignements, contacts et ombres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0573 — analyse et contrôle de cohérence de la qualité et incertitude : alignements, contacts et ombres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0574 — optimisation et exécution de la qualité et incertitude : alignements, contacts et ombres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0575 — export et traçabilité de la qualité et incertitude : alignements, contacts et ombres ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0576 — définition et validation du contrat de la index et recherche : alignements, contacts et ombres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0577 — conversion et normalisation de la index et recherche : alignements, contacts et ombres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0578 — analyse et contrôle de cohérence de la index et recherche : alignements, contacts et ombres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0579 — optimisation et exécution de la index et recherche : alignements, contacts et ombres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0580 — export et traçabilité de la index et recherche : alignements, contacts et ombres ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0581 — définition et validation du contrat de la échantillonnage et interpolation : alignements, contacts et ombres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0582 — conversion et normalisation de la échantillonnage et interpolation : alignements, contacts et ombres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0583 — analyse et contrôle de cohérence de la échantillonnage et interpolation : alignements, contacts et ombres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0584 — optimisation et exécution de la échantillonnage et interpolation : alignements, contacts et ombres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0585 — export et traçabilité de la échantillonnage et interpolation : alignements, contacts et ombres ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0586 — définition et validation du contrat de la visualisation et niveaux de détail : alignements, contacts et ombres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0587 — conversion et normalisation de la visualisation et niveaux de détail : alignements, contacts et ombres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0588 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : alignements, contacts et ombres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0589 — optimisation et exécution de la visualisation et niveaux de détail : alignements, contacts et ombres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0590 — export et traçabilité de la visualisation et niveaux de détail : alignements, contacts et ombres ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0591 — définition et validation du contrat de la stockage et diffusion : alignements, contacts et ombres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0592 — conversion et normalisation de la stockage et diffusion : alignements, contacts et ombres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0593 — analyse et contrôle de cohérence de la stockage et diffusion : alignements, contacts et ombres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0594 — optimisation et exécution de la stockage et diffusion : alignements, contacts et ombres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0595 — export et traçabilité de la stockage et diffusion : alignements, contacts et ombres ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0596 — définition et validation du contrat de la tests et conformité : alignements, contacts et ombres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0597 — conversion et normalisation de la tests et conformité : alignements, contacts et ombres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0598 — analyse et contrôle de cohérence de la tests et conformité : alignements, contacts et ombres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0599 — optimisation et exécution de la tests et conformité : alignements, contacts et ombres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0600 — export et traçabilité de la tests et conformité : alignements, contacts et ombres ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 29 · Éclairage et photométrie · ◉ / ◈ / ☉
+
+Périmètre : radiance, albédo et fonctions de phase.
+
+- **AX-0601 — définition et validation du contrat de la structure de données : radiance, albédo et fonctions de phase ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0602 — conversion et normalisation de la structure de données : radiance, albédo et fonctions de phase ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0603 — analyse et contrôle de cohérence de la structure de données : radiance, albédo et fonctions de phase ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0604 — optimisation et exécution de la structure de données : radiance, albédo et fonctions de phase ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0605 — export et traçabilité de la structure de données : radiance, albédo et fonctions de phase ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0606 — définition et validation du contrat de la métadonnées et provenance : radiance, albédo et fonctions de phase ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0607 — conversion et normalisation de la métadonnées et provenance : radiance, albédo et fonctions de phase ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0608 — analyse et contrôle de cohérence de la métadonnées et provenance : radiance, albédo et fonctions de phase ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0609 — optimisation et exécution de la métadonnées et provenance : radiance, albédo et fonctions de phase ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0610 — export et traçabilité de la métadonnées et provenance : radiance, albédo et fonctions de phase ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0611 — définition et validation du contrat de la paramètres et unités : radiance, albédo et fonctions de phase ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0612 — conversion et normalisation de la paramètres et unités : radiance, albédo et fonctions de phase ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0613 — analyse et contrôle de cohérence de la paramètres et unités : radiance, albédo et fonctions de phase ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0614 — optimisation et exécution de la paramètres et unités : radiance, albédo et fonctions de phase ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0615 — export et traçabilité de la paramètres et unités : radiance, albédo et fonctions de phase ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0616 — définition et validation du contrat de la géométrie et repérage : radiance, albédo et fonctions de phase ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0617 — conversion et normalisation de la géométrie et repérage : radiance, albédo et fonctions de phase ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0618 — analyse et contrôle de cohérence de la géométrie et repérage : radiance, albédo et fonctions de phase ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0619 — optimisation et exécution de la géométrie et repérage : radiance, albédo et fonctions de phase ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0620 — export et traçabilité de la géométrie et repérage : radiance, albédo et fonctions de phase ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0621 — définition et validation du contrat de la qualité et incertitude : radiance, albédo et fonctions de phase ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0622 — conversion et normalisation de la qualité et incertitude : radiance, albédo et fonctions de phase ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0623 — analyse et contrôle de cohérence de la qualité et incertitude : radiance, albédo et fonctions de phase ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0624 — optimisation et exécution de la qualité et incertitude : radiance, albédo et fonctions de phase ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0625 — export et traçabilité de la qualité et incertitude : radiance, albédo et fonctions de phase ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0626 — définition et validation du contrat de la index et recherche : radiance, albédo et fonctions de phase ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0627 — conversion et normalisation de la index et recherche : radiance, albédo et fonctions de phase ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0628 — analyse et contrôle de cohérence de la index et recherche : radiance, albédo et fonctions de phase ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0629 — optimisation et exécution de la index et recherche : radiance, albédo et fonctions de phase ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0630 — export et traçabilité de la index et recherche : radiance, albédo et fonctions de phase ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0631 — définition et validation du contrat de la échantillonnage et interpolation : radiance, albédo et fonctions de phase ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0632 — conversion et normalisation de la échantillonnage et interpolation : radiance, albédo et fonctions de phase ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0633 — analyse et contrôle de cohérence de la échantillonnage et interpolation : radiance, albédo et fonctions de phase ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0634 — optimisation et exécution de la échantillonnage et interpolation : radiance, albédo et fonctions de phase ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0635 — export et traçabilité de la échantillonnage et interpolation : radiance, albédo et fonctions de phase ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0636 — définition et validation du contrat de la visualisation et niveaux de détail : radiance, albédo et fonctions de phase ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0637 — conversion et normalisation de la visualisation et niveaux de détail : radiance, albédo et fonctions de phase ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0638 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : radiance, albédo et fonctions de phase ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0639 — optimisation et exécution de la visualisation et niveaux de détail : radiance, albédo et fonctions de phase ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0640 — export et traçabilité de la visualisation et niveaux de détail : radiance, albédo et fonctions de phase ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0641 — définition et validation du contrat de la stockage et diffusion : radiance, albédo et fonctions de phase ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0642 — conversion et normalisation de la stockage et diffusion : radiance, albédo et fonctions de phase ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0643 — analyse et contrôle de cohérence de la stockage et diffusion : radiance, albédo et fonctions de phase ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0644 — optimisation et exécution de la stockage et diffusion : radiance, albédo et fonctions de phase ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0645 — export et traçabilité de la stockage et diffusion : radiance, albédo et fonctions de phase ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0646 — définition et validation du contrat de la tests et conformité : radiance, albédo et fonctions de phase ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0647 — conversion et normalisation de la tests et conformité : radiance, albédo et fonctions de phase ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0648 — analyse et contrôle de cohérence de la tests et conformité : radiance, albédo et fonctions de phase ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0649 — optimisation et exécution de la tests et conformité : radiance, albédo et fonctions de phase ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0650 — export et traçabilité de la tests et conformité : radiance, albédo et fonctions de phase ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 30 · Textures planétaires · ◉ / 地 / ⧉
+
+Périmètre : atlas, imagerie et niveaux de détail.
+
+- **AX-0651 — définition et validation du contrat de la structure de données : atlas, imagerie et niveaux de détail ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0652 — conversion et normalisation de la structure de données : atlas, imagerie et niveaux de détail ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0653 — analyse et contrôle de cohérence de la structure de données : atlas, imagerie et niveaux de détail ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0654 — optimisation et exécution de la structure de données : atlas, imagerie et niveaux de détail ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0655 — export et traçabilité de la structure de données : atlas, imagerie et niveaux de détail ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0656 — définition et validation du contrat de la métadonnées et provenance : atlas, imagerie et niveaux de détail ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0657 — conversion et normalisation de la métadonnées et provenance : atlas, imagerie et niveaux de détail ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0658 — analyse et contrôle de cohérence de la métadonnées et provenance : atlas, imagerie et niveaux de détail ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0659 — optimisation et exécution de la métadonnées et provenance : atlas, imagerie et niveaux de détail ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0660 — export et traçabilité de la métadonnées et provenance : atlas, imagerie et niveaux de détail ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0661 — définition et validation du contrat de la paramètres et unités : atlas, imagerie et niveaux de détail ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0662 — conversion et normalisation de la paramètres et unités : atlas, imagerie et niveaux de détail ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0663 — analyse et contrôle de cohérence de la paramètres et unités : atlas, imagerie et niveaux de détail ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0664 — optimisation et exécution de la paramètres et unités : atlas, imagerie et niveaux de détail ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0665 — export et traçabilité de la paramètres et unités : atlas, imagerie et niveaux de détail ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0666 — définition et validation du contrat de la géométrie et repérage : atlas, imagerie et niveaux de détail ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0667 — conversion et normalisation de la géométrie et repérage : atlas, imagerie et niveaux de détail ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0668 — analyse et contrôle de cohérence de la géométrie et repérage : atlas, imagerie et niveaux de détail ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0669 — optimisation et exécution de la géométrie et repérage : atlas, imagerie et niveaux de détail ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0670 — export et traçabilité de la géométrie et repérage : atlas, imagerie et niveaux de détail ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0671 — définition et validation du contrat de la qualité et incertitude : atlas, imagerie et niveaux de détail ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0672 — conversion et normalisation de la qualité et incertitude : atlas, imagerie et niveaux de détail ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0673 — analyse et contrôle de cohérence de la qualité et incertitude : atlas, imagerie et niveaux de détail ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0674 — optimisation et exécution de la qualité et incertitude : atlas, imagerie et niveaux de détail ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0675 — export et traçabilité de la qualité et incertitude : atlas, imagerie et niveaux de détail ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0676 — définition et validation du contrat de la index et recherche : atlas, imagerie et niveaux de détail ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0677 — conversion et normalisation de la index et recherche : atlas, imagerie et niveaux de détail ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0678 — analyse et contrôle de cohérence de la index et recherche : atlas, imagerie et niveaux de détail ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0679 — optimisation et exécution de la index et recherche : atlas, imagerie et niveaux de détail ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0680 — export et traçabilité de la index et recherche : atlas, imagerie et niveaux de détail ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0681 — définition et validation du contrat de la échantillonnage et interpolation : atlas, imagerie et niveaux de détail ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0682 — conversion et normalisation de la échantillonnage et interpolation : atlas, imagerie et niveaux de détail ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0683 — analyse et contrôle de cohérence de la échantillonnage et interpolation : atlas, imagerie et niveaux de détail ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0684 — optimisation et exécution de la échantillonnage et interpolation : atlas, imagerie et niveaux de détail ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0685 — export et traçabilité de la échantillonnage et interpolation : atlas, imagerie et niveaux de détail ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0686 — définition et validation du contrat de la visualisation et niveaux de détail : atlas, imagerie et niveaux de détail ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0687 — conversion et normalisation de la visualisation et niveaux de détail : atlas, imagerie et niveaux de détail ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0688 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : atlas, imagerie et niveaux de détail ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0689 — optimisation et exécution de la visualisation et niveaux de détail : atlas, imagerie et niveaux de détail ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0690 — export et traçabilité de la visualisation et niveaux de détail : atlas, imagerie et niveaux de détail ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0691 — définition et validation du contrat de la stockage et diffusion : atlas, imagerie et niveaux de détail ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0692 — conversion et normalisation de la stockage et diffusion : atlas, imagerie et niveaux de détail ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0693 — analyse et contrôle de cohérence de la stockage et diffusion : atlas, imagerie et niveaux de détail ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0694 — optimisation et exécution de la stockage et diffusion : atlas, imagerie et niveaux de détail ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0695 — export et traçabilité de la stockage et diffusion : atlas, imagerie et niveaux de détail ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0696 — définition et validation du contrat de la tests et conformité : atlas, imagerie et niveaux de détail ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0697 — conversion et normalisation de la tests et conformité : atlas, imagerie et niveaux de détail ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0698 — analyse et contrôle de cohérence de la tests et conformité : atlas, imagerie et niveaux de détail ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0699 — optimisation et exécution de la tests et conformité : atlas, imagerie et niveaux de détail ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0700 — export et traçabilité de la tests et conformité : atlas, imagerie et niveaux de détail ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 31 · Imagerie scientifique · ◉ / ⇣ / ⌖
+
+Périmètre : calibration et traitement d'images.
+
+- **AX-0701 — définition et validation du contrat de la structure de données : calibration et traitement d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0702 — conversion et normalisation de la structure de données : calibration et traitement d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0703 — analyse et contrôle de cohérence de la structure de données : calibration et traitement d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0704 — optimisation et exécution de la structure de données : calibration et traitement d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0705 — export et traçabilité de la structure de données : calibration et traitement d'images ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0706 — définition et validation du contrat de la métadonnées et provenance : calibration et traitement d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0707 — conversion et normalisation de la métadonnées et provenance : calibration et traitement d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0708 — analyse et contrôle de cohérence de la métadonnées et provenance : calibration et traitement d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0709 — optimisation et exécution de la métadonnées et provenance : calibration et traitement d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0710 — export et traçabilité de la métadonnées et provenance : calibration et traitement d'images ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0711 — définition et validation du contrat de la paramètres et unités : calibration et traitement d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0712 — conversion et normalisation de la paramètres et unités : calibration et traitement d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0713 — analyse et contrôle de cohérence de la paramètres et unités : calibration et traitement d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0714 — optimisation et exécution de la paramètres et unités : calibration et traitement d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0715 — export et traçabilité de la paramètres et unités : calibration et traitement d'images ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0716 — définition et validation du contrat de la géométrie et repérage : calibration et traitement d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0717 — conversion et normalisation de la géométrie et repérage : calibration et traitement d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0718 — analyse et contrôle de cohérence de la géométrie et repérage : calibration et traitement d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0719 — optimisation et exécution de la géométrie et repérage : calibration et traitement d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0720 — export et traçabilité de la géométrie et repérage : calibration et traitement d'images ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0721 — définition et validation du contrat de la qualité et incertitude : calibration et traitement d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0722 — conversion et normalisation de la qualité et incertitude : calibration et traitement d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0723 — analyse et contrôle de cohérence de la qualité et incertitude : calibration et traitement d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0724 — optimisation et exécution de la qualité et incertitude : calibration et traitement d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0725 — export et traçabilité de la qualité et incertitude : calibration et traitement d'images ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0726 — définition et validation du contrat de la index et recherche : calibration et traitement d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0727 — conversion et normalisation de la index et recherche : calibration et traitement d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0728 — analyse et contrôle de cohérence de la index et recherche : calibration et traitement d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0729 — optimisation et exécution de la index et recherche : calibration et traitement d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0730 — export et traçabilité de la index et recherche : calibration et traitement d'images ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0731 — définition et validation du contrat de la échantillonnage et interpolation : calibration et traitement d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0732 — conversion et normalisation de la échantillonnage et interpolation : calibration et traitement d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0733 — analyse et contrôle de cohérence de la échantillonnage et interpolation : calibration et traitement d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0734 — optimisation et exécution de la échantillonnage et interpolation : calibration et traitement d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0735 — export et traçabilité de la échantillonnage et interpolation : calibration et traitement d'images ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0736 — définition et validation du contrat de la visualisation et niveaux de détail : calibration et traitement d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0737 — conversion et normalisation de la visualisation et niveaux de détail : calibration et traitement d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0738 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : calibration et traitement d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0739 — optimisation et exécution de la visualisation et niveaux de détail : calibration et traitement d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0740 — export et traçabilité de la visualisation et niveaux de détail : calibration et traitement d'images ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0741 — définition et validation du contrat de la stockage et diffusion : calibration et traitement d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0742 — conversion et normalisation de la stockage et diffusion : calibration et traitement d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0743 — analyse et contrôle de cohérence de la stockage et diffusion : calibration et traitement d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0744 — optimisation et exécution de la stockage et diffusion : calibration et traitement d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0745 — export et traçabilité de la stockage et diffusion : calibration et traitement d'images ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0746 — définition et validation du contrat de la tests et conformité : calibration et traitement d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0747 — conversion et normalisation de la tests et conformité : calibration et traitement d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0748 — analyse et contrôle de cohérence de la tests et conformité : calibration et traitement d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0749 — optimisation et exécution de la tests et conformité : calibration et traitement d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0750 — export et traçabilité de la tests et conformité : calibration et traitement d'images ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 32 · Photogrammétrie · ⌖ / ⇄ / ⚙
+
+Périmètre : reconstruction à partir d'images.
+
+- **AX-0751 — définition et validation du contrat de la structure de données : reconstruction à partir d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0752 — conversion et normalisation de la structure de données : reconstruction à partir d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0753 — analyse et contrôle de cohérence de la structure de données : reconstruction à partir d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0754 — optimisation et exécution de la structure de données : reconstruction à partir d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0755 — export et traçabilité de la structure de données : reconstruction à partir d'images ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0756 — définition et validation du contrat de la métadonnées et provenance : reconstruction à partir d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0757 — conversion et normalisation de la métadonnées et provenance : reconstruction à partir d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0758 — analyse et contrôle de cohérence de la métadonnées et provenance : reconstruction à partir d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0759 — optimisation et exécution de la métadonnées et provenance : reconstruction à partir d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0760 — export et traçabilité de la métadonnées et provenance : reconstruction à partir d'images ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0761 — définition et validation du contrat de la paramètres et unités : reconstruction à partir d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0762 — conversion et normalisation de la paramètres et unités : reconstruction à partir d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0763 — analyse et contrôle de cohérence de la paramètres et unités : reconstruction à partir d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0764 — optimisation et exécution de la paramètres et unités : reconstruction à partir d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0765 — export et traçabilité de la paramètres et unités : reconstruction à partir d'images ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0766 — définition et validation du contrat de la géométrie et repérage : reconstruction à partir d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0767 — conversion et normalisation de la géométrie et repérage : reconstruction à partir d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0768 — analyse et contrôle de cohérence de la géométrie et repérage : reconstruction à partir d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0769 — optimisation et exécution de la géométrie et repérage : reconstruction à partir d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0770 — export et traçabilité de la géométrie et repérage : reconstruction à partir d'images ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0771 — définition et validation du contrat de la qualité et incertitude : reconstruction à partir d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0772 — conversion et normalisation de la qualité et incertitude : reconstruction à partir d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0773 — analyse et contrôle de cohérence de la qualité et incertitude : reconstruction à partir d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0774 — optimisation et exécution de la qualité et incertitude : reconstruction à partir d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0775 — export et traçabilité de la qualité et incertitude : reconstruction à partir d'images ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0776 — définition et validation du contrat de la index et recherche : reconstruction à partir d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0777 — conversion et normalisation de la index et recherche : reconstruction à partir d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0778 — analyse et contrôle de cohérence de la index et recherche : reconstruction à partir d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0779 — optimisation et exécution de la index et recherche : reconstruction à partir d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0780 — export et traçabilité de la index et recherche : reconstruction à partir d'images ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0781 — définition et validation du contrat de la échantillonnage et interpolation : reconstruction à partir d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0782 — conversion et normalisation de la échantillonnage et interpolation : reconstruction à partir d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0783 — analyse et contrôle de cohérence de la échantillonnage et interpolation : reconstruction à partir d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0784 — optimisation et exécution de la échantillonnage et interpolation : reconstruction à partir d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0785 — export et traçabilité de la échantillonnage et interpolation : reconstruction à partir d'images ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0786 — définition et validation du contrat de la visualisation et niveaux de détail : reconstruction à partir d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0787 — conversion et normalisation de la visualisation et niveaux de détail : reconstruction à partir d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0788 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : reconstruction à partir d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0789 — optimisation et exécution de la visualisation et niveaux de détail : reconstruction à partir d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0790 — export et traçabilité de la visualisation et niveaux de détail : reconstruction à partir d'images ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0791 — définition et validation du contrat de la stockage et diffusion : reconstruction à partir d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0792 — conversion et normalisation de la stockage et diffusion : reconstruction à partir d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0793 — analyse et contrôle de cohérence de la stockage et diffusion : reconstruction à partir d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0794 — optimisation et exécution de la stockage et diffusion : reconstruction à partir d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0795 — export et traçabilité de la stockage et diffusion : reconstruction à partir d'images ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0796 — définition et validation du contrat de la tests et conformité : reconstruction à partir d'images ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0797 — conversion et normalisation de la tests et conformité : reconstruction à partir d'images ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0798 — analyse et contrôle de cohérence de la tests et conformité : reconstruction à partir d'images ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0799 — optimisation et exécution de la tests et conformité : reconstruction à partir d'images ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0800 — export et traçabilité de la tests et conformité : reconstruction à partir d'images ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 33 · Télédétection · 地 / 点 / ◉
+
+Périmètre : capteurs, bandes et indices.
+
+- **AX-0801 — définition et validation du contrat de la structure de données : capteurs, bandes et indices ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0802 — conversion et normalisation de la structure de données : capteurs, bandes et indices ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0803 — analyse et contrôle de cohérence de la structure de données : capteurs, bandes et indices ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0804 — optimisation et exécution de la structure de données : capteurs, bandes et indices ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0805 — export et traçabilité de la structure de données : capteurs, bandes et indices ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0806 — définition et validation du contrat de la métadonnées et provenance : capteurs, bandes et indices ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0807 — conversion et normalisation de la métadonnées et provenance : capteurs, bandes et indices ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0808 — analyse et contrôle de cohérence de la métadonnées et provenance : capteurs, bandes et indices ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0809 — optimisation et exécution de la métadonnées et provenance : capteurs, bandes et indices ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0810 — export et traçabilité de la métadonnées et provenance : capteurs, bandes et indices ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0811 — définition et validation du contrat de la paramètres et unités : capteurs, bandes et indices ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0812 — conversion et normalisation de la paramètres et unités : capteurs, bandes et indices ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0813 — analyse et contrôle de cohérence de la paramètres et unités : capteurs, bandes et indices ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0814 — optimisation et exécution de la paramètres et unités : capteurs, bandes et indices ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0815 — export et traçabilité de la paramètres et unités : capteurs, bandes et indices ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0816 — définition et validation du contrat de la géométrie et repérage : capteurs, bandes et indices ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0817 — conversion et normalisation de la géométrie et repérage : capteurs, bandes et indices ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0818 — analyse et contrôle de cohérence de la géométrie et repérage : capteurs, bandes et indices ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0819 — optimisation et exécution de la géométrie et repérage : capteurs, bandes et indices ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0820 — export et traçabilité de la géométrie et repérage : capteurs, bandes et indices ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0821 — définition et validation du contrat de la qualité et incertitude : capteurs, bandes et indices ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0822 — conversion et normalisation de la qualité et incertitude : capteurs, bandes et indices ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0823 — analyse et contrôle de cohérence de la qualité et incertitude : capteurs, bandes et indices ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0824 — optimisation et exécution de la qualité et incertitude : capteurs, bandes et indices ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0825 — export et traçabilité de la qualité et incertitude : capteurs, bandes et indices ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0826 — définition et validation du contrat de la index et recherche : capteurs, bandes et indices ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0827 — conversion et normalisation de la index et recherche : capteurs, bandes et indices ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0828 — analyse et contrôle de cohérence de la index et recherche : capteurs, bandes et indices ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0829 — optimisation et exécution de la index et recherche : capteurs, bandes et indices ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0830 — export et traçabilité de la index et recherche : capteurs, bandes et indices ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0831 — définition et validation du contrat de la échantillonnage et interpolation : capteurs, bandes et indices ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0832 — conversion et normalisation de la échantillonnage et interpolation : capteurs, bandes et indices ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0833 — analyse et contrôle de cohérence de la échantillonnage et interpolation : capteurs, bandes et indices ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0834 — optimisation et exécution de la échantillonnage et interpolation : capteurs, bandes et indices ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0835 — export et traçabilité de la échantillonnage et interpolation : capteurs, bandes et indices ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0836 — définition et validation du contrat de la visualisation et niveaux de détail : capteurs, bandes et indices ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0837 — conversion et normalisation de la visualisation et niveaux de détail : capteurs, bandes et indices ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0838 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : capteurs, bandes et indices ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0839 — optimisation et exécution de la visualisation et niveaux de détail : capteurs, bandes et indices ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0840 — export et traçabilité de la visualisation et niveaux de détail : capteurs, bandes et indices ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0841 — définition et validation du contrat de la stockage et diffusion : capteurs, bandes et indices ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0842 — conversion et normalisation de la stockage et diffusion : capteurs, bandes et indices ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0843 — analyse et contrôle de cohérence de la stockage et diffusion : capteurs, bandes et indices ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0844 — optimisation et exécution de la stockage et diffusion : capteurs, bandes et indices ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0845 — export et traçabilité de la stockage et diffusion : capteurs, bandes et indices ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0846 — définition et validation du contrat de la tests et conformité : capteurs, bandes et indices ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0847 — conversion et normalisation de la tests et conformité : capteurs, bandes et indices ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0848 — analyse et contrôle de cohérence de la tests et conformité : capteurs, bandes et indices ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0849 — optimisation et exécution de la tests et conformité : capteurs, bandes et indices ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0850 — export et traçabilité de la tests et conformité : capteurs, bandes et indices ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 34 · Formats LAS LAZ COPC · 点 / ⇣ / ⧉
+
+Périmètre : décodage et accès indexé aux nuages.
+
+- **AX-0851 — définition et validation du contrat de la structure de données : décodage et accès indexé aux nuages ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0852 — conversion et normalisation de la structure de données : décodage et accès indexé aux nuages ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0853 — analyse et contrôle de cohérence de la structure de données : décodage et accès indexé aux nuages ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0854 — optimisation et exécution de la structure de données : décodage et accès indexé aux nuages ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0855 — export et traçabilité de la structure de données : décodage et accès indexé aux nuages ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0856 — définition et validation du contrat de la métadonnées et provenance : décodage et accès indexé aux nuages ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0857 — conversion et normalisation de la métadonnées et provenance : décodage et accès indexé aux nuages ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0858 — analyse et contrôle de cohérence de la métadonnées et provenance : décodage et accès indexé aux nuages ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0859 — optimisation et exécution de la métadonnées et provenance : décodage et accès indexé aux nuages ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0860 — export et traçabilité de la métadonnées et provenance : décodage et accès indexé aux nuages ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0861 — définition et validation du contrat de la paramètres et unités : décodage et accès indexé aux nuages ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0862 — conversion et normalisation de la paramètres et unités : décodage et accès indexé aux nuages ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0863 — analyse et contrôle de cohérence de la paramètres et unités : décodage et accès indexé aux nuages ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0864 — optimisation et exécution de la paramètres et unités : décodage et accès indexé aux nuages ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0865 — export et traçabilité de la paramètres et unités : décodage et accès indexé aux nuages ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0866 — définition et validation du contrat de la géométrie et repérage : décodage et accès indexé aux nuages ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0867 — conversion et normalisation de la géométrie et repérage : décodage et accès indexé aux nuages ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0868 — analyse et contrôle de cohérence de la géométrie et repérage : décodage et accès indexé aux nuages ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0869 — optimisation et exécution de la géométrie et repérage : décodage et accès indexé aux nuages ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0870 — export et traçabilité de la géométrie et repérage : décodage et accès indexé aux nuages ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0871 — définition et validation du contrat de la qualité et incertitude : décodage et accès indexé aux nuages ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0872 — conversion et normalisation de la qualité et incertitude : décodage et accès indexé aux nuages ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0873 — analyse et contrôle de cohérence de la qualité et incertitude : décodage et accès indexé aux nuages ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0874 — optimisation et exécution de la qualité et incertitude : décodage et accès indexé aux nuages ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0875 — export et traçabilité de la qualité et incertitude : décodage et accès indexé aux nuages ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0876 — définition et validation du contrat de la index et recherche : décodage et accès indexé aux nuages ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0877 — conversion et normalisation de la index et recherche : décodage et accès indexé aux nuages ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0878 — analyse et contrôle de cohérence de la index et recherche : décodage et accès indexé aux nuages ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0879 — optimisation et exécution de la index et recherche : décodage et accès indexé aux nuages ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0880 — export et traçabilité de la index et recherche : décodage et accès indexé aux nuages ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0881 — définition et validation du contrat de la échantillonnage et interpolation : décodage et accès indexé aux nuages ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0882 — conversion et normalisation de la échantillonnage et interpolation : décodage et accès indexé aux nuages ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0883 — analyse et contrôle de cohérence de la échantillonnage et interpolation : décodage et accès indexé aux nuages ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0884 — optimisation et exécution de la échantillonnage et interpolation : décodage et accès indexé aux nuages ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0885 — export et traçabilité de la échantillonnage et interpolation : décodage et accès indexé aux nuages ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0886 — définition et validation du contrat de la visualisation et niveaux de détail : décodage et accès indexé aux nuages ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0887 — conversion et normalisation de la visualisation et niveaux de détail : décodage et accès indexé aux nuages ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0888 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : décodage et accès indexé aux nuages ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0889 — optimisation et exécution de la visualisation et niveaux de détail : décodage et accès indexé aux nuages ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0890 — export et traçabilité de la visualisation et niveaux de détail : décodage et accès indexé aux nuages ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0891 — définition et validation du contrat de la stockage et diffusion : décodage et accès indexé aux nuages ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0892 — conversion et normalisation de la stockage et diffusion : décodage et accès indexé aux nuages ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0893 — analyse et contrôle de cohérence de la stockage et diffusion : décodage et accès indexé aux nuages ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0894 — optimisation et exécution de la stockage et diffusion : décodage et accès indexé aux nuages ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0895 — export et traçabilité de la stockage et diffusion : décodage et accès indexé aux nuages ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0896 — définition et validation du contrat de la tests et conformité : décodage et accès indexé aux nuages ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0897 — conversion et normalisation de la tests et conformité : décodage et accès indexé aux nuages ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0898 — analyse et contrôle de cohérence de la tests et conformité : décodage et accès indexé aux nuages ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0899 — optimisation et exécution de la tests et conformité : décodage et accès indexé aux nuages ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0900 — export et traçabilité de la tests et conformité : décodage et accès indexé aux nuages ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 35 · Classification LiDAR · 点 / 地
+
+Périmètre : classes, retours et qualité.
+
+- **AX-0901 — définition et validation du contrat de la structure de données : classes, retours et qualité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0902 — conversion et normalisation de la structure de données : classes, retours et qualité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0903 — analyse et contrôle de cohérence de la structure de données : classes, retours et qualité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0904 — optimisation et exécution de la structure de données : classes, retours et qualité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0905 — export et traçabilité de la structure de données : classes, retours et qualité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0906 — définition et validation du contrat de la métadonnées et provenance : classes, retours et qualité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0907 — conversion et normalisation de la métadonnées et provenance : classes, retours et qualité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0908 — analyse et contrôle de cohérence de la métadonnées et provenance : classes, retours et qualité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0909 — optimisation et exécution de la métadonnées et provenance : classes, retours et qualité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0910 — export et traçabilité de la métadonnées et provenance : classes, retours et qualité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0911 — définition et validation du contrat de la paramètres et unités : classes, retours et qualité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0912 — conversion et normalisation de la paramètres et unités : classes, retours et qualité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0913 — analyse et contrôle de cohérence de la paramètres et unités : classes, retours et qualité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0914 — optimisation et exécution de la paramètres et unités : classes, retours et qualité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0915 — export et traçabilité de la paramètres et unités : classes, retours et qualité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0916 — définition et validation du contrat de la géométrie et repérage : classes, retours et qualité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0917 — conversion et normalisation de la géométrie et repérage : classes, retours et qualité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0918 — analyse et contrôle de cohérence de la géométrie et repérage : classes, retours et qualité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0919 — optimisation et exécution de la géométrie et repérage : classes, retours et qualité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0920 — export et traçabilité de la géométrie et repérage : classes, retours et qualité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0921 — définition et validation du contrat de la qualité et incertitude : classes, retours et qualité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0922 — conversion et normalisation de la qualité et incertitude : classes, retours et qualité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0923 — analyse et contrôle de cohérence de la qualité et incertitude : classes, retours et qualité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0924 — optimisation et exécution de la qualité et incertitude : classes, retours et qualité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0925 — export et traçabilité de la qualité et incertitude : classes, retours et qualité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0926 — définition et validation du contrat de la index et recherche : classes, retours et qualité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0927 — conversion et normalisation de la index et recherche : classes, retours et qualité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0928 — analyse et contrôle de cohérence de la index et recherche : classes, retours et qualité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0929 — optimisation et exécution de la index et recherche : classes, retours et qualité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0930 — export et traçabilité de la index et recherche : classes, retours et qualité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0931 — définition et validation du contrat de la échantillonnage et interpolation : classes, retours et qualité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0932 — conversion et normalisation de la échantillonnage et interpolation : classes, retours et qualité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0933 — analyse et contrôle de cohérence de la échantillonnage et interpolation : classes, retours et qualité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0934 — optimisation et exécution de la échantillonnage et interpolation : classes, retours et qualité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0935 — export et traçabilité de la échantillonnage et interpolation : classes, retours et qualité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0936 — définition et validation du contrat de la visualisation et niveaux de détail : classes, retours et qualité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0937 — conversion et normalisation de la visualisation et niveaux de détail : classes, retours et qualité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0938 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : classes, retours et qualité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0939 — optimisation et exécution de la visualisation et niveaux de détail : classes, retours et qualité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0940 — export et traçabilité de la visualisation et niveaux de détail : classes, retours et qualité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0941 — définition et validation du contrat de la stockage et diffusion : classes, retours et qualité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0942 — conversion et normalisation de la stockage et diffusion : classes, retours et qualité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0943 — analyse et contrôle de cohérence de la stockage et diffusion : classes, retours et qualité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0944 — optimisation et exécution de la stockage et diffusion : classes, retours et qualité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0945 — export et traçabilité de la stockage et diffusion : classes, retours et qualité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0946 — définition et validation du contrat de la tests et conformité : classes, retours et qualité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0947 — conversion et normalisation de la tests et conformité : classes, retours et qualité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0948 — analyse et contrôle de cohérence de la tests et conformité : classes, retours et qualité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0949 — optimisation et exécution de la tests et conformité : classes, retours et qualité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0950 — export et traçabilité de la tests et conformité : classes, retours et qualité ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 36 · Maillages 3D · 地 / ◉ / ⇄
+
+Périmètre : géométrie surfacique et topologie.
+
+- **AX-0951 — définition et validation du contrat de la structure de données : géométrie surfacique et topologie ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0952 — conversion et normalisation de la structure de données : géométrie surfacique et topologie ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0953 — analyse et contrôle de cohérence de la structure de données : géométrie surfacique et topologie ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0954 — optimisation et exécution de la structure de données : géométrie surfacique et topologie ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0955 — export et traçabilité de la structure de données : géométrie surfacique et topologie ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0956 — définition et validation du contrat de la métadonnées et provenance : géométrie surfacique et topologie ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0957 — conversion et normalisation de la métadonnées et provenance : géométrie surfacique et topologie ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0958 — analyse et contrôle de cohérence de la métadonnées et provenance : géométrie surfacique et topologie ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0959 — optimisation et exécution de la métadonnées et provenance : géométrie surfacique et topologie ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0960 — export et traçabilité de la métadonnées et provenance : géométrie surfacique et topologie ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0961 — définition et validation du contrat de la paramètres et unités : géométrie surfacique et topologie ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0962 — conversion et normalisation de la paramètres et unités : géométrie surfacique et topologie ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0963 — analyse et contrôle de cohérence de la paramètres et unités : géométrie surfacique et topologie ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0964 — optimisation et exécution de la paramètres et unités : géométrie surfacique et topologie ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0965 — export et traçabilité de la paramètres et unités : géométrie surfacique et topologie ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0966 — définition et validation du contrat de la géométrie et repérage : géométrie surfacique et topologie ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0967 — conversion et normalisation de la géométrie et repérage : géométrie surfacique et topologie ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0968 — analyse et contrôle de cohérence de la géométrie et repérage : géométrie surfacique et topologie ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0969 — optimisation et exécution de la géométrie et repérage : géométrie surfacique et topologie ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0970 — export et traçabilité de la géométrie et repérage : géométrie surfacique et topologie ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0971 — définition et validation du contrat de la qualité et incertitude : géométrie surfacique et topologie ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0972 — conversion et normalisation de la qualité et incertitude : géométrie surfacique et topologie ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0973 — analyse et contrôle de cohérence de la qualité et incertitude : géométrie surfacique et topologie ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0974 — optimisation et exécution de la qualité et incertitude : géométrie surfacique et topologie ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0975 — export et traçabilité de la qualité et incertitude : géométrie surfacique et topologie ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0976 — définition et validation du contrat de la index et recherche : géométrie surfacique et topologie ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0977 — conversion et normalisation de la index et recherche : géométrie surfacique et topologie ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0978 — analyse et contrôle de cohérence de la index et recherche : géométrie surfacique et topologie ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0979 — optimisation et exécution de la index et recherche : géométrie surfacique et topologie ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0980 — export et traçabilité de la index et recherche : géométrie surfacique et topologie ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0981 — définition et validation du contrat de la échantillonnage et interpolation : géométrie surfacique et topologie ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0982 — conversion et normalisation de la échantillonnage et interpolation : géométrie surfacique et topologie ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0983 — analyse et contrôle de cohérence de la échantillonnage et interpolation : géométrie surfacique et topologie ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0984 — optimisation et exécution de la échantillonnage et interpolation : géométrie surfacique et topologie ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0985 — export et traçabilité de la échantillonnage et interpolation : géométrie surfacique et topologie ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0986 — définition et validation du contrat de la visualisation et niveaux de détail : géométrie surfacique et topologie ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0987 — conversion et normalisation de la visualisation et niveaux de détail : géométrie surfacique et topologie ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0988 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : géométrie surfacique et topologie ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0989 — optimisation et exécution de la visualisation et niveaux de détail : géométrie surfacique et topologie ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0990 — export et traçabilité de la visualisation et niveaux de détail : géométrie surfacique et topologie ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0991 — définition et validation du contrat de la stockage et diffusion : géométrie surfacique et topologie ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0992 — conversion et normalisation de la stockage et diffusion : géométrie surfacique et topologie ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0993 — analyse et contrôle de cohérence de la stockage et diffusion : géométrie surfacique et topologie ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0994 — optimisation et exécution de la stockage et diffusion : géométrie surfacique et topologie ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-0995 — export et traçabilité de la stockage et diffusion : géométrie surfacique et topologie ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-0996 — définition et validation du contrat de la tests et conformité : géométrie surfacique et topologie ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-0997 — conversion et normalisation de la tests et conformité : géométrie surfacique et topologie ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-0998 — analyse et contrôle de cohérence de la tests et conformité : géométrie surfacique et topologie ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-0999 — optimisation et exécution de la tests et conformité : géométrie surfacique et topologie ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1000 — export et traçabilité de la tests et conformité : géométrie surfacique et topologie ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 37 · Octrees et index spatiaux · 点 / 地 / ⧉
+
+Périmètre : structures hiérarchiques de recherche.
+
+- **AX-1001 — définition et validation du contrat de la structure de données : structures hiérarchiques de recherche ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1002 — conversion et normalisation de la structure de données : structures hiérarchiques de recherche ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1003 — analyse et contrôle de cohérence de la structure de données : structures hiérarchiques de recherche ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1004 — optimisation et exécution de la structure de données : structures hiérarchiques de recherche ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1005 — export et traçabilité de la structure de données : structures hiérarchiques de recherche ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1006 — définition et validation du contrat de la métadonnées et provenance : structures hiérarchiques de recherche ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1007 — conversion et normalisation de la métadonnées et provenance : structures hiérarchiques de recherche ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1008 — analyse et contrôle de cohérence de la métadonnées et provenance : structures hiérarchiques de recherche ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1009 — optimisation et exécution de la métadonnées et provenance : structures hiérarchiques de recherche ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1010 — export et traçabilité de la métadonnées et provenance : structures hiérarchiques de recherche ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1011 — définition et validation du contrat de la paramètres et unités : structures hiérarchiques de recherche ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1012 — conversion et normalisation de la paramètres et unités : structures hiérarchiques de recherche ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1013 — analyse et contrôle de cohérence de la paramètres et unités : structures hiérarchiques de recherche ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1014 — optimisation et exécution de la paramètres et unités : structures hiérarchiques de recherche ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1015 — export et traçabilité de la paramètres et unités : structures hiérarchiques de recherche ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1016 — définition et validation du contrat de la géométrie et repérage : structures hiérarchiques de recherche ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1017 — conversion et normalisation de la géométrie et repérage : structures hiérarchiques de recherche ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1018 — analyse et contrôle de cohérence de la géométrie et repérage : structures hiérarchiques de recherche ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1019 — optimisation et exécution de la géométrie et repérage : structures hiérarchiques de recherche ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1020 — export et traçabilité de la géométrie et repérage : structures hiérarchiques de recherche ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1021 — définition et validation du contrat de la qualité et incertitude : structures hiérarchiques de recherche ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1022 — conversion et normalisation de la qualité et incertitude : structures hiérarchiques de recherche ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1023 — analyse et contrôle de cohérence de la qualité et incertitude : structures hiérarchiques de recherche ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1024 — optimisation et exécution de la qualité et incertitude : structures hiérarchiques de recherche ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1025 — export et traçabilité de la qualité et incertitude : structures hiérarchiques de recherche ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1026 — définition et validation du contrat de la index et recherche : structures hiérarchiques de recherche ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1027 — conversion et normalisation de la index et recherche : structures hiérarchiques de recherche ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1028 — analyse et contrôle de cohérence de la index et recherche : structures hiérarchiques de recherche ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1029 — optimisation et exécution de la index et recherche : structures hiérarchiques de recherche ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1030 — export et traçabilité de la index et recherche : structures hiérarchiques de recherche ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1031 — définition et validation du contrat de la échantillonnage et interpolation : structures hiérarchiques de recherche ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1032 — conversion et normalisation de la échantillonnage et interpolation : structures hiérarchiques de recherche ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1033 — analyse et contrôle de cohérence de la échantillonnage et interpolation : structures hiérarchiques de recherche ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1034 — optimisation et exécution de la échantillonnage et interpolation : structures hiérarchiques de recherche ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1035 — export et traçabilité de la échantillonnage et interpolation : structures hiérarchiques de recherche ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1036 — définition et validation du contrat de la visualisation et niveaux de détail : structures hiérarchiques de recherche ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1037 — conversion et normalisation de la visualisation et niveaux de détail : structures hiérarchiques de recherche ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1038 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : structures hiérarchiques de recherche ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1039 — optimisation et exécution de la visualisation et niveaux de détail : structures hiérarchiques de recherche ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1040 — export et traçabilité de la visualisation et niveaux de détail : structures hiérarchiques de recherche ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1041 — définition et validation du contrat de la stockage et diffusion : structures hiérarchiques de recherche ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1042 — conversion et normalisation de la stockage et diffusion : structures hiérarchiques de recherche ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1043 — analyse et contrôle de cohérence de la stockage et diffusion : structures hiérarchiques de recherche ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1044 — optimisation et exécution de la stockage et diffusion : structures hiérarchiques de recherche ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1045 — export et traçabilité de la stockage et diffusion : structures hiérarchiques de recherche ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1046 — définition et validation du contrat de la tests et conformité : structures hiérarchiques de recherche ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1047 — conversion et normalisation de la tests et conformité : structures hiérarchiques de recherche ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1048 — analyse et contrôle de cohérence de la tests et conformité : structures hiérarchiques de recherche ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1049 — optimisation et exécution de la tests et conformité : structures hiérarchiques de recherche ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1050 — export et traçabilité de la tests et conformité : structures hiérarchiques de recherche ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 38 · Volumes et voxels · 地 / 点 / ⇣
+
+Périmètre : champs volumiques et grilles 3D.
+
+- **AX-1051 — définition et validation du contrat de la structure de données : champs volumiques et grilles 3D ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1052 — conversion et normalisation de la structure de données : champs volumiques et grilles 3D ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1053 — analyse et contrôle de cohérence de la structure de données : champs volumiques et grilles 3D ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1054 — optimisation et exécution de la structure de données : champs volumiques et grilles 3D ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1055 — export et traçabilité de la structure de données : champs volumiques et grilles 3D ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1056 — définition et validation du contrat de la métadonnées et provenance : champs volumiques et grilles 3D ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1057 — conversion et normalisation de la métadonnées et provenance : champs volumiques et grilles 3D ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1058 — analyse et contrôle de cohérence de la métadonnées et provenance : champs volumiques et grilles 3D ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1059 — optimisation et exécution de la métadonnées et provenance : champs volumiques et grilles 3D ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1060 — export et traçabilité de la métadonnées et provenance : champs volumiques et grilles 3D ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1061 — définition et validation du contrat de la paramètres et unités : champs volumiques et grilles 3D ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1062 — conversion et normalisation de la paramètres et unités : champs volumiques et grilles 3D ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1063 — analyse et contrôle de cohérence de la paramètres et unités : champs volumiques et grilles 3D ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1064 — optimisation et exécution de la paramètres et unités : champs volumiques et grilles 3D ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1065 — export et traçabilité de la paramètres et unités : champs volumiques et grilles 3D ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1066 — définition et validation du contrat de la géométrie et repérage : champs volumiques et grilles 3D ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1067 — conversion et normalisation de la géométrie et repérage : champs volumiques et grilles 3D ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1068 — analyse et contrôle de cohérence de la géométrie et repérage : champs volumiques et grilles 3D ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1069 — optimisation et exécution de la géométrie et repérage : champs volumiques et grilles 3D ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1070 — export et traçabilité de la géométrie et repérage : champs volumiques et grilles 3D ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1071 — définition et validation du contrat de la qualité et incertitude : champs volumiques et grilles 3D ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1072 — conversion et normalisation de la qualité et incertitude : champs volumiques et grilles 3D ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1073 — analyse et contrôle de cohérence de la qualité et incertitude : champs volumiques et grilles 3D ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1074 — optimisation et exécution de la qualité et incertitude : champs volumiques et grilles 3D ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1075 — export et traçabilité de la qualité et incertitude : champs volumiques et grilles 3D ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1076 — définition et validation du contrat de la index et recherche : champs volumiques et grilles 3D ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1077 — conversion et normalisation de la index et recherche : champs volumiques et grilles 3D ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1078 — analyse et contrôle de cohérence de la index et recherche : champs volumiques et grilles 3D ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1079 — optimisation et exécution de la index et recherche : champs volumiques et grilles 3D ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1080 — export et traçabilité de la index et recherche : champs volumiques et grilles 3D ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1081 — définition et validation du contrat de la échantillonnage et interpolation : champs volumiques et grilles 3D ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1082 — conversion et normalisation de la échantillonnage et interpolation : champs volumiques et grilles 3D ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1083 — analyse et contrôle de cohérence de la échantillonnage et interpolation : champs volumiques et grilles 3D ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1084 — optimisation et exécution de la échantillonnage et interpolation : champs volumiques et grilles 3D ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1085 — export et traçabilité de la échantillonnage et interpolation : champs volumiques et grilles 3D ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1086 — définition et validation du contrat de la visualisation et niveaux de détail : champs volumiques et grilles 3D ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1087 — conversion et normalisation de la visualisation et niveaux de détail : champs volumiques et grilles 3D ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1088 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : champs volumiques et grilles 3D ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1089 — optimisation et exécution de la visualisation et niveaux de détail : champs volumiques et grilles 3D ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1090 — export et traçabilité de la visualisation et niveaux de détail : champs volumiques et grilles 3D ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1091 — définition et validation du contrat de la stockage et diffusion : champs volumiques et grilles 3D ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1092 — conversion et normalisation de la stockage et diffusion : champs volumiques et grilles 3D ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1093 — analyse et contrôle de cohérence de la stockage et diffusion : champs volumiques et grilles 3D ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1094 — optimisation et exécution de la stockage et diffusion : champs volumiques et grilles 3D ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1095 — export et traçabilité de la stockage et diffusion : champs volumiques et grilles 3D ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1096 — définition et validation du contrat de la tests et conformité : champs volumiques et grilles 3D ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1097 — conversion et normalisation de la tests et conformité : champs volumiques et grilles 3D ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1098 — analyse et contrôle de cohérence de la tests et conformité : champs volumiques et grilles 3D ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1099 — optimisation et exécution de la tests et conformité : champs volumiques et grilles 3D ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1100 — export et traçabilité de la tests et conformité : champs volumiques et grilles 3D ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 39 · Navigation et caméra · ◉ / ⇄ / ⌖
+
+Périmètre : caméras, contrôles et trajectoires.
+
+- **AX-1101 — définition et validation du contrat de la structure de données : caméras, contrôles et trajectoires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1102 — conversion et normalisation de la structure de données : caméras, contrôles et trajectoires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1103 — analyse et contrôle de cohérence de la structure de données : caméras, contrôles et trajectoires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1104 — optimisation et exécution de la structure de données : caméras, contrôles et trajectoires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1105 — export et traçabilité de la structure de données : caméras, contrôles et trajectoires ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1106 — définition et validation du contrat de la métadonnées et provenance : caméras, contrôles et trajectoires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1107 — conversion et normalisation de la métadonnées et provenance : caméras, contrôles et trajectoires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1108 — analyse et contrôle de cohérence de la métadonnées et provenance : caméras, contrôles et trajectoires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1109 — optimisation et exécution de la métadonnées et provenance : caméras, contrôles et trajectoires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1110 — export et traçabilité de la métadonnées et provenance : caméras, contrôles et trajectoires ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1111 — définition et validation du contrat de la paramètres et unités : caméras, contrôles et trajectoires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1112 — conversion et normalisation de la paramètres et unités : caméras, contrôles et trajectoires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1113 — analyse et contrôle de cohérence de la paramètres et unités : caméras, contrôles et trajectoires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1114 — optimisation et exécution de la paramètres et unités : caméras, contrôles et trajectoires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1115 — export et traçabilité de la paramètres et unités : caméras, contrôles et trajectoires ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1116 — définition et validation du contrat de la géométrie et repérage : caméras, contrôles et trajectoires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1117 — conversion et normalisation de la géométrie et repérage : caméras, contrôles et trajectoires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1118 — analyse et contrôle de cohérence de la géométrie et repérage : caméras, contrôles et trajectoires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1119 — optimisation et exécution de la géométrie et repérage : caméras, contrôles et trajectoires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1120 — export et traçabilité de la géométrie et repérage : caméras, contrôles et trajectoires ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1121 — définition et validation du contrat de la qualité et incertitude : caméras, contrôles et trajectoires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1122 — conversion et normalisation de la qualité et incertitude : caméras, contrôles et trajectoires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1123 — analyse et contrôle de cohérence de la qualité et incertitude : caméras, contrôles et trajectoires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1124 — optimisation et exécution de la qualité et incertitude : caméras, contrôles et trajectoires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1125 — export et traçabilité de la qualité et incertitude : caméras, contrôles et trajectoires ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1126 — définition et validation du contrat de la index et recherche : caméras, contrôles et trajectoires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1127 — conversion et normalisation de la index et recherche : caméras, contrôles et trajectoires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1128 — analyse et contrôle de cohérence de la index et recherche : caméras, contrôles et trajectoires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1129 — optimisation et exécution de la index et recherche : caméras, contrôles et trajectoires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1130 — export et traçabilité de la index et recherche : caméras, contrôles et trajectoires ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1131 — définition et validation du contrat de la échantillonnage et interpolation : caméras, contrôles et trajectoires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1132 — conversion et normalisation de la échantillonnage et interpolation : caméras, contrôles et trajectoires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1133 — analyse et contrôle de cohérence de la échantillonnage et interpolation : caméras, contrôles et trajectoires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1134 — optimisation et exécution de la échantillonnage et interpolation : caméras, contrôles et trajectoires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1135 — export et traçabilité de la échantillonnage et interpolation : caméras, contrôles et trajectoires ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1136 — définition et validation du contrat de la visualisation et niveaux de détail : caméras, contrôles et trajectoires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1137 — conversion et normalisation de la visualisation et niveaux de détail : caméras, contrôles et trajectoires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1138 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : caméras, contrôles et trajectoires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1139 — optimisation et exécution de la visualisation et niveaux de détail : caméras, contrôles et trajectoires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1140 — export et traçabilité de la visualisation et niveaux de détail : caméras, contrôles et trajectoires ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1141 — définition et validation du contrat de la stockage et diffusion : caméras, contrôles et trajectoires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1142 — conversion et normalisation de la stockage et diffusion : caméras, contrôles et trajectoires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1143 — analyse et contrôle de cohérence de la stockage et diffusion : caméras, contrôles et trajectoires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1144 — optimisation et exécution de la stockage et diffusion : caméras, contrôles et trajectoires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1145 — export et traçabilité de la stockage et diffusion : caméras, contrôles et trajectoires ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1146 — définition et validation du contrat de la tests et conformité : caméras, contrôles et trajectoires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1147 — conversion et normalisation de la tests et conformité : caméras, contrôles et trajectoires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1148 — analyse et contrôle de cohérence de la tests et conformité : caméras, contrôles et trajectoires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1149 — optimisation et exécution de la tests et conformité : caméras, contrôles et trajectoires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1150 — export et traçabilité de la tests et conformité : caméras, contrôles et trajectoires ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 40 · Visibilité et occlusion · ◉ / ⚙
+
+Périmètre : sélection des objets visibles.
+
+- **AX-1151 — définition et validation du contrat de la structure de données : sélection des objets visibles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1152 — conversion et normalisation de la structure de données : sélection des objets visibles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1153 — analyse et contrôle de cohérence de la structure de données : sélection des objets visibles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1154 — optimisation et exécution de la structure de données : sélection des objets visibles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1155 — export et traçabilité de la structure de données : sélection des objets visibles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1156 — définition et validation du contrat de la métadonnées et provenance : sélection des objets visibles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1157 — conversion et normalisation de la métadonnées et provenance : sélection des objets visibles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1158 — analyse et contrôle de cohérence de la métadonnées et provenance : sélection des objets visibles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1159 — optimisation et exécution de la métadonnées et provenance : sélection des objets visibles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1160 — export et traçabilité de la métadonnées et provenance : sélection des objets visibles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1161 — définition et validation du contrat de la paramètres et unités : sélection des objets visibles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1162 — conversion et normalisation de la paramètres et unités : sélection des objets visibles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1163 — analyse et contrôle de cohérence de la paramètres et unités : sélection des objets visibles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1164 — optimisation et exécution de la paramètres et unités : sélection des objets visibles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1165 — export et traçabilité de la paramètres et unités : sélection des objets visibles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1166 — définition et validation du contrat de la géométrie et repérage : sélection des objets visibles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1167 — conversion et normalisation de la géométrie et repérage : sélection des objets visibles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1168 — analyse et contrôle de cohérence de la géométrie et repérage : sélection des objets visibles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1169 — optimisation et exécution de la géométrie et repérage : sélection des objets visibles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1170 — export et traçabilité de la géométrie et repérage : sélection des objets visibles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1171 — définition et validation du contrat de la qualité et incertitude : sélection des objets visibles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1172 — conversion et normalisation de la qualité et incertitude : sélection des objets visibles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1173 — analyse et contrôle de cohérence de la qualité et incertitude : sélection des objets visibles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1174 — optimisation et exécution de la qualité et incertitude : sélection des objets visibles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1175 — export et traçabilité de la qualité et incertitude : sélection des objets visibles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1176 — définition et validation du contrat de la index et recherche : sélection des objets visibles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1177 — conversion et normalisation de la index et recherche : sélection des objets visibles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1178 — analyse et contrôle de cohérence de la index et recherche : sélection des objets visibles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1179 — optimisation et exécution de la index et recherche : sélection des objets visibles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1180 — export et traçabilité de la index et recherche : sélection des objets visibles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1181 — définition et validation du contrat de la échantillonnage et interpolation : sélection des objets visibles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1182 — conversion et normalisation de la échantillonnage et interpolation : sélection des objets visibles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1183 — analyse et contrôle de cohérence de la échantillonnage et interpolation : sélection des objets visibles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1184 — optimisation et exécution de la échantillonnage et interpolation : sélection des objets visibles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1185 — export et traçabilité de la échantillonnage et interpolation : sélection des objets visibles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1186 — définition et validation du contrat de la visualisation et niveaux de détail : sélection des objets visibles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1187 — conversion et normalisation de la visualisation et niveaux de détail : sélection des objets visibles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1188 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : sélection des objets visibles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1189 — optimisation et exécution de la visualisation et niveaux de détail : sélection des objets visibles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1190 — export et traçabilité de la visualisation et niveaux de détail : sélection des objets visibles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1191 — définition et validation du contrat de la stockage et diffusion : sélection des objets visibles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1192 — conversion et normalisation de la stockage et diffusion : sélection des objets visibles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1193 — analyse et contrôle de cohérence de la stockage et diffusion : sélection des objets visibles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1194 — optimisation et exécution de la stockage et diffusion : sélection des objets visibles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1195 — export et traçabilité de la stockage et diffusion : sélection des objets visibles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1196 — définition et validation du contrat de la tests et conformité : sélection des objets visibles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1197 — conversion et normalisation de la tests et conformité : sélection des objets visibles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1198 — analyse et contrôle de cohérence de la tests et conformité : sélection des objets visibles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1199 — optimisation et exécution de la tests et conformité : sélection des objets visibles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1200 — export et traçabilité de la tests et conformité : sélection des objets visibles ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 41 · WebGL et WebGPU · ◈ / ◉
+
+Périmètre : capacités et pipelines graphiques.
+
+- **AX-1201 — définition et validation du contrat de la structure de données : capacités et pipelines graphiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1202 — conversion et normalisation de la structure de données : capacités et pipelines graphiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1203 — analyse et contrôle de cohérence de la structure de données : capacités et pipelines graphiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1204 — optimisation et exécution de la structure de données : capacités et pipelines graphiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1205 — export et traçabilité de la structure de données : capacités et pipelines graphiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1206 — définition et validation du contrat de la métadonnées et provenance : capacités et pipelines graphiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1207 — conversion et normalisation de la métadonnées et provenance : capacités et pipelines graphiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1208 — analyse et contrôle de cohérence de la métadonnées et provenance : capacités et pipelines graphiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1209 — optimisation et exécution de la métadonnées et provenance : capacités et pipelines graphiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1210 — export et traçabilité de la métadonnées et provenance : capacités et pipelines graphiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1211 — définition et validation du contrat de la paramètres et unités : capacités et pipelines graphiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1212 — conversion et normalisation de la paramètres et unités : capacités et pipelines graphiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1213 — analyse et contrôle de cohérence de la paramètres et unités : capacités et pipelines graphiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1214 — optimisation et exécution de la paramètres et unités : capacités et pipelines graphiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1215 — export et traçabilité de la paramètres et unités : capacités et pipelines graphiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1216 — définition et validation du contrat de la géométrie et repérage : capacités et pipelines graphiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1217 — conversion et normalisation de la géométrie et repérage : capacités et pipelines graphiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1218 — analyse et contrôle de cohérence de la géométrie et repérage : capacités et pipelines graphiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1219 — optimisation et exécution de la géométrie et repérage : capacités et pipelines graphiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1220 — export et traçabilité de la géométrie et repérage : capacités et pipelines graphiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1221 — définition et validation du contrat de la qualité et incertitude : capacités et pipelines graphiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1222 — conversion et normalisation de la qualité et incertitude : capacités et pipelines graphiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1223 — analyse et contrôle de cohérence de la qualité et incertitude : capacités et pipelines graphiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1224 — optimisation et exécution de la qualité et incertitude : capacités et pipelines graphiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1225 — export et traçabilité de la qualité et incertitude : capacités et pipelines graphiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1226 — définition et validation du contrat de la index et recherche : capacités et pipelines graphiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1227 — conversion et normalisation de la index et recherche : capacités et pipelines graphiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1228 — analyse et contrôle de cohérence de la index et recherche : capacités et pipelines graphiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1229 — optimisation et exécution de la index et recherche : capacités et pipelines graphiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1230 — export et traçabilité de la index et recherche : capacités et pipelines graphiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1231 — définition et validation du contrat de la échantillonnage et interpolation : capacités et pipelines graphiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1232 — conversion et normalisation de la échantillonnage et interpolation : capacités et pipelines graphiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1233 — analyse et contrôle de cohérence de la échantillonnage et interpolation : capacités et pipelines graphiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1234 — optimisation et exécution de la échantillonnage et interpolation : capacités et pipelines graphiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1235 — export et traçabilité de la échantillonnage et interpolation : capacités et pipelines graphiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1236 — définition et validation du contrat de la visualisation et niveaux de détail : capacités et pipelines graphiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1237 — conversion et normalisation de la visualisation et niveaux de détail : capacités et pipelines graphiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1238 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : capacités et pipelines graphiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1239 — optimisation et exécution de la visualisation et niveaux de détail : capacités et pipelines graphiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1240 — export et traçabilité de la visualisation et niveaux de détail : capacités et pipelines graphiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1241 — définition et validation du contrat de la stockage et diffusion : capacités et pipelines graphiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1242 — conversion et normalisation de la stockage et diffusion : capacités et pipelines graphiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1243 — analyse et contrôle de cohérence de la stockage et diffusion : capacités et pipelines graphiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1244 — optimisation et exécution de la stockage et diffusion : capacités et pipelines graphiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1245 — export et traçabilité de la stockage et diffusion : capacités et pipelines graphiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1246 — définition et validation du contrat de la tests et conformité : capacités et pipelines graphiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1247 — conversion et normalisation de la tests et conformité : capacités et pipelines graphiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1248 — analyse et contrôle de cohérence de la tests et conformité : capacités et pipelines graphiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1249 — optimisation et exécution de la tests et conformité : capacités et pipelines graphiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1250 — export et traçabilité de la tests et conformité : capacités et pipelines graphiques ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 42 · Gestion mémoire GPU · ◈ / ⧉ / ⏱
+
+Périmètre : allocation et cycle de vie GPU.
+
+- **AX-1251 — définition et validation du contrat de la structure de données : allocation et cycle de vie GPU ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1252 — conversion et normalisation de la structure de données : allocation et cycle de vie GPU ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1253 — analyse et contrôle de cohérence de la structure de données : allocation et cycle de vie GPU ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1254 — optimisation et exécution de la structure de données : allocation et cycle de vie GPU ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1255 — export et traçabilité de la structure de données : allocation et cycle de vie GPU ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1256 — définition et validation du contrat de la métadonnées et provenance : allocation et cycle de vie GPU ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1257 — conversion et normalisation de la métadonnées et provenance : allocation et cycle de vie GPU ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1258 — analyse et contrôle de cohérence de la métadonnées et provenance : allocation et cycle de vie GPU ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1259 — optimisation et exécution de la métadonnées et provenance : allocation et cycle de vie GPU ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1260 — export et traçabilité de la métadonnées et provenance : allocation et cycle de vie GPU ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1261 — définition et validation du contrat de la paramètres et unités : allocation et cycle de vie GPU ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1262 — conversion et normalisation de la paramètres et unités : allocation et cycle de vie GPU ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1263 — analyse et contrôle de cohérence de la paramètres et unités : allocation et cycle de vie GPU ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1264 — optimisation et exécution de la paramètres et unités : allocation et cycle de vie GPU ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1265 — export et traçabilité de la paramètres et unités : allocation et cycle de vie GPU ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1266 — définition et validation du contrat de la géométrie et repérage : allocation et cycle de vie GPU ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1267 — conversion et normalisation de la géométrie et repérage : allocation et cycle de vie GPU ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1268 — analyse et contrôle de cohérence de la géométrie et repérage : allocation et cycle de vie GPU ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1269 — optimisation et exécution de la géométrie et repérage : allocation et cycle de vie GPU ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1270 — export et traçabilité de la géométrie et repérage : allocation et cycle de vie GPU ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1271 — définition et validation du contrat de la qualité et incertitude : allocation et cycle de vie GPU ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1272 — conversion et normalisation de la qualité et incertitude : allocation et cycle de vie GPU ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1273 — analyse et contrôle de cohérence de la qualité et incertitude : allocation et cycle de vie GPU ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1274 — optimisation et exécution de la qualité et incertitude : allocation et cycle de vie GPU ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1275 — export et traçabilité de la qualité et incertitude : allocation et cycle de vie GPU ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1276 — définition et validation du contrat de la index et recherche : allocation et cycle de vie GPU ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1277 — conversion et normalisation de la index et recherche : allocation et cycle de vie GPU ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1278 — analyse et contrôle de cohérence de la index et recherche : allocation et cycle de vie GPU ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1279 — optimisation et exécution de la index et recherche : allocation et cycle de vie GPU ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1280 — export et traçabilité de la index et recherche : allocation et cycle de vie GPU ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1281 — définition et validation du contrat de la échantillonnage et interpolation : allocation et cycle de vie GPU ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1282 — conversion et normalisation de la échantillonnage et interpolation : allocation et cycle de vie GPU ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1283 — analyse et contrôle de cohérence de la échantillonnage et interpolation : allocation et cycle de vie GPU ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1284 — optimisation et exécution de la échantillonnage et interpolation : allocation et cycle de vie GPU ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1285 — export et traçabilité de la échantillonnage et interpolation : allocation et cycle de vie GPU ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1286 — définition et validation du contrat de la visualisation et niveaux de détail : allocation et cycle de vie GPU ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1287 — conversion et normalisation de la visualisation et niveaux de détail : allocation et cycle de vie GPU ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1288 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : allocation et cycle de vie GPU ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1289 — optimisation et exécution de la visualisation et niveaux de détail : allocation et cycle de vie GPU ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1290 — export et traçabilité de la visualisation et niveaux de détail : allocation et cycle de vie GPU ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1291 — définition et validation du contrat de la stockage et diffusion : allocation et cycle de vie GPU ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1292 — conversion et normalisation de la stockage et diffusion : allocation et cycle de vie GPU ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1293 — analyse et contrôle de cohérence de la stockage et diffusion : allocation et cycle de vie GPU ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1294 — optimisation et exécution de la stockage et diffusion : allocation et cycle de vie GPU ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1295 — export et traçabilité de la stockage et diffusion : allocation et cycle de vie GPU ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1296 — définition et validation du contrat de la tests et conformité : allocation et cycle de vie GPU ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1297 — conversion et normalisation de la tests et conformité : allocation et cycle de vie GPU ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1298 — analyse et contrôle de cohérence de la tests et conformité : allocation et cycle de vie GPU ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1299 — optimisation et exécution de la tests et conformité : allocation et cycle de vie GPU ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1300 — export et traçabilité de la tests et conformité : allocation et cycle de vie GPU ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 43 · Matériaux et BRDF · ◈ / ◉
+
+Périmètre : réflexion et propriétés physiques.
+
+- **AX-1301 — définition et validation du contrat de la structure de données : réflexion et propriétés physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1302 — conversion et normalisation de la structure de données : réflexion et propriétés physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1303 — analyse et contrôle de cohérence de la structure de données : réflexion et propriétés physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1304 — optimisation et exécution de la structure de données : réflexion et propriétés physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1305 — export et traçabilité de la structure de données : réflexion et propriétés physiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1306 — définition et validation du contrat de la métadonnées et provenance : réflexion et propriétés physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1307 — conversion et normalisation de la métadonnées et provenance : réflexion et propriétés physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1308 — analyse et contrôle de cohérence de la métadonnées et provenance : réflexion et propriétés physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1309 — optimisation et exécution de la métadonnées et provenance : réflexion et propriétés physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1310 — export et traçabilité de la métadonnées et provenance : réflexion et propriétés physiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1311 — définition et validation du contrat de la paramètres et unités : réflexion et propriétés physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1312 — conversion et normalisation de la paramètres et unités : réflexion et propriétés physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1313 — analyse et contrôle de cohérence de la paramètres et unités : réflexion et propriétés physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1314 — optimisation et exécution de la paramètres et unités : réflexion et propriétés physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1315 — export et traçabilité de la paramètres et unités : réflexion et propriétés physiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1316 — définition et validation du contrat de la géométrie et repérage : réflexion et propriétés physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1317 — conversion et normalisation de la géométrie et repérage : réflexion et propriétés physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1318 — analyse et contrôle de cohérence de la géométrie et repérage : réflexion et propriétés physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1319 — optimisation et exécution de la géométrie et repérage : réflexion et propriétés physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1320 — export et traçabilité de la géométrie et repérage : réflexion et propriétés physiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1321 — définition et validation du contrat de la qualité et incertitude : réflexion et propriétés physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1322 — conversion et normalisation de la qualité et incertitude : réflexion et propriétés physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1323 — analyse et contrôle de cohérence de la qualité et incertitude : réflexion et propriétés physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1324 — optimisation et exécution de la qualité et incertitude : réflexion et propriétés physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1325 — export et traçabilité de la qualité et incertitude : réflexion et propriétés physiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1326 — définition et validation du contrat de la index et recherche : réflexion et propriétés physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1327 — conversion et normalisation de la index et recherche : réflexion et propriétés physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1328 — analyse et contrôle de cohérence de la index et recherche : réflexion et propriétés physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1329 — optimisation et exécution de la index et recherche : réflexion et propriétés physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1330 — export et traçabilité de la index et recherche : réflexion et propriétés physiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1331 — définition et validation du contrat de la échantillonnage et interpolation : réflexion et propriétés physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1332 — conversion et normalisation de la échantillonnage et interpolation : réflexion et propriétés physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1333 — analyse et contrôle de cohérence de la échantillonnage et interpolation : réflexion et propriétés physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1334 — optimisation et exécution de la échantillonnage et interpolation : réflexion et propriétés physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1335 — export et traçabilité de la échantillonnage et interpolation : réflexion et propriétés physiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1336 — définition et validation du contrat de la visualisation et niveaux de détail : réflexion et propriétés physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1337 — conversion et normalisation de la visualisation et niveaux de détail : réflexion et propriétés physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1338 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : réflexion et propriétés physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1339 — optimisation et exécution de la visualisation et niveaux de détail : réflexion et propriétés physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1340 — export et traçabilité de la visualisation et niveaux de détail : réflexion et propriétés physiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1341 — définition et validation du contrat de la stockage et diffusion : réflexion et propriétés physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1342 — conversion et normalisation de la stockage et diffusion : réflexion et propriétés physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1343 — analyse et contrôle de cohérence de la stockage et diffusion : réflexion et propriétés physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1344 — optimisation et exécution de la stockage et diffusion : réflexion et propriétés physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1345 — export et traçabilité de la stockage et diffusion : réflexion et propriétés physiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1346 — définition et validation du contrat de la tests et conformité : réflexion et propriétés physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1347 — conversion et normalisation de la tests et conformité : réflexion et propriétés physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1348 — analyse et contrôle de cohérence de la tests et conformité : réflexion et propriétés physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1349 — optimisation et exécution de la tests et conformité : réflexion et propriétés physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1350 — export et traçabilité de la tests et conformité : réflexion et propriétés physiques ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 44 · Atmosphères planétaires · ☉ / ◈ / ◉
+
+Périmètre : diffusion et profils atmosphériques.
+
+- **AX-1351 — définition et validation du contrat de la structure de données : diffusion et profils atmosphériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1352 — conversion et normalisation de la structure de données : diffusion et profils atmosphériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1353 — analyse et contrôle de cohérence de la structure de données : diffusion et profils atmosphériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1354 — optimisation et exécution de la structure de données : diffusion et profils atmosphériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1355 — export et traçabilité de la structure de données : diffusion et profils atmosphériques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1356 — définition et validation du contrat de la métadonnées et provenance : diffusion et profils atmosphériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1357 — conversion et normalisation de la métadonnées et provenance : diffusion et profils atmosphériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1358 — analyse et contrôle de cohérence de la métadonnées et provenance : diffusion et profils atmosphériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1359 — optimisation et exécution de la métadonnées et provenance : diffusion et profils atmosphériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1360 — export et traçabilité de la métadonnées et provenance : diffusion et profils atmosphériques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1361 — définition et validation du contrat de la paramètres et unités : diffusion et profils atmosphériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1362 — conversion et normalisation de la paramètres et unités : diffusion et profils atmosphériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1363 — analyse et contrôle de cohérence de la paramètres et unités : diffusion et profils atmosphériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1364 — optimisation et exécution de la paramètres et unités : diffusion et profils atmosphériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1365 — export et traçabilité de la paramètres et unités : diffusion et profils atmosphériques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1366 — définition et validation du contrat de la géométrie et repérage : diffusion et profils atmosphériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1367 — conversion et normalisation de la géométrie et repérage : diffusion et profils atmosphériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1368 — analyse et contrôle de cohérence de la géométrie et repérage : diffusion et profils atmosphériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1369 — optimisation et exécution de la géométrie et repérage : diffusion et profils atmosphériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1370 — export et traçabilité de la géométrie et repérage : diffusion et profils atmosphériques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1371 — définition et validation du contrat de la qualité et incertitude : diffusion et profils atmosphériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1372 — conversion et normalisation de la qualité et incertitude : diffusion et profils atmosphériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1373 — analyse et contrôle de cohérence de la qualité et incertitude : diffusion et profils atmosphériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1374 — optimisation et exécution de la qualité et incertitude : diffusion et profils atmosphériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1375 — export et traçabilité de la qualité et incertitude : diffusion et profils atmosphériques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1376 — définition et validation du contrat de la index et recherche : diffusion et profils atmosphériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1377 — conversion et normalisation de la index et recherche : diffusion et profils atmosphériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1378 — analyse et contrôle de cohérence de la index et recherche : diffusion et profils atmosphériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1379 — optimisation et exécution de la index et recherche : diffusion et profils atmosphériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1380 — export et traçabilité de la index et recherche : diffusion et profils atmosphériques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1381 — définition et validation du contrat de la échantillonnage et interpolation : diffusion et profils atmosphériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1382 — conversion et normalisation de la échantillonnage et interpolation : diffusion et profils atmosphériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1383 — analyse et contrôle de cohérence de la échantillonnage et interpolation : diffusion et profils atmosphériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1384 — optimisation et exécution de la échantillonnage et interpolation : diffusion et profils atmosphériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1385 — export et traçabilité de la échantillonnage et interpolation : diffusion et profils atmosphériques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1386 — définition et validation du contrat de la visualisation et niveaux de détail : diffusion et profils atmosphériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1387 — conversion et normalisation de la visualisation et niveaux de détail : diffusion et profils atmosphériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1388 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : diffusion et profils atmosphériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1389 — optimisation et exécution de la visualisation et niveaux de détail : diffusion et profils atmosphériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1390 — export et traçabilité de la visualisation et niveaux de détail : diffusion et profils atmosphériques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1391 — définition et validation du contrat de la stockage et diffusion : diffusion et profils atmosphériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1392 — conversion et normalisation de la stockage et diffusion : diffusion et profils atmosphériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1393 — analyse et contrôle de cohérence de la stockage et diffusion : diffusion et profils atmosphériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1394 — optimisation et exécution de la stockage et diffusion : diffusion et profils atmosphériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1395 — export et traçabilité de la stockage et diffusion : diffusion et profils atmosphériques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1396 — définition et validation du contrat de la tests et conformité : diffusion et profils atmosphériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1397 — conversion et normalisation de la tests et conformité : diffusion et profils atmosphériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1398 — analyse et contrôle de cohérence de la tests et conformité : diffusion et profils atmosphériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1399 — optimisation et exécution de la tests et conformité : diffusion et profils atmosphériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1400 — export et traçabilité de la tests et conformité : diffusion et profils atmosphériques ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 45 · Magnétosphères · ☉ / ∿ / ◉
+
+Périmètre : champs et structures magnétiques.
+
+- **AX-1401 — définition et validation du contrat de la structure de données : champs et structures magnétiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1402 — conversion et normalisation de la structure de données : champs et structures magnétiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1403 — analyse et contrôle de cohérence de la structure de données : champs et structures magnétiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1404 — optimisation et exécution de la structure de données : champs et structures magnétiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1405 — export et traçabilité de la structure de données : champs et structures magnétiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1406 — définition et validation du contrat de la métadonnées et provenance : champs et structures magnétiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1407 — conversion et normalisation de la métadonnées et provenance : champs et structures magnétiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1408 — analyse et contrôle de cohérence de la métadonnées et provenance : champs et structures magnétiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1409 — optimisation et exécution de la métadonnées et provenance : champs et structures magnétiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1410 — export et traçabilité de la métadonnées et provenance : champs et structures magnétiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1411 — définition et validation du contrat de la paramètres et unités : champs et structures magnétiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1412 — conversion et normalisation de la paramètres et unités : champs et structures magnétiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1413 — analyse et contrôle de cohérence de la paramètres et unités : champs et structures magnétiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1414 — optimisation et exécution de la paramètres et unités : champs et structures magnétiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1415 — export et traçabilité de la paramètres et unités : champs et structures magnétiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1416 — définition et validation du contrat de la géométrie et repérage : champs et structures magnétiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1417 — conversion et normalisation de la géométrie et repérage : champs et structures magnétiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1418 — analyse et contrôle de cohérence de la géométrie et repérage : champs et structures magnétiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1419 — optimisation et exécution de la géométrie et repérage : champs et structures magnétiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1420 — export et traçabilité de la géométrie et repérage : champs et structures magnétiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1421 — définition et validation du contrat de la qualité et incertitude : champs et structures magnétiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1422 — conversion et normalisation de la qualité et incertitude : champs et structures magnétiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1423 — analyse et contrôle de cohérence de la qualité et incertitude : champs et structures magnétiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1424 — optimisation et exécution de la qualité et incertitude : champs et structures magnétiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1425 — export et traçabilité de la qualité et incertitude : champs et structures magnétiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1426 — définition et validation du contrat de la index et recherche : champs et structures magnétiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1427 — conversion et normalisation de la index et recherche : champs et structures magnétiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1428 — analyse et contrôle de cohérence de la index et recherche : champs et structures magnétiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1429 — optimisation et exécution de la index et recherche : champs et structures magnétiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1430 — export et traçabilité de la index et recherche : champs et structures magnétiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1431 — définition et validation du contrat de la échantillonnage et interpolation : champs et structures magnétiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1432 — conversion et normalisation de la échantillonnage et interpolation : champs et structures magnétiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1433 — analyse et contrôle de cohérence de la échantillonnage et interpolation : champs et structures magnétiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1434 — optimisation et exécution de la échantillonnage et interpolation : champs et structures magnétiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1435 — export et traçabilité de la échantillonnage et interpolation : champs et structures magnétiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1436 — définition et validation du contrat de la visualisation et niveaux de détail : champs et structures magnétiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1437 — conversion et normalisation de la visualisation et niveaux de détail : champs et structures magnétiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1438 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : champs et structures magnétiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1439 — optimisation et exécution de la visualisation et niveaux de détail : champs et structures magnétiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1440 — export et traçabilité de la visualisation et niveaux de détail : champs et structures magnétiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1441 — définition et validation du contrat de la stockage et diffusion : champs et structures magnétiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1442 — conversion et normalisation de la stockage et diffusion : champs et structures magnétiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1443 — analyse et contrôle de cohérence de la stockage et diffusion : champs et structures magnétiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1444 — optimisation et exécution de la stockage et diffusion : champs et structures magnétiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1445 — export et traçabilité de la stockage et diffusion : champs et structures magnétiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1446 — définition et validation du contrat de la tests et conformité : champs et structures magnétiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1447 — conversion et normalisation de la tests et conformité : champs et structures magnétiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1448 — analyse et contrôle de cohérence de la tests et conformité : champs et structures magnétiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1449 — optimisation et exécution de la tests et conformité : champs et structures magnétiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1450 — export et traçabilité de la tests et conformité : champs et structures magnétiques ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 46 · Plasmas spatiaux · ∿ / ⚙
+
+Périmètre : variables et modèles de plasma.
+
+- **AX-1451 — définition et validation du contrat de la structure de données : variables et modèles de plasma ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1452 — conversion et normalisation de la structure de données : variables et modèles de plasma ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1453 — analyse et contrôle de cohérence de la structure de données : variables et modèles de plasma ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1454 — optimisation et exécution de la structure de données : variables et modèles de plasma ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1455 — export et traçabilité de la structure de données : variables et modèles de plasma ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1456 — définition et validation du contrat de la métadonnées et provenance : variables et modèles de plasma ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1457 — conversion et normalisation de la métadonnées et provenance : variables et modèles de plasma ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1458 — analyse et contrôle de cohérence de la métadonnées et provenance : variables et modèles de plasma ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1459 — optimisation et exécution de la métadonnées et provenance : variables et modèles de plasma ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1460 — export et traçabilité de la métadonnées et provenance : variables et modèles de plasma ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1461 — définition et validation du contrat de la paramètres et unités : variables et modèles de plasma ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1462 — conversion et normalisation de la paramètres et unités : variables et modèles de plasma ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1463 — analyse et contrôle de cohérence de la paramètres et unités : variables et modèles de plasma ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1464 — optimisation et exécution de la paramètres et unités : variables et modèles de plasma ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1465 — export et traçabilité de la paramètres et unités : variables et modèles de plasma ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1466 — définition et validation du contrat de la géométrie et repérage : variables et modèles de plasma ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1467 — conversion et normalisation de la géométrie et repérage : variables et modèles de plasma ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1468 — analyse et contrôle de cohérence de la géométrie et repérage : variables et modèles de plasma ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1469 — optimisation et exécution de la géométrie et repérage : variables et modèles de plasma ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1470 — export et traçabilité de la géométrie et repérage : variables et modèles de plasma ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1471 — définition et validation du contrat de la qualité et incertitude : variables et modèles de plasma ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1472 — conversion et normalisation de la qualité et incertitude : variables et modèles de plasma ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1473 — analyse et contrôle de cohérence de la qualité et incertitude : variables et modèles de plasma ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1474 — optimisation et exécution de la qualité et incertitude : variables et modèles de plasma ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1475 — export et traçabilité de la qualité et incertitude : variables et modèles de plasma ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1476 — définition et validation du contrat de la index et recherche : variables et modèles de plasma ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1477 — conversion et normalisation de la index et recherche : variables et modèles de plasma ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1478 — analyse et contrôle de cohérence de la index et recherche : variables et modèles de plasma ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1479 — optimisation et exécution de la index et recherche : variables et modèles de plasma ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1480 — export et traçabilité de la index et recherche : variables et modèles de plasma ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1481 — définition et validation du contrat de la échantillonnage et interpolation : variables et modèles de plasma ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1482 — conversion et normalisation de la échantillonnage et interpolation : variables et modèles de plasma ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1483 — analyse et contrôle de cohérence de la échantillonnage et interpolation : variables et modèles de plasma ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1484 — optimisation et exécution de la échantillonnage et interpolation : variables et modèles de plasma ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1485 — export et traçabilité de la échantillonnage et interpolation : variables et modèles de plasma ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1486 — définition et validation du contrat de la visualisation et niveaux de détail : variables et modèles de plasma ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1487 — conversion et normalisation de la visualisation et niveaux de détail : variables et modèles de plasma ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1488 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : variables et modèles de plasma ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1489 — optimisation et exécution de la visualisation et niveaux de détail : variables et modèles de plasma ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1490 — export et traçabilité de la visualisation et niveaux de détail : variables et modèles de plasma ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1491 — définition et validation du contrat de la stockage et diffusion : variables et modèles de plasma ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1492 — conversion et normalisation de la stockage et diffusion : variables et modèles de plasma ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1493 — analyse et contrôle de cohérence de la stockage et diffusion : variables et modèles de plasma ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1494 — optimisation et exécution de la stockage et diffusion : variables et modèles de plasma ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1495 — export et traçabilité de la stockage et diffusion : variables et modèles de plasma ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1496 — définition et validation du contrat de la tests et conformité : variables et modèles de plasma ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1497 — conversion et normalisation de la tests et conformité : variables et modèles de plasma ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1498 — analyse et contrôle de cohérence de la tests et conformité : variables et modèles de plasma ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1499 — optimisation et exécution de la tests et conformité : variables et modèles de plasma ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1500 — export et traçabilité de la tests et conformité : variables et modèles de plasma ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 47 · Ondes électromagnétiques · ∿ / ⚙ / ◈
+
+Périmètre : champs, propagation et spectres.
+
+- **AX-1501 — définition et validation du contrat de la structure de données : champs, propagation et spectres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1502 — conversion et normalisation de la structure de données : champs, propagation et spectres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1503 — analyse et contrôle de cohérence de la structure de données : champs, propagation et spectres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1504 — optimisation et exécution de la structure de données : champs, propagation et spectres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1505 — export et traçabilité de la structure de données : champs, propagation et spectres ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1506 — définition et validation du contrat de la métadonnées et provenance : champs, propagation et spectres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1507 — conversion et normalisation de la métadonnées et provenance : champs, propagation et spectres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1508 — analyse et contrôle de cohérence de la métadonnées et provenance : champs, propagation et spectres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1509 — optimisation et exécution de la métadonnées et provenance : champs, propagation et spectres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1510 — export et traçabilité de la métadonnées et provenance : champs, propagation et spectres ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1511 — définition et validation du contrat de la paramètres et unités : champs, propagation et spectres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1512 — conversion et normalisation de la paramètres et unités : champs, propagation et spectres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1513 — analyse et contrôle de cohérence de la paramètres et unités : champs, propagation et spectres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1514 — optimisation et exécution de la paramètres et unités : champs, propagation et spectres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1515 — export et traçabilité de la paramètres et unités : champs, propagation et spectres ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1516 — définition et validation du contrat de la géométrie et repérage : champs, propagation et spectres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1517 — conversion et normalisation de la géométrie et repérage : champs, propagation et spectres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1518 — analyse et contrôle de cohérence de la géométrie et repérage : champs, propagation et spectres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1519 — optimisation et exécution de la géométrie et repérage : champs, propagation et spectres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1520 — export et traçabilité de la géométrie et repérage : champs, propagation et spectres ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1521 — définition et validation du contrat de la qualité et incertitude : champs, propagation et spectres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1522 — conversion et normalisation de la qualité et incertitude : champs, propagation et spectres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1523 — analyse et contrôle de cohérence de la qualité et incertitude : champs, propagation et spectres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1524 — optimisation et exécution de la qualité et incertitude : champs, propagation et spectres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1525 — export et traçabilité de la qualité et incertitude : champs, propagation et spectres ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1526 — définition et validation du contrat de la index et recherche : champs, propagation et spectres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1527 — conversion et normalisation de la index et recherche : champs, propagation et spectres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1528 — analyse et contrôle de cohérence de la index et recherche : champs, propagation et spectres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1529 — optimisation et exécution de la index et recherche : champs, propagation et spectres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1530 — export et traçabilité de la index et recherche : champs, propagation et spectres ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1531 — définition et validation du contrat de la échantillonnage et interpolation : champs, propagation et spectres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1532 — conversion et normalisation de la échantillonnage et interpolation : champs, propagation et spectres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1533 — analyse et contrôle de cohérence de la échantillonnage et interpolation : champs, propagation et spectres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1534 — optimisation et exécution de la échantillonnage et interpolation : champs, propagation et spectres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1535 — export et traçabilité de la échantillonnage et interpolation : champs, propagation et spectres ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1536 — définition et validation du contrat de la visualisation et niveaux de détail : champs, propagation et spectres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1537 — conversion et normalisation de la visualisation et niveaux de détail : champs, propagation et spectres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1538 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : champs, propagation et spectres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1539 — optimisation et exécution de la visualisation et niveaux de détail : champs, propagation et spectres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1540 — export et traçabilité de la visualisation et niveaux de détail : champs, propagation et spectres ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1541 — définition et validation du contrat de la stockage et diffusion : champs, propagation et spectres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1542 — conversion et normalisation de la stockage et diffusion : champs, propagation et spectres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1543 — analyse et contrôle de cohérence de la stockage et diffusion : champs, propagation et spectres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1544 — optimisation et exécution de la stockage et diffusion : champs, propagation et spectres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1545 — export et traçabilité de la stockage et diffusion : champs, propagation et spectres ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1546 — définition et validation du contrat de la tests et conformité : champs, propagation et spectres ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1547 — conversion et normalisation de la tests et conformité : champs, propagation et spectres ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1548 — analyse et contrôle de cohérence de la tests et conformité : champs, propagation et spectres ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1549 — optimisation et exécution de la tests et conformité : champs, propagation et spectres ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1550 — export et traçabilité de la tests et conformité : champs, propagation et spectres ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 48 · Fusion nucléaire — données physiques · ∿ / ⚙
+
+Périmètre : paramètres et visualisation de données de fusion.
+
+- **AX-1551 — définition et validation du contrat de la structure de données : paramètres et visualisation de données de fusion ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1552 — conversion et normalisation de la structure de données : paramètres et visualisation de données de fusion ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1553 — analyse et contrôle de cohérence de la structure de données : paramètres et visualisation de données de fusion ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1554 — optimisation et exécution de la structure de données : paramètres et visualisation de données de fusion ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1555 — export et traçabilité de la structure de données : paramètres et visualisation de données de fusion ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1556 — définition et validation du contrat de la métadonnées et provenance : paramètres et visualisation de données de fusion ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1557 — conversion et normalisation de la métadonnées et provenance : paramètres et visualisation de données de fusion ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1558 — analyse et contrôle de cohérence de la métadonnées et provenance : paramètres et visualisation de données de fusion ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1559 — optimisation et exécution de la métadonnées et provenance : paramètres et visualisation de données de fusion ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1560 — export et traçabilité de la métadonnées et provenance : paramètres et visualisation de données de fusion ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1561 — définition et validation du contrat de la paramètres et unités : paramètres et visualisation de données de fusion ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1562 — conversion et normalisation de la paramètres et unités : paramètres et visualisation de données de fusion ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1563 — analyse et contrôle de cohérence de la paramètres et unités : paramètres et visualisation de données de fusion ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1564 — optimisation et exécution de la paramètres et unités : paramètres et visualisation de données de fusion ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1565 — export et traçabilité de la paramètres et unités : paramètres et visualisation de données de fusion ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1566 — définition et validation du contrat de la géométrie et repérage : paramètres et visualisation de données de fusion ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1567 — conversion et normalisation de la géométrie et repérage : paramètres et visualisation de données de fusion ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1568 — analyse et contrôle de cohérence de la géométrie et repérage : paramètres et visualisation de données de fusion ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1569 — optimisation et exécution de la géométrie et repérage : paramètres et visualisation de données de fusion ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1570 — export et traçabilité de la géométrie et repérage : paramètres et visualisation de données de fusion ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1571 — définition et validation du contrat de la qualité et incertitude : paramètres et visualisation de données de fusion ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1572 — conversion et normalisation de la qualité et incertitude : paramètres et visualisation de données de fusion ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1573 — analyse et contrôle de cohérence de la qualité et incertitude : paramètres et visualisation de données de fusion ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1574 — optimisation et exécution de la qualité et incertitude : paramètres et visualisation de données de fusion ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1575 — export et traçabilité de la qualité et incertitude : paramètres et visualisation de données de fusion ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1576 — définition et validation du contrat de la index et recherche : paramètres et visualisation de données de fusion ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1577 — conversion et normalisation de la index et recherche : paramètres et visualisation de données de fusion ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1578 — analyse et contrôle de cohérence de la index et recherche : paramètres et visualisation de données de fusion ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1579 — optimisation et exécution de la index et recherche : paramètres et visualisation de données de fusion ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1580 — export et traçabilité de la index et recherche : paramètres et visualisation de données de fusion ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1581 — définition et validation du contrat de la échantillonnage et interpolation : paramètres et visualisation de données de fusion ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1582 — conversion et normalisation de la échantillonnage et interpolation : paramètres et visualisation de données de fusion ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1583 — analyse et contrôle de cohérence de la échantillonnage et interpolation : paramètres et visualisation de données de fusion ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1584 — optimisation et exécution de la échantillonnage et interpolation : paramètres et visualisation de données de fusion ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1585 — export et traçabilité de la échantillonnage et interpolation : paramètres et visualisation de données de fusion ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1586 — définition et validation du contrat de la visualisation et niveaux de détail : paramètres et visualisation de données de fusion ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1587 — conversion et normalisation de la visualisation et niveaux de détail : paramètres et visualisation de données de fusion ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1588 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : paramètres et visualisation de données de fusion ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1589 — optimisation et exécution de la visualisation et niveaux de détail : paramètres et visualisation de données de fusion ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1590 — export et traçabilité de la visualisation et niveaux de détail : paramètres et visualisation de données de fusion ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1591 — définition et validation du contrat de la stockage et diffusion : paramètres et visualisation de données de fusion ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1592 — conversion et normalisation de la stockage et diffusion : paramètres et visualisation de données de fusion ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1593 — analyse et contrôle de cohérence de la stockage et diffusion : paramètres et visualisation de données de fusion ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1594 — optimisation et exécution de la stockage et diffusion : paramètres et visualisation de données de fusion ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1595 — export et traçabilité de la stockage et diffusion : paramètres et visualisation de données de fusion ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1596 — définition et validation du contrat de la tests et conformité : paramètres et visualisation de données de fusion ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1597 — conversion et normalisation de la tests et conformité : paramètres et visualisation de données de fusion ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1598 — analyse et contrôle de cohérence de la tests et conformité : paramètres et visualisation de données de fusion ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1599 — optimisation et exécution de la tests et conformité : paramètres et visualisation de données de fusion ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1600 — export et traçabilité de la tests et conformité : paramètres et visualisation de données de fusion ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 49 · Sismologie et géophysique · 地 / ∿ / ⚙
+
+Périmètre : ondes sismiques et sous-sol.
+
+- **AX-1601 — définition et validation du contrat de la structure de données : ondes sismiques et sous-sol ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1602 — conversion et normalisation de la structure de données : ondes sismiques et sous-sol ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1603 — analyse et contrôle de cohérence de la structure de données : ondes sismiques et sous-sol ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1604 — optimisation et exécution de la structure de données : ondes sismiques et sous-sol ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1605 — export et traçabilité de la structure de données : ondes sismiques et sous-sol ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1606 — définition et validation du contrat de la métadonnées et provenance : ondes sismiques et sous-sol ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1607 — conversion et normalisation de la métadonnées et provenance : ondes sismiques et sous-sol ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1608 — analyse et contrôle de cohérence de la métadonnées et provenance : ondes sismiques et sous-sol ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1609 — optimisation et exécution de la métadonnées et provenance : ondes sismiques et sous-sol ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1610 — export et traçabilité de la métadonnées et provenance : ondes sismiques et sous-sol ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1611 — définition et validation du contrat de la paramètres et unités : ondes sismiques et sous-sol ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1612 — conversion et normalisation de la paramètres et unités : ondes sismiques et sous-sol ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1613 — analyse et contrôle de cohérence de la paramètres et unités : ondes sismiques et sous-sol ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1614 — optimisation et exécution de la paramètres et unités : ondes sismiques et sous-sol ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1615 — export et traçabilité de la paramètres et unités : ondes sismiques et sous-sol ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1616 — définition et validation du contrat de la géométrie et repérage : ondes sismiques et sous-sol ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1617 — conversion et normalisation de la géométrie et repérage : ondes sismiques et sous-sol ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1618 — analyse et contrôle de cohérence de la géométrie et repérage : ondes sismiques et sous-sol ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1619 — optimisation et exécution de la géométrie et repérage : ondes sismiques et sous-sol ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1620 — export et traçabilité de la géométrie et repérage : ondes sismiques et sous-sol ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1621 — définition et validation du contrat de la qualité et incertitude : ondes sismiques et sous-sol ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1622 — conversion et normalisation de la qualité et incertitude : ondes sismiques et sous-sol ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1623 — analyse et contrôle de cohérence de la qualité et incertitude : ondes sismiques et sous-sol ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1624 — optimisation et exécution de la qualité et incertitude : ondes sismiques et sous-sol ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1625 — export et traçabilité de la qualité et incertitude : ondes sismiques et sous-sol ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1626 — définition et validation du contrat de la index et recherche : ondes sismiques et sous-sol ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1627 — conversion et normalisation de la index et recherche : ondes sismiques et sous-sol ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1628 — analyse et contrôle de cohérence de la index et recherche : ondes sismiques et sous-sol ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1629 — optimisation et exécution de la index et recherche : ondes sismiques et sous-sol ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1630 — export et traçabilité de la index et recherche : ondes sismiques et sous-sol ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1631 — définition et validation du contrat de la échantillonnage et interpolation : ondes sismiques et sous-sol ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1632 — conversion et normalisation de la échantillonnage et interpolation : ondes sismiques et sous-sol ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1633 — analyse et contrôle de cohérence de la échantillonnage et interpolation : ondes sismiques et sous-sol ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1634 — optimisation et exécution de la échantillonnage et interpolation : ondes sismiques et sous-sol ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1635 — export et traçabilité de la échantillonnage et interpolation : ondes sismiques et sous-sol ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1636 — définition et validation du contrat de la visualisation et niveaux de détail : ondes sismiques et sous-sol ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1637 — conversion et normalisation de la visualisation et niveaux de détail : ondes sismiques et sous-sol ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1638 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : ondes sismiques et sous-sol ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1639 — optimisation et exécution de la visualisation et niveaux de détail : ondes sismiques et sous-sol ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1640 — export et traçabilité de la visualisation et niveaux de détail : ondes sismiques et sous-sol ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1641 — définition et validation du contrat de la stockage et diffusion : ondes sismiques et sous-sol ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1642 — conversion et normalisation de la stockage et diffusion : ondes sismiques et sous-sol ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1643 — analyse et contrôle de cohérence de la stockage et diffusion : ondes sismiques et sous-sol ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1644 — optimisation et exécution de la stockage et diffusion : ondes sismiques et sous-sol ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1645 — export et traçabilité de la stockage et diffusion : ondes sismiques et sous-sol ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1646 — définition et validation du contrat de la tests et conformité : ondes sismiques et sous-sol ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1647 — conversion et normalisation de la tests et conformité : ondes sismiques et sous-sol ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1648 — analyse et contrôle de cohérence de la tests et conformité : ondes sismiques et sous-sol ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1649 — optimisation et exécution de la tests et conformité : ondes sismiques et sous-sol ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1650 — export et traçabilité de la tests et conformité : ondes sismiques et sous-sol ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 50 · Gravimétrie · 地 / ⚙ / ◎
+
+Périmètre : potentiel et champs gravitationnels.
+
+- **AX-1651 — définition et validation du contrat de la structure de données : potentiel et champs gravitationnels ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1652 — conversion et normalisation de la structure de données : potentiel et champs gravitationnels ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1653 — analyse et contrôle de cohérence de la structure de données : potentiel et champs gravitationnels ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1654 — optimisation et exécution de la structure de données : potentiel et champs gravitationnels ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1655 — export et traçabilité de la structure de données : potentiel et champs gravitationnels ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1656 — définition et validation du contrat de la métadonnées et provenance : potentiel et champs gravitationnels ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1657 — conversion et normalisation de la métadonnées et provenance : potentiel et champs gravitationnels ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1658 — analyse et contrôle de cohérence de la métadonnées et provenance : potentiel et champs gravitationnels ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1659 — optimisation et exécution de la métadonnées et provenance : potentiel et champs gravitationnels ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1660 — export et traçabilité de la métadonnées et provenance : potentiel et champs gravitationnels ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1661 — définition et validation du contrat de la paramètres et unités : potentiel et champs gravitationnels ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1662 — conversion et normalisation de la paramètres et unités : potentiel et champs gravitationnels ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1663 — analyse et contrôle de cohérence de la paramètres et unités : potentiel et champs gravitationnels ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1664 — optimisation et exécution de la paramètres et unités : potentiel et champs gravitationnels ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1665 — export et traçabilité de la paramètres et unités : potentiel et champs gravitationnels ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1666 — définition et validation du contrat de la géométrie et repérage : potentiel et champs gravitationnels ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1667 — conversion et normalisation de la géométrie et repérage : potentiel et champs gravitationnels ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1668 — analyse et contrôle de cohérence de la géométrie et repérage : potentiel et champs gravitationnels ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1669 — optimisation et exécution de la géométrie et repérage : potentiel et champs gravitationnels ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1670 — export et traçabilité de la géométrie et repérage : potentiel et champs gravitationnels ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1671 — définition et validation du contrat de la qualité et incertitude : potentiel et champs gravitationnels ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1672 — conversion et normalisation de la qualité et incertitude : potentiel et champs gravitationnels ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1673 — analyse et contrôle de cohérence de la qualité et incertitude : potentiel et champs gravitationnels ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1674 — optimisation et exécution de la qualité et incertitude : potentiel et champs gravitationnels ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1675 — export et traçabilité de la qualité et incertitude : potentiel et champs gravitationnels ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1676 — définition et validation du contrat de la index et recherche : potentiel et champs gravitationnels ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1677 — conversion et normalisation de la index et recherche : potentiel et champs gravitationnels ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1678 — analyse et contrôle de cohérence de la index et recherche : potentiel et champs gravitationnels ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1679 — optimisation et exécution de la index et recherche : potentiel et champs gravitationnels ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1680 — export et traçabilité de la index et recherche : potentiel et champs gravitationnels ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1681 — définition et validation du contrat de la échantillonnage et interpolation : potentiel et champs gravitationnels ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1682 — conversion et normalisation de la échantillonnage et interpolation : potentiel et champs gravitationnels ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1683 — analyse et contrôle de cohérence de la échantillonnage et interpolation : potentiel et champs gravitationnels ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1684 — optimisation et exécution de la échantillonnage et interpolation : potentiel et champs gravitationnels ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1685 — export et traçabilité de la échantillonnage et interpolation : potentiel et champs gravitationnels ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1686 — définition et validation du contrat de la visualisation et niveaux de détail : potentiel et champs gravitationnels ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1687 — conversion et normalisation de la visualisation et niveaux de détail : potentiel et champs gravitationnels ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1688 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : potentiel et champs gravitationnels ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1689 — optimisation et exécution de la visualisation et niveaux de détail : potentiel et champs gravitationnels ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1690 — export et traçabilité de la visualisation et niveaux de détail : potentiel et champs gravitationnels ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1691 — définition et validation du contrat de la stockage et diffusion : potentiel et champs gravitationnels ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1692 — conversion et normalisation de la stockage et diffusion : potentiel et champs gravitationnels ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1693 — analyse et contrôle de cohérence de la stockage et diffusion : potentiel et champs gravitationnels ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1694 — optimisation et exécution de la stockage et diffusion : potentiel et champs gravitationnels ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1695 — export et traçabilité de la stockage et diffusion : potentiel et champs gravitationnels ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1696 — définition et validation du contrat de la tests et conformité : potentiel et champs gravitationnels ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1697 — conversion et normalisation de la tests et conformité : potentiel et champs gravitationnels ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1698 — analyse et contrôle de cohérence de la tests et conformité : potentiel et champs gravitationnels ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1699 — optimisation et exécution de la tests et conformité : potentiel et champs gravitationnels ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1700 — export et traçabilité de la tests et conformité : potentiel et champs gravitationnels ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 51 · Thermique planétaire · ☉ / ☾ / ∿
+
+Périmètre : températures et bilans thermiques.
+
+- **AX-1701 — définition et validation du contrat de la structure de données : températures et bilans thermiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1702 — conversion et normalisation de la structure de données : températures et bilans thermiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1703 — analyse et contrôle de cohérence de la structure de données : températures et bilans thermiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1704 — optimisation et exécution de la structure de données : températures et bilans thermiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1705 — export et traçabilité de la structure de données : températures et bilans thermiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1706 — définition et validation du contrat de la métadonnées et provenance : températures et bilans thermiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1707 — conversion et normalisation de la métadonnées et provenance : températures et bilans thermiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1708 — analyse et contrôle de cohérence de la métadonnées et provenance : températures et bilans thermiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1709 — optimisation et exécution de la métadonnées et provenance : températures et bilans thermiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1710 — export et traçabilité de la métadonnées et provenance : températures et bilans thermiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1711 — définition et validation du contrat de la paramètres et unités : températures et bilans thermiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1712 — conversion et normalisation de la paramètres et unités : températures et bilans thermiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1713 — analyse et contrôle de cohérence de la paramètres et unités : températures et bilans thermiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1714 — optimisation et exécution de la paramètres et unités : températures et bilans thermiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1715 — export et traçabilité de la paramètres et unités : températures et bilans thermiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1716 — définition et validation du contrat de la géométrie et repérage : températures et bilans thermiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1717 — conversion et normalisation de la géométrie et repérage : températures et bilans thermiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1718 — analyse et contrôle de cohérence de la géométrie et repérage : températures et bilans thermiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1719 — optimisation et exécution de la géométrie et repérage : températures et bilans thermiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1720 — export et traçabilité de la géométrie et repérage : températures et bilans thermiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1721 — définition et validation du contrat de la qualité et incertitude : températures et bilans thermiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1722 — conversion et normalisation de la qualité et incertitude : températures et bilans thermiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1723 — analyse et contrôle de cohérence de la qualité et incertitude : températures et bilans thermiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1724 — optimisation et exécution de la qualité et incertitude : températures et bilans thermiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1725 — export et traçabilité de la qualité et incertitude : températures et bilans thermiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1726 — définition et validation du contrat de la index et recherche : températures et bilans thermiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1727 — conversion et normalisation de la index et recherche : températures et bilans thermiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1728 — analyse et contrôle de cohérence de la index et recherche : températures et bilans thermiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1729 — optimisation et exécution de la index et recherche : températures et bilans thermiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1730 — export et traçabilité de la index et recherche : températures et bilans thermiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1731 — définition et validation du contrat de la échantillonnage et interpolation : températures et bilans thermiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1732 — conversion et normalisation de la échantillonnage et interpolation : températures et bilans thermiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1733 — analyse et contrôle de cohérence de la échantillonnage et interpolation : températures et bilans thermiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1734 — optimisation et exécution de la échantillonnage et interpolation : températures et bilans thermiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1735 — export et traçabilité de la échantillonnage et interpolation : températures et bilans thermiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1736 — définition et validation du contrat de la visualisation et niveaux de détail : températures et bilans thermiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1737 — conversion et normalisation de la visualisation et niveaux de détail : températures et bilans thermiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1738 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : températures et bilans thermiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1739 — optimisation et exécution de la visualisation et niveaux de détail : températures et bilans thermiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1740 — export et traçabilité de la visualisation et niveaux de détail : températures et bilans thermiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1741 — définition et validation du contrat de la stockage et diffusion : températures et bilans thermiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1742 — conversion et normalisation de la stockage et diffusion : températures et bilans thermiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1743 — analyse et contrôle de cohérence de la stockage et diffusion : températures et bilans thermiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1744 — optimisation et exécution de la stockage et diffusion : températures et bilans thermiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1745 — export et traçabilité de la stockage et diffusion : températures et bilans thermiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1746 — définition et validation du contrat de la tests et conformité : températures et bilans thermiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1747 — conversion et normalisation de la tests et conformité : températures et bilans thermiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1748 — analyse et contrôle de cohérence de la tests et conformité : températures et bilans thermiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1749 — optimisation et exécution de la tests et conformité : températures et bilans thermiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1750 — export et traçabilité de la tests et conformité : températures et bilans thermiques ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 52 · Océanographie et hydrologie · 地 / ∿ / ⌖
+
+Périmètre : eaux, courants et bassins.
+
+- **AX-1751 — définition et validation du contrat de la structure de données : eaux, courants et bassins ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1752 — conversion et normalisation de la structure de données : eaux, courants et bassins ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1753 — analyse et contrôle de cohérence de la structure de données : eaux, courants et bassins ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1754 — optimisation et exécution de la structure de données : eaux, courants et bassins ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1755 — export et traçabilité de la structure de données : eaux, courants et bassins ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1756 — définition et validation du contrat de la métadonnées et provenance : eaux, courants et bassins ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1757 — conversion et normalisation de la métadonnées et provenance : eaux, courants et bassins ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1758 — analyse et contrôle de cohérence de la métadonnées et provenance : eaux, courants et bassins ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1759 — optimisation et exécution de la métadonnées et provenance : eaux, courants et bassins ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1760 — export et traçabilité de la métadonnées et provenance : eaux, courants et bassins ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1761 — définition et validation du contrat de la paramètres et unités : eaux, courants et bassins ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1762 — conversion et normalisation de la paramètres et unités : eaux, courants et bassins ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1763 — analyse et contrôle de cohérence de la paramètres et unités : eaux, courants et bassins ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1764 — optimisation et exécution de la paramètres et unités : eaux, courants et bassins ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1765 — export et traçabilité de la paramètres et unités : eaux, courants et bassins ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1766 — définition et validation du contrat de la géométrie et repérage : eaux, courants et bassins ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1767 — conversion et normalisation de la géométrie et repérage : eaux, courants et bassins ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1768 — analyse et contrôle de cohérence de la géométrie et repérage : eaux, courants et bassins ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1769 — optimisation et exécution de la géométrie et repérage : eaux, courants et bassins ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1770 — export et traçabilité de la géométrie et repérage : eaux, courants et bassins ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1771 — définition et validation du contrat de la qualité et incertitude : eaux, courants et bassins ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1772 — conversion et normalisation de la qualité et incertitude : eaux, courants et bassins ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1773 — analyse et contrôle de cohérence de la qualité et incertitude : eaux, courants et bassins ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1774 — optimisation et exécution de la qualité et incertitude : eaux, courants et bassins ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1775 — export et traçabilité de la qualité et incertitude : eaux, courants et bassins ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1776 — définition et validation du contrat de la index et recherche : eaux, courants et bassins ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1777 — conversion et normalisation de la index et recherche : eaux, courants et bassins ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1778 — analyse et contrôle de cohérence de la index et recherche : eaux, courants et bassins ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1779 — optimisation et exécution de la index et recherche : eaux, courants et bassins ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1780 — export et traçabilité de la index et recherche : eaux, courants et bassins ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1781 — définition et validation du contrat de la échantillonnage et interpolation : eaux, courants et bassins ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1782 — conversion et normalisation de la échantillonnage et interpolation : eaux, courants et bassins ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1783 — analyse et contrôle de cohérence de la échantillonnage et interpolation : eaux, courants et bassins ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1784 — optimisation et exécution de la échantillonnage et interpolation : eaux, courants et bassins ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1785 — export et traçabilité de la échantillonnage et interpolation : eaux, courants et bassins ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1786 — définition et validation du contrat de la visualisation et niveaux de détail : eaux, courants et bassins ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1787 — conversion et normalisation de la visualisation et niveaux de détail : eaux, courants et bassins ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1788 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : eaux, courants et bassins ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1789 — optimisation et exécution de la visualisation et niveaux de détail : eaux, courants et bassins ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1790 — export et traçabilité de la visualisation et niveaux de détail : eaux, courants et bassins ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1791 — définition et validation du contrat de la stockage et diffusion : eaux, courants et bassins ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1792 — conversion et normalisation de la stockage et diffusion : eaux, courants et bassins ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1793 — analyse et contrôle de cohérence de la stockage et diffusion : eaux, courants et bassins ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1794 — optimisation et exécution de la stockage et diffusion : eaux, courants et bassins ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1795 — export et traçabilité de la stockage et diffusion : eaux, courants et bassins ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1796 — définition et validation du contrat de la tests et conformité : eaux, courants et bassins ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1797 — conversion et normalisation de la tests et conformité : eaux, courants et bassins ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1798 — analyse et contrôle de cohérence de la tests et conformité : eaux, courants et bassins ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1799 — optimisation et exécution de la tests et conformité : eaux, courants et bassins ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1800 — export et traçabilité de la tests et conformité : eaux, courants et bassins ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 53 · Météorologie et climat · 地 / ∿ / ⏱
+
+Périmètre : champs atmosphériques et séries climatiques.
+
+- **AX-1801 — définition et validation du contrat de la structure de données : champs atmosphériques et séries climatiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1802 — conversion et normalisation de la structure de données : champs atmosphériques et séries climatiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1803 — analyse et contrôle de cohérence de la structure de données : champs atmosphériques et séries climatiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1804 — optimisation et exécution de la structure de données : champs atmosphériques et séries climatiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1805 — export et traçabilité de la structure de données : champs atmosphériques et séries climatiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1806 — définition et validation du contrat de la métadonnées et provenance : champs atmosphériques et séries climatiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1807 — conversion et normalisation de la métadonnées et provenance : champs atmosphériques et séries climatiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1808 — analyse et contrôle de cohérence de la métadonnées et provenance : champs atmosphériques et séries climatiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1809 — optimisation et exécution de la métadonnées et provenance : champs atmosphériques et séries climatiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1810 — export et traçabilité de la métadonnées et provenance : champs atmosphériques et séries climatiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1811 — définition et validation du contrat de la paramètres et unités : champs atmosphériques et séries climatiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1812 — conversion et normalisation de la paramètres et unités : champs atmosphériques et séries climatiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1813 — analyse et contrôle de cohérence de la paramètres et unités : champs atmosphériques et séries climatiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1814 — optimisation et exécution de la paramètres et unités : champs atmosphériques et séries climatiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1815 — export et traçabilité de la paramètres et unités : champs atmosphériques et séries climatiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1816 — définition et validation du contrat de la géométrie et repérage : champs atmosphériques et séries climatiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1817 — conversion et normalisation de la géométrie et repérage : champs atmosphériques et séries climatiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1818 — analyse et contrôle de cohérence de la géométrie et repérage : champs atmosphériques et séries climatiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1819 — optimisation et exécution de la géométrie et repérage : champs atmosphériques et séries climatiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1820 — export et traçabilité de la géométrie et repérage : champs atmosphériques et séries climatiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1821 — définition et validation du contrat de la qualité et incertitude : champs atmosphériques et séries climatiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1822 — conversion et normalisation de la qualité et incertitude : champs atmosphériques et séries climatiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1823 — analyse et contrôle de cohérence de la qualité et incertitude : champs atmosphériques et séries climatiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1824 — optimisation et exécution de la qualité et incertitude : champs atmosphériques et séries climatiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1825 — export et traçabilité de la qualité et incertitude : champs atmosphériques et séries climatiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1826 — définition et validation du contrat de la index et recherche : champs atmosphériques et séries climatiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1827 — conversion et normalisation de la index et recherche : champs atmosphériques et séries climatiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1828 — analyse et contrôle de cohérence de la index et recherche : champs atmosphériques et séries climatiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1829 — optimisation et exécution de la index et recherche : champs atmosphériques et séries climatiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1830 — export et traçabilité de la index et recherche : champs atmosphériques et séries climatiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1831 — définition et validation du contrat de la échantillonnage et interpolation : champs atmosphériques et séries climatiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1832 — conversion et normalisation de la échantillonnage et interpolation : champs atmosphériques et séries climatiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1833 — analyse et contrôle de cohérence de la échantillonnage et interpolation : champs atmosphériques et séries climatiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1834 — optimisation et exécution de la échantillonnage et interpolation : champs atmosphériques et séries climatiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1835 — export et traçabilité de la échantillonnage et interpolation : champs atmosphériques et séries climatiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1836 — définition et validation du contrat de la visualisation et niveaux de détail : champs atmosphériques et séries climatiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1837 — conversion et normalisation de la visualisation et niveaux de détail : champs atmosphériques et séries climatiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1838 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : champs atmosphériques et séries climatiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1839 — optimisation et exécution de la visualisation et niveaux de détail : champs atmosphériques et séries climatiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1840 — export et traçabilité de la visualisation et niveaux de détail : champs atmosphériques et séries climatiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1841 — définition et validation du contrat de la stockage et diffusion : champs atmosphériques et séries climatiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1842 — conversion et normalisation de la stockage et diffusion : champs atmosphériques et séries climatiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1843 — analyse et contrôle de cohérence de la stockage et diffusion : champs atmosphériques et séries climatiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1844 — optimisation et exécution de la stockage et diffusion : champs atmosphériques et séries climatiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1845 — export et traçabilité de la stockage et diffusion : champs atmosphériques et séries climatiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1846 — définition et validation du contrat de la tests et conformité : champs atmosphériques et séries climatiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1847 — conversion et normalisation de la tests et conformité : champs atmosphériques et séries climatiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1848 — analyse et contrôle de cohérence de la tests et conformité : champs atmosphériques et séries climatiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1849 — optimisation et exécution de la tests et conformité : champs atmosphériques et séries climatiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1850 — export et traçabilité de la tests et conformité : champs atmosphériques et séries climatiques ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 54 · Réseaux et graphes spatiaux · ⌖ / ⚙
+
+Périmètre : topologie et chemins géographiques.
+
+- **AX-1851 — définition et validation du contrat de la structure de données : topologie et chemins géographiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1852 — conversion et normalisation de la structure de données : topologie et chemins géographiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1853 — analyse et contrôle de cohérence de la structure de données : topologie et chemins géographiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1854 — optimisation et exécution de la structure de données : topologie et chemins géographiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1855 — export et traçabilité de la structure de données : topologie et chemins géographiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1856 — définition et validation du contrat de la métadonnées et provenance : topologie et chemins géographiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1857 — conversion et normalisation de la métadonnées et provenance : topologie et chemins géographiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1858 — analyse et contrôle de cohérence de la métadonnées et provenance : topologie et chemins géographiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1859 — optimisation et exécution de la métadonnées et provenance : topologie et chemins géographiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1860 — export et traçabilité de la métadonnées et provenance : topologie et chemins géographiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1861 — définition et validation du contrat de la paramètres et unités : topologie et chemins géographiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1862 — conversion et normalisation de la paramètres et unités : topologie et chemins géographiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1863 — analyse et contrôle de cohérence de la paramètres et unités : topologie et chemins géographiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1864 — optimisation et exécution de la paramètres et unités : topologie et chemins géographiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1865 — export et traçabilité de la paramètres et unités : topologie et chemins géographiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1866 — définition et validation du contrat de la géométrie et repérage : topologie et chemins géographiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1867 — conversion et normalisation de la géométrie et repérage : topologie et chemins géographiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1868 — analyse et contrôle de cohérence de la géométrie et repérage : topologie et chemins géographiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1869 — optimisation et exécution de la géométrie et repérage : topologie et chemins géographiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1870 — export et traçabilité de la géométrie et repérage : topologie et chemins géographiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1871 — définition et validation du contrat de la qualité et incertitude : topologie et chemins géographiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1872 — conversion et normalisation de la qualité et incertitude : topologie et chemins géographiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1873 — analyse et contrôle de cohérence de la qualité et incertitude : topologie et chemins géographiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1874 — optimisation et exécution de la qualité et incertitude : topologie et chemins géographiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1875 — export et traçabilité de la qualité et incertitude : topologie et chemins géographiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1876 — définition et validation du contrat de la index et recherche : topologie et chemins géographiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1877 — conversion et normalisation de la index et recherche : topologie et chemins géographiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1878 — analyse et contrôle de cohérence de la index et recherche : topologie et chemins géographiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1879 — optimisation et exécution de la index et recherche : topologie et chemins géographiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1880 — export et traçabilité de la index et recherche : topologie et chemins géographiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1881 — définition et validation du contrat de la échantillonnage et interpolation : topologie et chemins géographiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1882 — conversion et normalisation de la échantillonnage et interpolation : topologie et chemins géographiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1883 — analyse et contrôle de cohérence de la échantillonnage et interpolation : topologie et chemins géographiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1884 — optimisation et exécution de la échantillonnage et interpolation : topologie et chemins géographiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1885 — export et traçabilité de la échantillonnage et interpolation : topologie et chemins géographiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1886 — définition et validation du contrat de la visualisation et niveaux de détail : topologie et chemins géographiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1887 — conversion et normalisation de la visualisation et niveaux de détail : topologie et chemins géographiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1888 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : topologie et chemins géographiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1889 — optimisation et exécution de la visualisation et niveaux de détail : topologie et chemins géographiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1890 — export et traçabilité de la visualisation et niveaux de détail : topologie et chemins géographiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1891 — définition et validation du contrat de la stockage et diffusion : topologie et chemins géographiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1892 — conversion et normalisation de la stockage et diffusion : topologie et chemins géographiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1893 — analyse et contrôle de cohérence de la stockage et diffusion : topologie et chemins géographiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1894 — optimisation et exécution de la stockage et diffusion : topologie et chemins géographiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1895 — export et traçabilité de la stockage et diffusion : topologie et chemins géographiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1896 — définition et validation du contrat de la tests et conformité : topologie et chemins géographiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1897 — conversion et normalisation de la tests et conformité : topologie et chemins géographiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1898 — analyse et contrôle de cohérence de la tests et conformité : topologie et chemins géographiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1899 — optimisation et exécution de la tests et conformité : topologie et chemins géographiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1900 — export et traçabilité de la tests et conformité : topologie et chemins géographiques ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 55 · Données urbaines et bâtiments · 地 / 点 / ⌖
+
+Périmètre : objets urbains et jumeaux numériques.
+
+- **AX-1901 — définition et validation du contrat de la structure de données : objets urbains et jumeaux numériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1902 — conversion et normalisation de la structure de données : objets urbains et jumeaux numériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1903 — analyse et contrôle de cohérence de la structure de données : objets urbains et jumeaux numériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1904 — optimisation et exécution de la structure de données : objets urbains et jumeaux numériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1905 — export et traçabilité de la structure de données : objets urbains et jumeaux numériques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1906 — définition et validation du contrat de la métadonnées et provenance : objets urbains et jumeaux numériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1907 — conversion et normalisation de la métadonnées et provenance : objets urbains et jumeaux numériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1908 — analyse et contrôle de cohérence de la métadonnées et provenance : objets urbains et jumeaux numériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1909 — optimisation et exécution de la métadonnées et provenance : objets urbains et jumeaux numériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1910 — export et traçabilité de la métadonnées et provenance : objets urbains et jumeaux numériques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1911 — définition et validation du contrat de la paramètres et unités : objets urbains et jumeaux numériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1912 — conversion et normalisation de la paramètres et unités : objets urbains et jumeaux numériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1913 — analyse et contrôle de cohérence de la paramètres et unités : objets urbains et jumeaux numériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1914 — optimisation et exécution de la paramètres et unités : objets urbains et jumeaux numériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1915 — export et traçabilité de la paramètres et unités : objets urbains et jumeaux numériques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1916 — définition et validation du contrat de la géométrie et repérage : objets urbains et jumeaux numériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1917 — conversion et normalisation de la géométrie et repérage : objets urbains et jumeaux numériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1918 — analyse et contrôle de cohérence de la géométrie et repérage : objets urbains et jumeaux numériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1919 — optimisation et exécution de la géométrie et repérage : objets urbains et jumeaux numériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1920 — export et traçabilité de la géométrie et repérage : objets urbains et jumeaux numériques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1921 — définition et validation du contrat de la qualité et incertitude : objets urbains et jumeaux numériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1922 — conversion et normalisation de la qualité et incertitude : objets urbains et jumeaux numériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1923 — analyse et contrôle de cohérence de la qualité et incertitude : objets urbains et jumeaux numériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1924 — optimisation et exécution de la qualité et incertitude : objets urbains et jumeaux numériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1925 — export et traçabilité de la qualité et incertitude : objets urbains et jumeaux numériques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1926 — définition et validation du contrat de la index et recherche : objets urbains et jumeaux numériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1927 — conversion et normalisation de la index et recherche : objets urbains et jumeaux numériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1928 — analyse et contrôle de cohérence de la index et recherche : objets urbains et jumeaux numériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1929 — optimisation et exécution de la index et recherche : objets urbains et jumeaux numériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1930 — export et traçabilité de la index et recherche : objets urbains et jumeaux numériques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1931 — définition et validation du contrat de la échantillonnage et interpolation : objets urbains et jumeaux numériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1932 — conversion et normalisation de la échantillonnage et interpolation : objets urbains et jumeaux numériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1933 — analyse et contrôle de cohérence de la échantillonnage et interpolation : objets urbains et jumeaux numériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1934 — optimisation et exécution de la échantillonnage et interpolation : objets urbains et jumeaux numériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1935 — export et traçabilité de la échantillonnage et interpolation : objets urbains et jumeaux numériques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1936 — définition et validation du contrat de la visualisation et niveaux de détail : objets urbains et jumeaux numériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1937 — conversion et normalisation de la visualisation et niveaux de détail : objets urbains et jumeaux numériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1938 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : objets urbains et jumeaux numériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1939 — optimisation et exécution de la visualisation et niveaux de détail : objets urbains et jumeaux numériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1940 — export et traçabilité de la visualisation et niveaux de détail : objets urbains et jumeaux numériques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1941 — définition et validation du contrat de la stockage et diffusion : objets urbains et jumeaux numériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1942 — conversion et normalisation de la stockage et diffusion : objets urbains et jumeaux numériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1943 — analyse et contrôle de cohérence de la stockage et diffusion : objets urbains et jumeaux numériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1944 — optimisation et exécution de la stockage et diffusion : objets urbains et jumeaux numériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1945 — export et traçabilité de la stockage et diffusion : objets urbains et jumeaux numériques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1946 — définition et validation du contrat de la tests et conformité : objets urbains et jumeaux numériques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1947 — conversion et normalisation de la tests et conformité : objets urbains et jumeaux numériques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1948 — analyse et contrôle de cohérence de la tests et conformité : objets urbains et jumeaux numériques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1949 — optimisation et exécution de la tests et conformité : objets urbains et jumeaux numériques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1950 — export et traçabilité de la tests et conformité : objets urbains et jumeaux numériques ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 56 · Transport et mobilité · ⌖ / ▦ / ⏱
+
+Périmètre : réseaux, horaires et mobilité.
+
+- **AX-1951 — définition et validation du contrat de la structure de données : réseaux, horaires et mobilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1952 — conversion et normalisation de la structure de données : réseaux, horaires et mobilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1953 — analyse et contrôle de cohérence de la structure de données : réseaux, horaires et mobilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1954 — optimisation et exécution de la structure de données : réseaux, horaires et mobilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1955 — export et traçabilité de la structure de données : réseaux, horaires et mobilité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1956 — définition et validation du contrat de la métadonnées et provenance : réseaux, horaires et mobilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1957 — conversion et normalisation de la métadonnées et provenance : réseaux, horaires et mobilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1958 — analyse et contrôle de cohérence de la métadonnées et provenance : réseaux, horaires et mobilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1959 — optimisation et exécution de la métadonnées et provenance : réseaux, horaires et mobilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1960 — export et traçabilité de la métadonnées et provenance : réseaux, horaires et mobilité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1961 — définition et validation du contrat de la paramètres et unités : réseaux, horaires et mobilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1962 — conversion et normalisation de la paramètres et unités : réseaux, horaires et mobilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1963 — analyse et contrôle de cohérence de la paramètres et unités : réseaux, horaires et mobilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1964 — optimisation et exécution de la paramètres et unités : réseaux, horaires et mobilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1965 — export et traçabilité de la paramètres et unités : réseaux, horaires et mobilité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1966 — définition et validation du contrat de la géométrie et repérage : réseaux, horaires et mobilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1967 — conversion et normalisation de la géométrie et repérage : réseaux, horaires et mobilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1968 — analyse et contrôle de cohérence de la géométrie et repérage : réseaux, horaires et mobilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1969 — optimisation et exécution de la géométrie et repérage : réseaux, horaires et mobilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1970 — export et traçabilité de la géométrie et repérage : réseaux, horaires et mobilité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1971 — définition et validation du contrat de la qualité et incertitude : réseaux, horaires et mobilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1972 — conversion et normalisation de la qualité et incertitude : réseaux, horaires et mobilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1973 — analyse et contrôle de cohérence de la qualité et incertitude : réseaux, horaires et mobilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1974 — optimisation et exécution de la qualité et incertitude : réseaux, horaires et mobilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1975 — export et traçabilité de la qualité et incertitude : réseaux, horaires et mobilité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1976 — définition et validation du contrat de la index et recherche : réseaux, horaires et mobilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1977 — conversion et normalisation de la index et recherche : réseaux, horaires et mobilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1978 — analyse et contrôle de cohérence de la index et recherche : réseaux, horaires et mobilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1979 — optimisation et exécution de la index et recherche : réseaux, horaires et mobilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1980 — export et traçabilité de la index et recherche : réseaux, horaires et mobilité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1981 — définition et validation du contrat de la échantillonnage et interpolation : réseaux, horaires et mobilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1982 — conversion et normalisation de la échantillonnage et interpolation : réseaux, horaires et mobilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1983 — analyse et contrôle de cohérence de la échantillonnage et interpolation : réseaux, horaires et mobilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1984 — optimisation et exécution de la échantillonnage et interpolation : réseaux, horaires et mobilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1985 — export et traçabilité de la échantillonnage et interpolation : réseaux, horaires et mobilité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1986 — définition et validation du contrat de la visualisation et niveaux de détail : réseaux, horaires et mobilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1987 — conversion et normalisation de la visualisation et niveaux de détail : réseaux, horaires et mobilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1988 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : réseaux, horaires et mobilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1989 — optimisation et exécution de la visualisation et niveaux de détail : réseaux, horaires et mobilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1990 — export et traçabilité de la visualisation et niveaux de détail : réseaux, horaires et mobilité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1991 — définition et validation du contrat de la stockage et diffusion : réseaux, horaires et mobilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1992 — conversion et normalisation de la stockage et diffusion : réseaux, horaires et mobilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1993 — analyse et contrôle de cohérence de la stockage et diffusion : réseaux, horaires et mobilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1994 — optimisation et exécution de la stockage et diffusion : réseaux, horaires et mobilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-1995 — export et traçabilité de la stockage et diffusion : réseaux, horaires et mobilité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-1996 — définition et validation du contrat de la tests et conformité : réseaux, horaires et mobilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-1997 — conversion et normalisation de la tests et conformité : réseaux, horaires et mobilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-1998 — analyse et contrôle de cohérence de la tests et conformité : réseaux, horaires et mobilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-1999 — optimisation et exécution de la tests et conformité : réseaux, horaires et mobilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2000 — export et traçabilité de la tests et conformité : réseaux, horaires et mobilité ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 57 · GNSS et navigation · ⌖ / ⏱ / ⚙
+
+Périmètre : observations et positionnement satellite.
+
+- **AX-2001 — définition et validation du contrat de la structure de données : observations et positionnement satellite ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2002 — conversion et normalisation de la structure de données : observations et positionnement satellite ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2003 — analyse et contrôle de cohérence de la structure de données : observations et positionnement satellite ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2004 — optimisation et exécution de la structure de données : observations et positionnement satellite ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2005 — export et traçabilité de la structure de données : observations et positionnement satellite ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2006 — définition et validation du contrat de la métadonnées et provenance : observations et positionnement satellite ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2007 — conversion et normalisation de la métadonnées et provenance : observations et positionnement satellite ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2008 — analyse et contrôle de cohérence de la métadonnées et provenance : observations et positionnement satellite ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2009 — optimisation et exécution de la métadonnées et provenance : observations et positionnement satellite ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2010 — export et traçabilité de la métadonnées et provenance : observations et positionnement satellite ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2011 — définition et validation du contrat de la paramètres et unités : observations et positionnement satellite ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2012 — conversion et normalisation de la paramètres et unités : observations et positionnement satellite ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2013 — analyse et contrôle de cohérence de la paramètres et unités : observations et positionnement satellite ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2014 — optimisation et exécution de la paramètres et unités : observations et positionnement satellite ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2015 — export et traçabilité de la paramètres et unités : observations et positionnement satellite ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2016 — définition et validation du contrat de la géométrie et repérage : observations et positionnement satellite ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2017 — conversion et normalisation de la géométrie et repérage : observations et positionnement satellite ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2018 — analyse et contrôle de cohérence de la géométrie et repérage : observations et positionnement satellite ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2019 — optimisation et exécution de la géométrie et repérage : observations et positionnement satellite ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2020 — export et traçabilité de la géométrie et repérage : observations et positionnement satellite ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2021 — définition et validation du contrat de la qualité et incertitude : observations et positionnement satellite ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2022 — conversion et normalisation de la qualité et incertitude : observations et positionnement satellite ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2023 — analyse et contrôle de cohérence de la qualité et incertitude : observations et positionnement satellite ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2024 — optimisation et exécution de la qualité et incertitude : observations et positionnement satellite ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2025 — export et traçabilité de la qualité et incertitude : observations et positionnement satellite ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2026 — définition et validation du contrat de la index et recherche : observations et positionnement satellite ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2027 — conversion et normalisation de la index et recherche : observations et positionnement satellite ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2028 — analyse et contrôle de cohérence de la index et recherche : observations et positionnement satellite ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2029 — optimisation et exécution de la index et recherche : observations et positionnement satellite ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2030 — export et traçabilité de la index et recherche : observations et positionnement satellite ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2031 — définition et validation du contrat de la échantillonnage et interpolation : observations et positionnement satellite ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2032 — conversion et normalisation de la échantillonnage et interpolation : observations et positionnement satellite ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2033 — analyse et contrôle de cohérence de la échantillonnage et interpolation : observations et positionnement satellite ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2034 — optimisation et exécution de la échantillonnage et interpolation : observations et positionnement satellite ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2035 — export et traçabilité de la échantillonnage et interpolation : observations et positionnement satellite ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2036 — définition et validation du contrat de la visualisation et niveaux de détail : observations et positionnement satellite ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2037 — conversion et normalisation de la visualisation et niveaux de détail : observations et positionnement satellite ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2038 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : observations et positionnement satellite ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2039 — optimisation et exécution de la visualisation et niveaux de détail : observations et positionnement satellite ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2040 — export et traçabilité de la visualisation et niveaux de détail : observations et positionnement satellite ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2041 — définition et validation du contrat de la stockage et diffusion : observations et positionnement satellite ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2042 — conversion et normalisation de la stockage et diffusion : observations et positionnement satellite ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2043 — analyse et contrôle de cohérence de la stockage et diffusion : observations et positionnement satellite ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2044 — optimisation et exécution de la stockage et diffusion : observations et positionnement satellite ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2045 — export et traçabilité de la stockage et diffusion : observations et positionnement satellite ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2046 — définition et validation du contrat de la tests et conformité : observations et positionnement satellite ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2047 — conversion et normalisation de la tests et conformité : observations et positionnement satellite ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2048 — analyse et contrôle de cohérence de la tests et conformité : observations et positionnement satellite ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2049 — optimisation et exécution de la tests et conformité : observations et positionnement satellite ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2050 — export et traçabilité de la tests et conformité : observations et positionnement satellite ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 58 · Robotique et capteurs · ⌖ / ⇄ / 点
+
+Périmètre : repères, calibration et fusion capteurs.
+
+- **AX-2051 — définition et validation du contrat de la structure de données : repères, calibration et fusion capteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2052 — conversion et normalisation de la structure de données : repères, calibration et fusion capteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2053 — analyse et contrôle de cohérence de la structure de données : repères, calibration et fusion capteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2054 — optimisation et exécution de la structure de données : repères, calibration et fusion capteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2055 — export et traçabilité de la structure de données : repères, calibration et fusion capteurs ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2056 — définition et validation du contrat de la métadonnées et provenance : repères, calibration et fusion capteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2057 — conversion et normalisation de la métadonnées et provenance : repères, calibration et fusion capteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2058 — analyse et contrôle de cohérence de la métadonnées et provenance : repères, calibration et fusion capteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2059 — optimisation et exécution de la métadonnées et provenance : repères, calibration et fusion capteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2060 — export et traçabilité de la métadonnées et provenance : repères, calibration et fusion capteurs ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2061 — définition et validation du contrat de la paramètres et unités : repères, calibration et fusion capteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2062 — conversion et normalisation de la paramètres et unités : repères, calibration et fusion capteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2063 — analyse et contrôle de cohérence de la paramètres et unités : repères, calibration et fusion capteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2064 — optimisation et exécution de la paramètres et unités : repères, calibration et fusion capteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2065 — export et traçabilité de la paramètres et unités : repères, calibration et fusion capteurs ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2066 — définition et validation du contrat de la géométrie et repérage : repères, calibration et fusion capteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2067 — conversion et normalisation de la géométrie et repérage : repères, calibration et fusion capteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2068 — analyse et contrôle de cohérence de la géométrie et repérage : repères, calibration et fusion capteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2069 — optimisation et exécution de la géométrie et repérage : repères, calibration et fusion capteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2070 — export et traçabilité de la géométrie et repérage : repères, calibration et fusion capteurs ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2071 — définition et validation du contrat de la qualité et incertitude : repères, calibration et fusion capteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2072 — conversion et normalisation de la qualité et incertitude : repères, calibration et fusion capteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2073 — analyse et contrôle de cohérence de la qualité et incertitude : repères, calibration et fusion capteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2074 — optimisation et exécution de la qualité et incertitude : repères, calibration et fusion capteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2075 — export et traçabilité de la qualité et incertitude : repères, calibration et fusion capteurs ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2076 — définition et validation du contrat de la index et recherche : repères, calibration et fusion capteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2077 — conversion et normalisation de la index et recherche : repères, calibration et fusion capteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2078 — analyse et contrôle de cohérence de la index et recherche : repères, calibration et fusion capteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2079 — optimisation et exécution de la index et recherche : repères, calibration et fusion capteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2080 — export et traçabilité de la index et recherche : repères, calibration et fusion capteurs ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2081 — définition et validation du contrat de la échantillonnage et interpolation : repères, calibration et fusion capteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2082 — conversion et normalisation de la échantillonnage et interpolation : repères, calibration et fusion capteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2083 — analyse et contrôle de cohérence de la échantillonnage et interpolation : repères, calibration et fusion capteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2084 — optimisation et exécution de la échantillonnage et interpolation : repères, calibration et fusion capteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2085 — export et traçabilité de la échantillonnage et interpolation : repères, calibration et fusion capteurs ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2086 — définition et validation du contrat de la visualisation et niveaux de détail : repères, calibration et fusion capteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2087 — conversion et normalisation de la visualisation et niveaux de détail : repères, calibration et fusion capteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2088 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : repères, calibration et fusion capteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2089 — optimisation et exécution de la visualisation et niveaux de détail : repères, calibration et fusion capteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2090 — export et traçabilité de la visualisation et niveaux de détail : repères, calibration et fusion capteurs ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2091 — définition et validation du contrat de la stockage et diffusion : repères, calibration et fusion capteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2092 — conversion et normalisation de la stockage et diffusion : repères, calibration et fusion capteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2093 — analyse et contrôle de cohérence de la stockage et diffusion : repères, calibration et fusion capteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2094 — optimisation et exécution de la stockage et diffusion : repères, calibration et fusion capteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2095 — export et traçabilité de la stockage et diffusion : repères, calibration et fusion capteurs ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2096 — définition et validation du contrat de la tests et conformité : repères, calibration et fusion capteurs ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2097 — conversion et normalisation de la tests et conformité : repères, calibration et fusion capteurs ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2098 — analyse et contrôle de cohérence de la tests et conformité : repères, calibration et fusion capteurs ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2099 — optimisation et exécution de la tests et conformité : repères, calibration et fusion capteurs ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2100 — export et traçabilité de la tests et conformité : repères, calibration et fusion capteurs ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 59 · Simulation physique · ⚙ / ∿ / ◉
+
+Périmètre : modèles et observables physiques.
+
+- **AX-2101 — définition et validation du contrat de la structure de données : modèles et observables physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2102 — conversion et normalisation de la structure de données : modèles et observables physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2103 — analyse et contrôle de cohérence de la structure de données : modèles et observables physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2104 — optimisation et exécution de la structure de données : modèles et observables physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2105 — export et traçabilité de la structure de données : modèles et observables physiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2106 — définition et validation du contrat de la métadonnées et provenance : modèles et observables physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2107 — conversion et normalisation de la métadonnées et provenance : modèles et observables physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2108 — analyse et contrôle de cohérence de la métadonnées et provenance : modèles et observables physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2109 — optimisation et exécution de la métadonnées et provenance : modèles et observables physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2110 — export et traçabilité de la métadonnées et provenance : modèles et observables physiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2111 — définition et validation du contrat de la paramètres et unités : modèles et observables physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2112 — conversion et normalisation de la paramètres et unités : modèles et observables physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2113 — analyse et contrôle de cohérence de la paramètres et unités : modèles et observables physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2114 — optimisation et exécution de la paramètres et unités : modèles et observables physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2115 — export et traçabilité de la paramètres et unités : modèles et observables physiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2116 — définition et validation du contrat de la géométrie et repérage : modèles et observables physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2117 — conversion et normalisation de la géométrie et repérage : modèles et observables physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2118 — analyse et contrôle de cohérence de la géométrie et repérage : modèles et observables physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2119 — optimisation et exécution de la géométrie et repérage : modèles et observables physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2120 — export et traçabilité de la géométrie et repérage : modèles et observables physiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2121 — définition et validation du contrat de la qualité et incertitude : modèles et observables physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2122 — conversion et normalisation de la qualité et incertitude : modèles et observables physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2123 — analyse et contrôle de cohérence de la qualité et incertitude : modèles et observables physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2124 — optimisation et exécution de la qualité et incertitude : modèles et observables physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2125 — export et traçabilité de la qualité et incertitude : modèles et observables physiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2126 — définition et validation du contrat de la index et recherche : modèles et observables physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2127 — conversion et normalisation de la index et recherche : modèles et observables physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2128 — analyse et contrôle de cohérence de la index et recherche : modèles et observables physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2129 — optimisation et exécution de la index et recherche : modèles et observables physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2130 — export et traçabilité de la index et recherche : modèles et observables physiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2131 — définition et validation du contrat de la échantillonnage et interpolation : modèles et observables physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2132 — conversion et normalisation de la échantillonnage et interpolation : modèles et observables physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2133 — analyse et contrôle de cohérence de la échantillonnage et interpolation : modèles et observables physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2134 — optimisation et exécution de la échantillonnage et interpolation : modèles et observables physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2135 — export et traçabilité de la échantillonnage et interpolation : modèles et observables physiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2136 — définition et validation du contrat de la visualisation et niveaux de détail : modèles et observables physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2137 — conversion et normalisation de la visualisation et niveaux de détail : modèles et observables physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2138 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : modèles et observables physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2139 — optimisation et exécution de la visualisation et niveaux de détail : modèles et observables physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2140 — export et traçabilité de la visualisation et niveaux de détail : modèles et observables physiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2141 — définition et validation du contrat de la stockage et diffusion : modèles et observables physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2142 — conversion et normalisation de la stockage et diffusion : modèles et observables physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2143 — analyse et contrôle de cohérence de la stockage et diffusion : modèles et observables physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2144 — optimisation et exécution de la stockage et diffusion : modèles et observables physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2145 — export et traçabilité de la stockage et diffusion : modèles et observables physiques ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2146 — définition et validation du contrat de la tests et conformité : modèles et observables physiques ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2147 — conversion et normalisation de la tests et conformité : modèles et observables physiques ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2148 — analyse et contrôle de cohérence de la tests et conformité : modèles et observables physiques ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2149 — optimisation et exécution de la tests et conformité : modèles et observables physiques ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2150 — export et traçabilité de la tests et conformité : modèles et observables physiques ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 60 · Calcul distribué et workers · ⚙ / ⏱ / ⧉
+
+Périmètre : tâches et exécution parallèle.
+
+- **AX-2151 — définition et validation du contrat de la structure de données : tâches et exécution parallèle ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2152 — conversion et normalisation de la structure de données : tâches et exécution parallèle ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2153 — analyse et contrôle de cohérence de la structure de données : tâches et exécution parallèle ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2154 — optimisation et exécution de la structure de données : tâches et exécution parallèle ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2155 — export et traçabilité de la structure de données : tâches et exécution parallèle ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2156 — définition et validation du contrat de la métadonnées et provenance : tâches et exécution parallèle ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2157 — conversion et normalisation de la métadonnées et provenance : tâches et exécution parallèle ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2158 — analyse et contrôle de cohérence de la métadonnées et provenance : tâches et exécution parallèle ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2159 — optimisation et exécution de la métadonnées et provenance : tâches et exécution parallèle ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2160 — export et traçabilité de la métadonnées et provenance : tâches et exécution parallèle ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2161 — définition et validation du contrat de la paramètres et unités : tâches et exécution parallèle ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2162 — conversion et normalisation de la paramètres et unités : tâches et exécution parallèle ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2163 — analyse et contrôle de cohérence de la paramètres et unités : tâches et exécution parallèle ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2164 — optimisation et exécution de la paramètres et unités : tâches et exécution parallèle ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2165 — export et traçabilité de la paramètres et unités : tâches et exécution parallèle ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2166 — définition et validation du contrat de la géométrie et repérage : tâches et exécution parallèle ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2167 — conversion et normalisation de la géométrie et repérage : tâches et exécution parallèle ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2168 — analyse et contrôle de cohérence de la géométrie et repérage : tâches et exécution parallèle ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2169 — optimisation et exécution de la géométrie et repérage : tâches et exécution parallèle ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2170 — export et traçabilité de la géométrie et repérage : tâches et exécution parallèle ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2171 — définition et validation du contrat de la qualité et incertitude : tâches et exécution parallèle ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2172 — conversion et normalisation de la qualité et incertitude : tâches et exécution parallèle ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2173 — analyse et contrôle de cohérence de la qualité et incertitude : tâches et exécution parallèle ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2174 — optimisation et exécution de la qualité et incertitude : tâches et exécution parallèle ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2175 — export et traçabilité de la qualité et incertitude : tâches et exécution parallèle ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2176 — définition et validation du contrat de la index et recherche : tâches et exécution parallèle ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2177 — conversion et normalisation de la index et recherche : tâches et exécution parallèle ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2178 — analyse et contrôle de cohérence de la index et recherche : tâches et exécution parallèle ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2179 — optimisation et exécution de la index et recherche : tâches et exécution parallèle ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2180 — export et traçabilité de la index et recherche : tâches et exécution parallèle ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2181 — définition et validation du contrat de la échantillonnage et interpolation : tâches et exécution parallèle ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2182 — conversion et normalisation de la échantillonnage et interpolation : tâches et exécution parallèle ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2183 — analyse et contrôle de cohérence de la échantillonnage et interpolation : tâches et exécution parallèle ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2184 — optimisation et exécution de la échantillonnage et interpolation : tâches et exécution parallèle ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2185 — export et traçabilité de la échantillonnage et interpolation : tâches et exécution parallèle ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2186 — définition et validation du contrat de la visualisation et niveaux de détail : tâches et exécution parallèle ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2187 — conversion et normalisation de la visualisation et niveaux de détail : tâches et exécution parallèle ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2188 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : tâches et exécution parallèle ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2189 — optimisation et exécution de la visualisation et niveaux de détail : tâches et exécution parallèle ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2190 — export et traçabilité de la visualisation et niveaux de détail : tâches et exécution parallèle ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2191 — définition et validation du contrat de la stockage et diffusion : tâches et exécution parallèle ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2192 — conversion et normalisation de la stockage et diffusion : tâches et exécution parallèle ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2193 — analyse et contrôle de cohérence de la stockage et diffusion : tâches et exécution parallèle ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2194 — optimisation et exécution de la stockage et diffusion : tâches et exécution parallèle ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2195 — export et traçabilité de la stockage et diffusion : tâches et exécution parallèle ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2196 — définition et validation du contrat de la tests et conformité : tâches et exécution parallèle ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2197 — conversion et normalisation de la tests et conformité : tâches et exécution parallèle ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2198 — analyse et contrôle de cohérence de la tests et conformité : tâches et exécution parallèle ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2199 — optimisation et exécution de la tests et conformité : tâches et exécution parallèle ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2200 — export et traçabilité de la tests et conformité : tâches et exécution parallèle ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 61 · Stockage et persistance · ⧉ / ⇣
+
+Périmètre : données locales et transactions.
+
+- **AX-2201 — définition et validation du contrat de la structure de données : données locales et transactions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2202 — conversion et normalisation de la structure de données : données locales et transactions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2203 — analyse et contrôle de cohérence de la structure de données : données locales et transactions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2204 — optimisation et exécution de la structure de données : données locales et transactions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2205 — export et traçabilité de la structure de données : données locales et transactions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2206 — définition et validation du contrat de la métadonnées et provenance : données locales et transactions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2207 — conversion et normalisation de la métadonnées et provenance : données locales et transactions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2208 — analyse et contrôle de cohérence de la métadonnées et provenance : données locales et transactions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2209 — optimisation et exécution de la métadonnées et provenance : données locales et transactions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2210 — export et traçabilité de la métadonnées et provenance : données locales et transactions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2211 — définition et validation du contrat de la paramètres et unités : données locales et transactions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2212 — conversion et normalisation de la paramètres et unités : données locales et transactions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2213 — analyse et contrôle de cohérence de la paramètres et unités : données locales et transactions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2214 — optimisation et exécution de la paramètres et unités : données locales et transactions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2215 — export et traçabilité de la paramètres et unités : données locales et transactions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2216 — définition et validation du contrat de la géométrie et repérage : données locales et transactions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2217 — conversion et normalisation de la géométrie et repérage : données locales et transactions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2218 — analyse et contrôle de cohérence de la géométrie et repérage : données locales et transactions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2219 — optimisation et exécution de la géométrie et repérage : données locales et transactions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2220 — export et traçabilité de la géométrie et repérage : données locales et transactions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2221 — définition et validation du contrat de la qualité et incertitude : données locales et transactions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2222 — conversion et normalisation de la qualité et incertitude : données locales et transactions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2223 — analyse et contrôle de cohérence de la qualité et incertitude : données locales et transactions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2224 — optimisation et exécution de la qualité et incertitude : données locales et transactions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2225 — export et traçabilité de la qualité et incertitude : données locales et transactions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2226 — définition et validation du contrat de la index et recherche : données locales et transactions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2227 — conversion et normalisation de la index et recherche : données locales et transactions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2228 — analyse et contrôle de cohérence de la index et recherche : données locales et transactions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2229 — optimisation et exécution de la index et recherche : données locales et transactions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2230 — export et traçabilité de la index et recherche : données locales et transactions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2231 — définition et validation du contrat de la échantillonnage et interpolation : données locales et transactions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2232 — conversion et normalisation de la échantillonnage et interpolation : données locales et transactions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2233 — analyse et contrôle de cohérence de la échantillonnage et interpolation : données locales et transactions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2234 — optimisation et exécution de la échantillonnage et interpolation : données locales et transactions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2235 — export et traçabilité de la échantillonnage et interpolation : données locales et transactions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2236 — définition et validation du contrat de la visualisation et niveaux de détail : données locales et transactions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2237 — conversion et normalisation de la visualisation et niveaux de détail : données locales et transactions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2238 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : données locales et transactions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2239 — optimisation et exécution de la visualisation et niveaux de détail : données locales et transactions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2240 — export et traçabilité de la visualisation et niveaux de détail : données locales et transactions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2241 — définition et validation du contrat de la stockage et diffusion : données locales et transactions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2242 — conversion et normalisation de la stockage et diffusion : données locales et transactions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2243 — analyse et contrôle de cohérence de la stockage et diffusion : données locales et transactions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2244 — optimisation et exécution de la stockage et diffusion : données locales et transactions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2245 — export et traçabilité de la stockage et diffusion : données locales et transactions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2246 — définition et validation du contrat de la tests et conformité : données locales et transactions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2247 — conversion et normalisation de la tests et conformité : données locales et transactions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2248 — analyse et contrôle de cohérence de la tests et conformité : données locales et transactions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2249 — optimisation et exécution de la tests et conformité : données locales et transactions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2250 — export et traçabilité de la tests et conformité : données locales et transactions ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 62 · Réseau et diffusion · ▦ / ⧉ / ⇣
+
+Périmètre : transferts, flux et ressources.
+
+- **AX-2251 — définition et validation du contrat de la structure de données : transferts, flux et ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2252 — conversion et normalisation de la structure de données : transferts, flux et ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2253 — analyse et contrôle de cohérence de la structure de données : transferts, flux et ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2254 — optimisation et exécution de la structure de données : transferts, flux et ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2255 — export et traçabilité de la structure de données : transferts, flux et ressources ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2256 — définition et validation du contrat de la métadonnées et provenance : transferts, flux et ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2257 — conversion et normalisation de la métadonnées et provenance : transferts, flux et ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2258 — analyse et contrôle de cohérence de la métadonnées et provenance : transferts, flux et ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2259 — optimisation et exécution de la métadonnées et provenance : transferts, flux et ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2260 — export et traçabilité de la métadonnées et provenance : transferts, flux et ressources ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2261 — définition et validation du contrat de la paramètres et unités : transferts, flux et ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2262 — conversion et normalisation de la paramètres et unités : transferts, flux et ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2263 — analyse et contrôle de cohérence de la paramètres et unités : transferts, flux et ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2264 — optimisation et exécution de la paramètres et unités : transferts, flux et ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2265 — export et traçabilité de la paramètres et unités : transferts, flux et ressources ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2266 — définition et validation du contrat de la géométrie et repérage : transferts, flux et ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2267 — conversion et normalisation de la géométrie et repérage : transferts, flux et ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2268 — analyse et contrôle de cohérence de la géométrie et repérage : transferts, flux et ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2269 — optimisation et exécution de la géométrie et repérage : transferts, flux et ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2270 — export et traçabilité de la géométrie et repérage : transferts, flux et ressources ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2271 — définition et validation du contrat de la qualité et incertitude : transferts, flux et ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2272 — conversion et normalisation de la qualité et incertitude : transferts, flux et ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2273 — analyse et contrôle de cohérence de la qualité et incertitude : transferts, flux et ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2274 — optimisation et exécution de la qualité et incertitude : transferts, flux et ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2275 — export et traçabilité de la qualité et incertitude : transferts, flux et ressources ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2276 — définition et validation du contrat de la index et recherche : transferts, flux et ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2277 — conversion et normalisation de la index et recherche : transferts, flux et ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2278 — analyse et contrôle de cohérence de la index et recherche : transferts, flux et ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2279 — optimisation et exécution de la index et recherche : transferts, flux et ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2280 — export et traçabilité de la index et recherche : transferts, flux et ressources ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2281 — définition et validation du contrat de la échantillonnage et interpolation : transferts, flux et ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2282 — conversion et normalisation de la échantillonnage et interpolation : transferts, flux et ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2283 — analyse et contrôle de cohérence de la échantillonnage et interpolation : transferts, flux et ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2284 — optimisation et exécution de la échantillonnage et interpolation : transferts, flux et ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2285 — export et traçabilité de la échantillonnage et interpolation : transferts, flux et ressources ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2286 — définition et validation du contrat de la visualisation et niveaux de détail : transferts, flux et ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2287 — conversion et normalisation de la visualisation et niveaux de détail : transferts, flux et ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2288 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : transferts, flux et ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2289 — optimisation et exécution de la visualisation et niveaux de détail : transferts, flux et ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2290 — export et traçabilité de la visualisation et niveaux de détail : transferts, flux et ressources ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2291 — définition et validation du contrat de la stockage et diffusion : transferts, flux et ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2292 — conversion et normalisation de la stockage et diffusion : transferts, flux et ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2293 — analyse et contrôle de cohérence de la stockage et diffusion : transferts, flux et ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2294 — optimisation et exécution de la stockage et diffusion : transferts, flux et ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2295 — export et traçabilité de la stockage et diffusion : transferts, flux et ressources ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2296 — définition et validation du contrat de la tests et conformité : transferts, flux et ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2297 — conversion et normalisation de la tests et conformité : transferts, flux et ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2298 — analyse et contrôle de cohérence de la tests et conformité : transferts, flux et ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2299 — optimisation et exécution de la tests et conformité : transferts, flux et ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2300 — export et traçabilité de la tests et conformité : transferts, flux et ressources ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 63 · Formats scientifiques · ⇣ / ⌖ / ⧉
+
+Périmètre : conteneurs et formats d'échange.
+
+- **AX-2301 — définition et validation du contrat de la structure de données : conteneurs et formats d'échange ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2302 — conversion et normalisation de la structure de données : conteneurs et formats d'échange ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2303 — analyse et contrôle de cohérence de la structure de données : conteneurs et formats d'échange ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2304 — optimisation et exécution de la structure de données : conteneurs et formats d'échange ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2305 — export et traçabilité de la structure de données : conteneurs et formats d'échange ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2306 — définition et validation du contrat de la métadonnées et provenance : conteneurs et formats d'échange ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2307 — conversion et normalisation de la métadonnées et provenance : conteneurs et formats d'échange ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2308 — analyse et contrôle de cohérence de la métadonnées et provenance : conteneurs et formats d'échange ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2309 — optimisation et exécution de la métadonnées et provenance : conteneurs et formats d'échange ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2310 — export et traçabilité de la métadonnées et provenance : conteneurs et formats d'échange ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2311 — définition et validation du contrat de la paramètres et unités : conteneurs et formats d'échange ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2312 — conversion et normalisation de la paramètres et unités : conteneurs et formats d'échange ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2313 — analyse et contrôle de cohérence de la paramètres et unités : conteneurs et formats d'échange ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2314 — optimisation et exécution de la paramètres et unités : conteneurs et formats d'échange ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2315 — export et traçabilité de la paramètres et unités : conteneurs et formats d'échange ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2316 — définition et validation du contrat de la géométrie et repérage : conteneurs et formats d'échange ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2317 — conversion et normalisation de la géométrie et repérage : conteneurs et formats d'échange ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2318 — analyse et contrôle de cohérence de la géométrie et repérage : conteneurs et formats d'échange ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2319 — optimisation et exécution de la géométrie et repérage : conteneurs et formats d'échange ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2320 — export et traçabilité de la géométrie et repérage : conteneurs et formats d'échange ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2321 — définition et validation du contrat de la qualité et incertitude : conteneurs et formats d'échange ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2322 — conversion et normalisation de la qualité et incertitude : conteneurs et formats d'échange ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2323 — analyse et contrôle de cohérence de la qualité et incertitude : conteneurs et formats d'échange ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2324 — optimisation et exécution de la qualité et incertitude : conteneurs et formats d'échange ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2325 — export et traçabilité de la qualité et incertitude : conteneurs et formats d'échange ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2326 — définition et validation du contrat de la index et recherche : conteneurs et formats d'échange ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2327 — conversion et normalisation de la index et recherche : conteneurs et formats d'échange ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2328 — analyse et contrôle de cohérence de la index et recherche : conteneurs et formats d'échange ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2329 — optimisation et exécution de la index et recherche : conteneurs et formats d'échange ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2330 — export et traçabilité de la index et recherche : conteneurs et formats d'échange ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2331 — définition et validation du contrat de la échantillonnage et interpolation : conteneurs et formats d'échange ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2332 — conversion et normalisation de la échantillonnage et interpolation : conteneurs et formats d'échange ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2333 — analyse et contrôle de cohérence de la échantillonnage et interpolation : conteneurs et formats d'échange ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2334 — optimisation et exécution de la échantillonnage et interpolation : conteneurs et formats d'échange ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2335 — export et traçabilité de la échantillonnage et interpolation : conteneurs et formats d'échange ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2336 — définition et validation du contrat de la visualisation et niveaux de détail : conteneurs et formats d'échange ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2337 — conversion et normalisation de la visualisation et niveaux de détail : conteneurs et formats d'échange ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2338 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : conteneurs et formats d'échange ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2339 — optimisation et exécution de la visualisation et niveaux de détail : conteneurs et formats d'échange ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2340 — export et traçabilité de la visualisation et niveaux de détail : conteneurs et formats d'échange ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2341 — définition et validation du contrat de la stockage et diffusion : conteneurs et formats d'échange ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2342 — conversion et normalisation de la stockage et diffusion : conteneurs et formats d'échange ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2343 — analyse et contrôle de cohérence de la stockage et diffusion : conteneurs et formats d'échange ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2344 — optimisation et exécution de la stockage et diffusion : conteneurs et formats d'échange ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2345 — export et traçabilité de la stockage et diffusion : conteneurs et formats d'échange ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2346 — définition et validation du contrat de la tests et conformité : conteneurs et formats d'échange ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2347 — conversion et normalisation de la tests et conformité : conteneurs et formats d'échange ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2348 — analyse et contrôle de cohérence de la tests et conformité : conteneurs et formats d'échange ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2349 — optimisation et exécution de la tests et conformité : conteneurs et formats d'échange ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2350 — export et traçabilité de la tests et conformité : conteneurs et formats d'échange ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 64 · Qualité et incertitude · ⚙ / ⌖ / ⏱
+
+Périmètre : métrologie et validation.
+
+- **AX-2351 — définition et validation du contrat de la structure de données : métrologie et validation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2352 — conversion et normalisation de la structure de données : métrologie et validation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2353 — analyse et contrôle de cohérence de la structure de données : métrologie et validation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2354 — optimisation et exécution de la structure de données : métrologie et validation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2355 — export et traçabilité de la structure de données : métrologie et validation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2356 — définition et validation du contrat de la métadonnées et provenance : métrologie et validation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2357 — conversion et normalisation de la métadonnées et provenance : métrologie et validation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2358 — analyse et contrôle de cohérence de la métadonnées et provenance : métrologie et validation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2359 — optimisation et exécution de la métadonnées et provenance : métrologie et validation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2360 — export et traçabilité de la métadonnées et provenance : métrologie et validation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2361 — définition et validation du contrat de la paramètres et unités : métrologie et validation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2362 — conversion et normalisation de la paramètres et unités : métrologie et validation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2363 — analyse et contrôle de cohérence de la paramètres et unités : métrologie et validation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2364 — optimisation et exécution de la paramètres et unités : métrologie et validation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2365 — export et traçabilité de la paramètres et unités : métrologie et validation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2366 — définition et validation du contrat de la géométrie et repérage : métrologie et validation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2367 — conversion et normalisation de la géométrie et repérage : métrologie et validation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2368 — analyse et contrôle de cohérence de la géométrie et repérage : métrologie et validation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2369 — optimisation et exécution de la géométrie et repérage : métrologie et validation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2370 — export et traçabilité de la géométrie et repérage : métrologie et validation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2371 — définition et validation du contrat de la qualité et incertitude : métrologie et validation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2372 — conversion et normalisation de la qualité et incertitude : métrologie et validation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2373 — analyse et contrôle de cohérence de la qualité et incertitude : métrologie et validation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2374 — optimisation et exécution de la qualité et incertitude : métrologie et validation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2375 — export et traçabilité de la qualité et incertitude : métrologie et validation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2376 — définition et validation du contrat de la index et recherche : métrologie et validation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2377 — conversion et normalisation de la index et recherche : métrologie et validation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2378 — analyse et contrôle de cohérence de la index et recherche : métrologie et validation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2379 — optimisation et exécution de la index et recherche : métrologie et validation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2380 — export et traçabilité de la index et recherche : métrologie et validation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2381 — définition et validation du contrat de la échantillonnage et interpolation : métrologie et validation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2382 — conversion et normalisation de la échantillonnage et interpolation : métrologie et validation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2383 — analyse et contrôle de cohérence de la échantillonnage et interpolation : métrologie et validation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2384 — optimisation et exécution de la échantillonnage et interpolation : métrologie et validation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2385 — export et traçabilité de la échantillonnage et interpolation : métrologie et validation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2386 — définition et validation du contrat de la visualisation et niveaux de détail : métrologie et validation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2387 — conversion et normalisation de la visualisation et niveaux de détail : métrologie et validation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2388 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : métrologie et validation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2389 — optimisation et exécution de la visualisation et niveaux de détail : métrologie et validation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2390 — export et traçabilité de la visualisation et niveaux de détail : métrologie et validation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2391 — définition et validation du contrat de la stockage et diffusion : métrologie et validation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2392 — conversion et normalisation de la stockage et diffusion : métrologie et validation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2393 — analyse et contrôle de cohérence de la stockage et diffusion : métrologie et validation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2394 — optimisation et exécution de la stockage et diffusion : métrologie et validation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2395 — export et traçabilité de la stockage et diffusion : métrologie et validation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2396 — définition et validation du contrat de la tests et conformité : métrologie et validation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2397 — conversion et normalisation de la tests et conformité : métrologie et validation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2398 — analyse et contrôle de cohérence de la tests et conformité : métrologie et validation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2399 — optimisation et exécution de la tests et conformité : métrologie et validation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2400 — export et traçabilité de la tests et conformité : métrologie et validation ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 65 · Sécurité des données · ⧉ / ⇣
+
+Périmètre : intégrité et confiance des ressources.
+
+- **AX-2401 — définition et validation du contrat de la structure de données : intégrité et confiance des ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2402 — conversion et normalisation de la structure de données : intégrité et confiance des ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2403 — analyse et contrôle de cohérence de la structure de données : intégrité et confiance des ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2404 — optimisation et exécution de la structure de données : intégrité et confiance des ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2405 — export et traçabilité de la structure de données : intégrité et confiance des ressources ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2406 — définition et validation du contrat de la métadonnées et provenance : intégrité et confiance des ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2407 — conversion et normalisation de la métadonnées et provenance : intégrité et confiance des ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2408 — analyse et contrôle de cohérence de la métadonnées et provenance : intégrité et confiance des ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2409 — optimisation et exécution de la métadonnées et provenance : intégrité et confiance des ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2410 — export et traçabilité de la métadonnées et provenance : intégrité et confiance des ressources ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2411 — définition et validation du contrat de la paramètres et unités : intégrité et confiance des ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2412 — conversion et normalisation de la paramètres et unités : intégrité et confiance des ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2413 — analyse et contrôle de cohérence de la paramètres et unités : intégrité et confiance des ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2414 — optimisation et exécution de la paramètres et unités : intégrité et confiance des ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2415 — export et traçabilité de la paramètres et unités : intégrité et confiance des ressources ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2416 — définition et validation du contrat de la géométrie et repérage : intégrité et confiance des ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2417 — conversion et normalisation de la géométrie et repérage : intégrité et confiance des ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2418 — analyse et contrôle de cohérence de la géométrie et repérage : intégrité et confiance des ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2419 — optimisation et exécution de la géométrie et repérage : intégrité et confiance des ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2420 — export et traçabilité de la géométrie et repérage : intégrité et confiance des ressources ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2421 — définition et validation du contrat de la qualité et incertitude : intégrité et confiance des ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2422 — conversion et normalisation de la qualité et incertitude : intégrité et confiance des ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2423 — analyse et contrôle de cohérence de la qualité et incertitude : intégrité et confiance des ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2424 — optimisation et exécution de la qualité et incertitude : intégrité et confiance des ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2425 — export et traçabilité de la qualité et incertitude : intégrité et confiance des ressources ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2426 — définition et validation du contrat de la index et recherche : intégrité et confiance des ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2427 — conversion et normalisation de la index et recherche : intégrité et confiance des ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2428 — analyse et contrôle de cohérence de la index et recherche : intégrité et confiance des ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2429 — optimisation et exécution de la index et recherche : intégrité et confiance des ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2430 — export et traçabilité de la index et recherche : intégrité et confiance des ressources ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2431 — définition et validation du contrat de la échantillonnage et interpolation : intégrité et confiance des ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2432 — conversion et normalisation de la échantillonnage et interpolation : intégrité et confiance des ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2433 — analyse et contrôle de cohérence de la échantillonnage et interpolation : intégrité et confiance des ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2434 — optimisation et exécution de la échantillonnage et interpolation : intégrité et confiance des ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2435 — export et traçabilité de la échantillonnage et interpolation : intégrité et confiance des ressources ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2436 — définition et validation du contrat de la visualisation et niveaux de détail : intégrité et confiance des ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2437 — conversion et normalisation de la visualisation et niveaux de détail : intégrité et confiance des ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2438 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : intégrité et confiance des ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2439 — optimisation et exécution de la visualisation et niveaux de détail : intégrité et confiance des ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2440 — export et traçabilité de la visualisation et niveaux de détail : intégrité et confiance des ressources ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2441 — définition et validation du contrat de la stockage et diffusion : intégrité et confiance des ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2442 — conversion et normalisation de la stockage et diffusion : intégrité et confiance des ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2443 — analyse et contrôle de cohérence de la stockage et diffusion : intégrité et confiance des ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2444 — optimisation et exécution de la stockage et diffusion : intégrité et confiance des ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2445 — export et traçabilité de la stockage et diffusion : intégrité et confiance des ressources ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2446 — définition et validation du contrat de la tests et conformité : intégrité et confiance des ressources ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2447 — conversion et normalisation de la tests et conformité : intégrité et confiance des ressources ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2448 — analyse et contrôle de cohérence de la tests et conformité : intégrité et confiance des ressources ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2449 — optimisation et exécution de la tests et conformité : intégrité et confiance des ressources ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2450 — export et traçabilité de la tests et conformité : intégrité et confiance des ressources ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 66 · Accessibilité de l'interface · ◉ / ⌖
+
+Périmètre : navigation et exposition accessible.
+
+- **AX-2451 — définition et validation du contrat de la structure de données : navigation et exposition accessible ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2452 — conversion et normalisation de la structure de données : navigation et exposition accessible ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2453 — analyse et contrôle de cohérence de la structure de données : navigation et exposition accessible ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2454 — optimisation et exécution de la structure de données : navigation et exposition accessible ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2455 — export et traçabilité de la structure de données : navigation et exposition accessible ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2456 — définition et validation du contrat de la métadonnées et provenance : navigation et exposition accessible ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2457 — conversion et normalisation de la métadonnées et provenance : navigation et exposition accessible ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2458 — analyse et contrôle de cohérence de la métadonnées et provenance : navigation et exposition accessible ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2459 — optimisation et exécution de la métadonnées et provenance : navigation et exposition accessible ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2460 — export et traçabilité de la métadonnées et provenance : navigation et exposition accessible ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2461 — définition et validation du contrat de la paramètres et unités : navigation et exposition accessible ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2462 — conversion et normalisation de la paramètres et unités : navigation et exposition accessible ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2463 — analyse et contrôle de cohérence de la paramètres et unités : navigation et exposition accessible ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2464 — optimisation et exécution de la paramètres et unités : navigation et exposition accessible ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2465 — export et traçabilité de la paramètres et unités : navigation et exposition accessible ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2466 — définition et validation du contrat de la géométrie et repérage : navigation et exposition accessible ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2467 — conversion et normalisation de la géométrie et repérage : navigation et exposition accessible ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2468 — analyse et contrôle de cohérence de la géométrie et repérage : navigation et exposition accessible ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2469 — optimisation et exécution de la géométrie et repérage : navigation et exposition accessible ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2470 — export et traçabilité de la géométrie et repérage : navigation et exposition accessible ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2471 — définition et validation du contrat de la qualité et incertitude : navigation et exposition accessible ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2472 — conversion et normalisation de la qualité et incertitude : navigation et exposition accessible ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2473 — analyse et contrôle de cohérence de la qualité et incertitude : navigation et exposition accessible ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2474 — optimisation et exécution de la qualité et incertitude : navigation et exposition accessible ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2475 — export et traçabilité de la qualité et incertitude : navigation et exposition accessible ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2476 — définition et validation du contrat de la index et recherche : navigation et exposition accessible ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2477 — conversion et normalisation de la index et recherche : navigation et exposition accessible ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2478 — analyse et contrôle de cohérence de la index et recherche : navigation et exposition accessible ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2479 — optimisation et exécution de la index et recherche : navigation et exposition accessible ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2480 — export et traçabilité de la index et recherche : navigation et exposition accessible ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2481 — définition et validation du contrat de la échantillonnage et interpolation : navigation et exposition accessible ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2482 — conversion et normalisation de la échantillonnage et interpolation : navigation et exposition accessible ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2483 — analyse et contrôle de cohérence de la échantillonnage et interpolation : navigation et exposition accessible ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2484 — optimisation et exécution de la échantillonnage et interpolation : navigation et exposition accessible ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2485 — export et traçabilité de la échantillonnage et interpolation : navigation et exposition accessible ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2486 — définition et validation du contrat de la visualisation et niveaux de détail : navigation et exposition accessible ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2487 — conversion et normalisation de la visualisation et niveaux de détail : navigation et exposition accessible ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2488 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : navigation et exposition accessible ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2489 — optimisation et exécution de la visualisation et niveaux de détail : navigation et exposition accessible ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2490 — export et traçabilité de la visualisation et niveaux de détail : navigation et exposition accessible ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2491 — définition et validation du contrat de la stockage et diffusion : navigation et exposition accessible ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2492 — conversion et normalisation de la stockage et diffusion : navigation et exposition accessible ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2493 — analyse et contrôle de cohérence de la stockage et diffusion : navigation et exposition accessible ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2494 — optimisation et exécution de la stockage et diffusion : navigation et exposition accessible ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2495 — export et traçabilité de la stockage et diffusion : navigation et exposition accessible ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2496 — définition et validation du contrat de la tests et conformité : navigation et exposition accessible ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2497 — conversion et normalisation de la tests et conformité : navigation et exposition accessible ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2498 — analyse et contrôle de cohérence de la tests et conformité : navigation et exposition accessible ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2499 — optimisation et exécution de la tests et conformité : navigation et exposition accessible ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2500 — export et traçabilité de la tests et conformité : navigation et exposition accessible ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 67 · Internationalisation et nomenclature · ⌖ / ⧉
+
+Périmètre : noms, langues et conventions.
+
+- **AX-2501 — définition et validation du contrat de la structure de données : noms, langues et conventions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2502 — conversion et normalisation de la structure de données : noms, langues et conventions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2503 — analyse et contrôle de cohérence de la structure de données : noms, langues et conventions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2504 — optimisation et exécution de la structure de données : noms, langues et conventions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2505 — export et traçabilité de la structure de données : noms, langues et conventions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2506 — définition et validation du contrat de la métadonnées et provenance : noms, langues et conventions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2507 — conversion et normalisation de la métadonnées et provenance : noms, langues et conventions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2508 — analyse et contrôle de cohérence de la métadonnées et provenance : noms, langues et conventions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2509 — optimisation et exécution de la métadonnées et provenance : noms, langues et conventions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2510 — export et traçabilité de la métadonnées et provenance : noms, langues et conventions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2511 — définition et validation du contrat de la paramètres et unités : noms, langues et conventions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2512 — conversion et normalisation de la paramètres et unités : noms, langues et conventions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2513 — analyse et contrôle de cohérence de la paramètres et unités : noms, langues et conventions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2514 — optimisation et exécution de la paramètres et unités : noms, langues et conventions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2515 — export et traçabilité de la paramètres et unités : noms, langues et conventions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2516 — définition et validation du contrat de la géométrie et repérage : noms, langues et conventions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2517 — conversion et normalisation de la géométrie et repérage : noms, langues et conventions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2518 — analyse et contrôle de cohérence de la géométrie et repérage : noms, langues et conventions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2519 — optimisation et exécution de la géométrie et repérage : noms, langues et conventions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2520 — export et traçabilité de la géométrie et repérage : noms, langues et conventions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2521 — définition et validation du contrat de la qualité et incertitude : noms, langues et conventions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2522 — conversion et normalisation de la qualité et incertitude : noms, langues et conventions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2523 — analyse et contrôle de cohérence de la qualité et incertitude : noms, langues et conventions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2524 — optimisation et exécution de la qualité et incertitude : noms, langues et conventions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2525 — export et traçabilité de la qualité et incertitude : noms, langues et conventions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2526 — définition et validation du contrat de la index et recherche : noms, langues et conventions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2527 — conversion et normalisation de la index et recherche : noms, langues et conventions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2528 — analyse et contrôle de cohérence de la index et recherche : noms, langues et conventions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2529 — optimisation et exécution de la index et recherche : noms, langues et conventions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2530 — export et traçabilité de la index et recherche : noms, langues et conventions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2531 — définition et validation du contrat de la échantillonnage et interpolation : noms, langues et conventions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2532 — conversion et normalisation de la échantillonnage et interpolation : noms, langues et conventions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2533 — analyse et contrôle de cohérence de la échantillonnage et interpolation : noms, langues et conventions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2534 — optimisation et exécution de la échantillonnage et interpolation : noms, langues et conventions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2535 — export et traçabilité de la échantillonnage et interpolation : noms, langues et conventions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2536 — définition et validation du contrat de la visualisation et niveaux de détail : noms, langues et conventions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2537 — conversion et normalisation de la visualisation et niveaux de détail : noms, langues et conventions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2538 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : noms, langues et conventions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2539 — optimisation et exécution de la visualisation et niveaux de détail : noms, langues et conventions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2540 — export et traçabilité de la visualisation et niveaux de détail : noms, langues et conventions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2541 — définition et validation du contrat de la stockage et diffusion : noms, langues et conventions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2542 — conversion et normalisation de la stockage et diffusion : noms, langues et conventions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2543 — analyse et contrôle de cohérence de la stockage et diffusion : noms, langues et conventions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2544 — optimisation et exécution de la stockage et diffusion : noms, langues et conventions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2545 — export et traçabilité de la stockage et diffusion : noms, langues et conventions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2546 — définition et validation du contrat de la tests et conformité : noms, langues et conventions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2547 — conversion et normalisation de la tests et conformité : noms, langues et conventions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2548 — analyse et contrôle de cohérence de la tests et conformité : noms, langues et conventions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2549 — optimisation et exécution de la tests et conformité : noms, langues et conventions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2550 — export et traçabilité de la tests et conformité : noms, langues et conventions ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 68 · API et contrats de modules · ⚙ / ⧉
+
+Périmètre : interfaces et compatibilité.
+
+- **AX-2551 — définition et validation du contrat de la structure de données : interfaces et compatibilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2552 — conversion et normalisation de la structure de données : interfaces et compatibilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2553 — analyse et contrôle de cohérence de la structure de données : interfaces et compatibilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2554 — optimisation et exécution de la structure de données : interfaces et compatibilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2555 — export et traçabilité de la structure de données : interfaces et compatibilité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2556 — définition et validation du contrat de la métadonnées et provenance : interfaces et compatibilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2557 — conversion et normalisation de la métadonnées et provenance : interfaces et compatibilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2558 — analyse et contrôle de cohérence de la métadonnées et provenance : interfaces et compatibilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2559 — optimisation et exécution de la métadonnées et provenance : interfaces et compatibilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2560 — export et traçabilité de la métadonnées et provenance : interfaces et compatibilité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2561 — définition et validation du contrat de la paramètres et unités : interfaces et compatibilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2562 — conversion et normalisation de la paramètres et unités : interfaces et compatibilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2563 — analyse et contrôle de cohérence de la paramètres et unités : interfaces et compatibilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2564 — optimisation et exécution de la paramètres et unités : interfaces et compatibilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2565 — export et traçabilité de la paramètres et unités : interfaces et compatibilité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2566 — définition et validation du contrat de la géométrie et repérage : interfaces et compatibilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2567 — conversion et normalisation de la géométrie et repérage : interfaces et compatibilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2568 — analyse et contrôle de cohérence de la géométrie et repérage : interfaces et compatibilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2569 — optimisation et exécution de la géométrie et repérage : interfaces et compatibilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2570 — export et traçabilité de la géométrie et repérage : interfaces et compatibilité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2571 — définition et validation du contrat de la qualité et incertitude : interfaces et compatibilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2572 — conversion et normalisation de la qualité et incertitude : interfaces et compatibilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2573 — analyse et contrôle de cohérence de la qualité et incertitude : interfaces et compatibilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2574 — optimisation et exécution de la qualité et incertitude : interfaces et compatibilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2575 — export et traçabilité de la qualité et incertitude : interfaces et compatibilité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2576 — définition et validation du contrat de la index et recherche : interfaces et compatibilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2577 — conversion et normalisation de la index et recherche : interfaces et compatibilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2578 — analyse et contrôle de cohérence de la index et recherche : interfaces et compatibilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2579 — optimisation et exécution de la index et recherche : interfaces et compatibilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2580 — export et traçabilité de la index et recherche : interfaces et compatibilité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2581 — définition et validation du contrat de la échantillonnage et interpolation : interfaces et compatibilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2582 — conversion et normalisation de la échantillonnage et interpolation : interfaces et compatibilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2583 — analyse et contrôle de cohérence de la échantillonnage et interpolation : interfaces et compatibilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2584 — optimisation et exécution de la échantillonnage et interpolation : interfaces et compatibilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2585 — export et traçabilité de la échantillonnage et interpolation : interfaces et compatibilité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2586 — définition et validation du contrat de la visualisation et niveaux de détail : interfaces et compatibilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2587 — conversion et normalisation de la visualisation et niveaux de détail : interfaces et compatibilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2588 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : interfaces et compatibilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2589 — optimisation et exécution de la visualisation et niveaux de détail : interfaces et compatibilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2590 — export et traçabilité de la visualisation et niveaux de détail : interfaces et compatibilité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2591 — définition et validation du contrat de la stockage et diffusion : interfaces et compatibilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2592 — conversion et normalisation de la stockage et diffusion : interfaces et compatibilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2593 — analyse et contrôle de cohérence de la stockage et diffusion : interfaces et compatibilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2594 — optimisation et exécution de la stockage et diffusion : interfaces et compatibilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2595 — export et traçabilité de la stockage et diffusion : interfaces et compatibilité ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2596 — définition et validation du contrat de la tests et conformité : interfaces et compatibilité ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2597 — conversion et normalisation de la tests et conformité : interfaces et compatibilité ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2598 — analyse et contrôle de cohérence de la tests et conformité : interfaces et compatibilité ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2599 — optimisation et exécution de la tests et conformité : interfaces et compatibilité ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2600 — export et traçabilité de la tests et conformité : interfaces et compatibilité ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 69 · Tests et validation scientifique · ⚙ / ⏱
+
+Périmètre : tests numériques et références.
+
+- **AX-2601 — définition et validation du contrat de la structure de données : tests numériques et références ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2602 — conversion et normalisation de la structure de données : tests numériques et références ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2603 — analyse et contrôle de cohérence de la structure de données : tests numériques et références ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2604 — optimisation et exécution de la structure de données : tests numériques et références ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2605 — export et traçabilité de la structure de données : tests numériques et références ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2606 — définition et validation du contrat de la métadonnées et provenance : tests numériques et références ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2607 — conversion et normalisation de la métadonnées et provenance : tests numériques et références ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2608 — analyse et contrôle de cohérence de la métadonnées et provenance : tests numériques et références ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2609 — optimisation et exécution de la métadonnées et provenance : tests numériques et références ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2610 — export et traçabilité de la métadonnées et provenance : tests numériques et références ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2611 — définition et validation du contrat de la paramètres et unités : tests numériques et références ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2612 — conversion et normalisation de la paramètres et unités : tests numériques et références ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2613 — analyse et contrôle de cohérence de la paramètres et unités : tests numériques et références ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2614 — optimisation et exécution de la paramètres et unités : tests numériques et références ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2615 — export et traçabilité de la paramètres et unités : tests numériques et références ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2616 — définition et validation du contrat de la géométrie et repérage : tests numériques et références ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2617 — conversion et normalisation de la géométrie et repérage : tests numériques et références ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2618 — analyse et contrôle de cohérence de la géométrie et repérage : tests numériques et références ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2619 — optimisation et exécution de la géométrie et repérage : tests numériques et références ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2620 — export et traçabilité de la géométrie et repérage : tests numériques et références ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2621 — définition et validation du contrat de la qualité et incertitude : tests numériques et références ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2622 — conversion et normalisation de la qualité et incertitude : tests numériques et références ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2623 — analyse et contrôle de cohérence de la qualité et incertitude : tests numériques et références ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2624 — optimisation et exécution de la qualité et incertitude : tests numériques et références ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2625 — export et traçabilité de la qualité et incertitude : tests numériques et références ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2626 — définition et validation du contrat de la index et recherche : tests numériques et références ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2627 — conversion et normalisation de la index et recherche : tests numériques et références ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2628 — analyse et contrôle de cohérence de la index et recherche : tests numériques et références ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2629 — optimisation et exécution de la index et recherche : tests numériques et références ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2630 — export et traçabilité de la index et recherche : tests numériques et références ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2631 — définition et validation du contrat de la échantillonnage et interpolation : tests numériques et références ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2632 — conversion et normalisation de la échantillonnage et interpolation : tests numériques et références ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2633 — analyse et contrôle de cohérence de la échantillonnage et interpolation : tests numériques et références ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2634 — optimisation et exécution de la échantillonnage et interpolation : tests numériques et références ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2635 — export et traçabilité de la échantillonnage et interpolation : tests numériques et références ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2636 — définition et validation du contrat de la visualisation et niveaux de détail : tests numériques et références ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2637 — conversion et normalisation de la visualisation et niveaux de détail : tests numériques et références ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2638 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : tests numériques et références ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2639 — optimisation et exécution de la visualisation et niveaux de détail : tests numériques et références ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2640 — export et traçabilité de la visualisation et niveaux de détail : tests numériques et références ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2641 — définition et validation du contrat de la stockage et diffusion : tests numériques et références ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2642 — conversion et normalisation de la stockage et diffusion : tests numériques et références ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2643 — analyse et contrôle de cohérence de la stockage et diffusion : tests numériques et références ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2644 — optimisation et exécution de la stockage et diffusion : tests numériques et références ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2645 — export et traçabilité de la stockage et diffusion : tests numériques et références ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2646 — définition et validation du contrat de la tests et conformité : tests numériques et références ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2647 — conversion et normalisation de la tests et conformité : tests numériques et références ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2648 — analyse et contrôle de cohérence de la tests et conformité : tests numériques et références ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2649 — optimisation et exécution de la tests et conformité : tests numériques et références ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2650 — export et traçabilité de la tests et conformité : tests numériques et références ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 70 · Observabilité et diagnostic · ⏱ / ⧉
+
+Périmètre : traces, mesures et diagnostics.
+
+- **AX-2651 — définition et validation du contrat de la structure de données : traces, mesures et diagnostics ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2652 — conversion et normalisation de la structure de données : traces, mesures et diagnostics ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2653 — analyse et contrôle de cohérence de la structure de données : traces, mesures et diagnostics ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2654 — optimisation et exécution de la structure de données : traces, mesures et diagnostics ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2655 — export et traçabilité de la structure de données : traces, mesures et diagnostics ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2656 — définition et validation du contrat de la métadonnées et provenance : traces, mesures et diagnostics ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2657 — conversion et normalisation de la métadonnées et provenance : traces, mesures et diagnostics ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2658 — analyse et contrôle de cohérence de la métadonnées et provenance : traces, mesures et diagnostics ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2659 — optimisation et exécution de la métadonnées et provenance : traces, mesures et diagnostics ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2660 — export et traçabilité de la métadonnées et provenance : traces, mesures et diagnostics ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2661 — définition et validation du contrat de la paramètres et unités : traces, mesures et diagnostics ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2662 — conversion et normalisation de la paramètres et unités : traces, mesures et diagnostics ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2663 — analyse et contrôle de cohérence de la paramètres et unités : traces, mesures et diagnostics ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2664 — optimisation et exécution de la paramètres et unités : traces, mesures et diagnostics ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2665 — export et traçabilité de la paramètres et unités : traces, mesures et diagnostics ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2666 — définition et validation du contrat de la géométrie et repérage : traces, mesures et diagnostics ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2667 — conversion et normalisation de la géométrie et repérage : traces, mesures et diagnostics ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2668 — analyse et contrôle de cohérence de la géométrie et repérage : traces, mesures et diagnostics ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2669 — optimisation et exécution de la géométrie et repérage : traces, mesures et diagnostics ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2670 — export et traçabilité de la géométrie et repérage : traces, mesures et diagnostics ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2671 — définition et validation du contrat de la qualité et incertitude : traces, mesures et diagnostics ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2672 — conversion et normalisation de la qualité et incertitude : traces, mesures et diagnostics ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2673 — analyse et contrôle de cohérence de la qualité et incertitude : traces, mesures et diagnostics ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2674 — optimisation et exécution de la qualité et incertitude : traces, mesures et diagnostics ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2675 — export et traçabilité de la qualité et incertitude : traces, mesures et diagnostics ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2676 — définition et validation du contrat de la index et recherche : traces, mesures et diagnostics ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2677 — conversion et normalisation de la index et recherche : traces, mesures et diagnostics ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2678 — analyse et contrôle de cohérence de la index et recherche : traces, mesures et diagnostics ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2679 — optimisation et exécution de la index et recherche : traces, mesures et diagnostics ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2680 — export et traçabilité de la index et recherche : traces, mesures et diagnostics ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2681 — définition et validation du contrat de la échantillonnage et interpolation : traces, mesures et diagnostics ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2682 — conversion et normalisation de la échantillonnage et interpolation : traces, mesures et diagnostics ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2683 — analyse et contrôle de cohérence de la échantillonnage et interpolation : traces, mesures et diagnostics ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2684 — optimisation et exécution de la échantillonnage et interpolation : traces, mesures et diagnostics ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2685 — export et traçabilité de la échantillonnage et interpolation : traces, mesures et diagnostics ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2686 — définition et validation du contrat de la visualisation et niveaux de détail : traces, mesures et diagnostics ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2687 — conversion et normalisation de la visualisation et niveaux de détail : traces, mesures et diagnostics ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2688 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : traces, mesures et diagnostics ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2689 — optimisation et exécution de la visualisation et niveaux de détail : traces, mesures et diagnostics ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2690 — export et traçabilité de la visualisation et niveaux de détail : traces, mesures et diagnostics ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2691 — définition et validation du contrat de la stockage et diffusion : traces, mesures et diagnostics ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2692 — conversion et normalisation de la stockage et diffusion : traces, mesures et diagnostics ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2693 — analyse et contrôle de cohérence de la stockage et diffusion : traces, mesures et diagnostics ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2694 — optimisation et exécution de la stockage et diffusion : traces, mesures et diagnostics ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2695 — export et traçabilité de la stockage et diffusion : traces, mesures et diagnostics ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2696 — définition et validation du contrat de la tests et conformité : traces, mesures et diagnostics ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2697 — conversion et normalisation de la tests et conformité : traces, mesures et diagnostics ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2698 — analyse et contrôle de cohérence de la tests et conformité : traces, mesures et diagnostics ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2699 — optimisation et exécution de la tests et conformité : traces, mesures et diagnostics ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2700 — export et traçabilité de la tests et conformité : traces, mesures et diagnostics ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 71 · Pipelines de données · ⚙ / ⇣ / ⧉
+
+Périmètre : chaînes de transformation.
+
+- **AX-2701 — définition et validation du contrat de la structure de données : chaînes de transformation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2702 — conversion et normalisation de la structure de données : chaînes de transformation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2703 — analyse et contrôle de cohérence de la structure de données : chaînes de transformation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2704 — optimisation et exécution de la structure de données : chaînes de transformation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2705 — export et traçabilité de la structure de données : chaînes de transformation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2706 — définition et validation du contrat de la métadonnées et provenance : chaînes de transformation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2707 — conversion et normalisation de la métadonnées et provenance : chaînes de transformation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2708 — analyse et contrôle de cohérence de la métadonnées et provenance : chaînes de transformation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2709 — optimisation et exécution de la métadonnées et provenance : chaînes de transformation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2710 — export et traçabilité de la métadonnées et provenance : chaînes de transformation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2711 — définition et validation du contrat de la paramètres et unités : chaînes de transformation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2712 — conversion et normalisation de la paramètres et unités : chaînes de transformation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2713 — analyse et contrôle de cohérence de la paramètres et unités : chaînes de transformation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2714 — optimisation et exécution de la paramètres et unités : chaînes de transformation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2715 — export et traçabilité de la paramètres et unités : chaînes de transformation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2716 — définition et validation du contrat de la géométrie et repérage : chaînes de transformation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2717 — conversion et normalisation de la géométrie et repérage : chaînes de transformation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2718 — analyse et contrôle de cohérence de la géométrie et repérage : chaînes de transformation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2719 — optimisation et exécution de la géométrie et repérage : chaînes de transformation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2720 — export et traçabilité de la géométrie et repérage : chaînes de transformation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2721 — définition et validation du contrat de la qualité et incertitude : chaînes de transformation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2722 — conversion et normalisation de la qualité et incertitude : chaînes de transformation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2723 — analyse et contrôle de cohérence de la qualité et incertitude : chaînes de transformation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2724 — optimisation et exécution de la qualité et incertitude : chaînes de transformation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2725 — export et traçabilité de la qualité et incertitude : chaînes de transformation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2726 — définition et validation du contrat de la index et recherche : chaînes de transformation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2727 — conversion et normalisation de la index et recherche : chaînes de transformation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2728 — analyse et contrôle de cohérence de la index et recherche : chaînes de transformation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2729 — optimisation et exécution de la index et recherche : chaînes de transformation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2730 — export et traçabilité de la index et recherche : chaînes de transformation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2731 — définition et validation du contrat de la échantillonnage et interpolation : chaînes de transformation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2732 — conversion et normalisation de la échantillonnage et interpolation : chaînes de transformation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2733 — analyse et contrôle de cohérence de la échantillonnage et interpolation : chaînes de transformation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2734 — optimisation et exécution de la échantillonnage et interpolation : chaînes de transformation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2735 — export et traçabilité de la échantillonnage et interpolation : chaînes de transformation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2736 — définition et validation du contrat de la visualisation et niveaux de détail : chaînes de transformation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2737 — conversion et normalisation de la visualisation et niveaux de détail : chaînes de transformation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2738 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : chaînes de transformation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2739 — optimisation et exécution de la visualisation et niveaux de détail : chaînes de transformation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2740 — export et traçabilité de la visualisation et niveaux de détail : chaînes de transformation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2741 — définition et validation du contrat de la stockage et diffusion : chaînes de transformation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2742 — conversion et normalisation de la stockage et diffusion : chaînes de transformation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2743 — analyse et contrôle de cohérence de la stockage et diffusion : chaînes de transformation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2744 — optimisation et exécution de la stockage et diffusion : chaînes de transformation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2745 — export et traçabilité de la stockage et diffusion : chaînes de transformation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2746 — définition et validation du contrat de la tests et conformité : chaînes de transformation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2747 — conversion et normalisation de la tests et conformité : chaînes de transformation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2748 — analyse et contrôle de cohérence de la tests et conformité : chaînes de transformation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2749 — optimisation et exécution de la tests et conformité : chaînes de transformation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2750 — export et traçabilité de la tests et conformité : chaînes de transformation ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 72 · Gestion des couches · ◉ / ▦ / ⧉
+
+Périmètre : couches cartographiques et planétaires.
+
+- **AX-2751 — définition et validation du contrat de la structure de données : couches cartographiques et planétaires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2752 — conversion et normalisation de la structure de données : couches cartographiques et planétaires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2753 — analyse et contrôle de cohérence de la structure de données : couches cartographiques et planétaires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2754 — optimisation et exécution de la structure de données : couches cartographiques et planétaires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2755 — export et traçabilité de la structure de données : couches cartographiques et planétaires ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2756 — définition et validation du contrat de la métadonnées et provenance : couches cartographiques et planétaires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2757 — conversion et normalisation de la métadonnées et provenance : couches cartographiques et planétaires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2758 — analyse et contrôle de cohérence de la métadonnées et provenance : couches cartographiques et planétaires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2759 — optimisation et exécution de la métadonnées et provenance : couches cartographiques et planétaires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2760 — export et traçabilité de la métadonnées et provenance : couches cartographiques et planétaires ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2761 — définition et validation du contrat de la paramètres et unités : couches cartographiques et planétaires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2762 — conversion et normalisation de la paramètres et unités : couches cartographiques et planétaires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2763 — analyse et contrôle de cohérence de la paramètres et unités : couches cartographiques et planétaires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2764 — optimisation et exécution de la paramètres et unités : couches cartographiques et planétaires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2765 — export et traçabilité de la paramètres et unités : couches cartographiques et planétaires ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2766 — définition et validation du contrat de la géométrie et repérage : couches cartographiques et planétaires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2767 — conversion et normalisation de la géométrie et repérage : couches cartographiques et planétaires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2768 — analyse et contrôle de cohérence de la géométrie et repérage : couches cartographiques et planétaires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2769 — optimisation et exécution de la géométrie et repérage : couches cartographiques et planétaires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2770 — export et traçabilité de la géométrie et repérage : couches cartographiques et planétaires ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2771 — définition et validation du contrat de la qualité et incertitude : couches cartographiques et planétaires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2772 — conversion et normalisation de la qualité et incertitude : couches cartographiques et planétaires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2773 — analyse et contrôle de cohérence de la qualité et incertitude : couches cartographiques et planétaires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2774 — optimisation et exécution de la qualité et incertitude : couches cartographiques et planétaires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2775 — export et traçabilité de la qualité et incertitude : couches cartographiques et planétaires ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2776 — définition et validation du contrat de la index et recherche : couches cartographiques et planétaires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2777 — conversion et normalisation de la index et recherche : couches cartographiques et planétaires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2778 — analyse et contrôle de cohérence de la index et recherche : couches cartographiques et planétaires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2779 — optimisation et exécution de la index et recherche : couches cartographiques et planétaires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2780 — export et traçabilité de la index et recherche : couches cartographiques et planétaires ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2781 — définition et validation du contrat de la échantillonnage et interpolation : couches cartographiques et planétaires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2782 — conversion et normalisation de la échantillonnage et interpolation : couches cartographiques et planétaires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2783 — analyse et contrôle de cohérence de la échantillonnage et interpolation : couches cartographiques et planétaires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2784 — optimisation et exécution de la échantillonnage et interpolation : couches cartographiques et planétaires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2785 — export et traçabilité de la échantillonnage et interpolation : couches cartographiques et planétaires ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2786 — définition et validation du contrat de la visualisation et niveaux de détail : couches cartographiques et planétaires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2787 — conversion et normalisation de la visualisation et niveaux de détail : couches cartographiques et planétaires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2788 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : couches cartographiques et planétaires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2789 — optimisation et exécution de la visualisation et niveaux de détail : couches cartographiques et planétaires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2790 — export et traçabilité de la visualisation et niveaux de détail : couches cartographiques et planétaires ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2791 — définition et validation du contrat de la stockage et diffusion : couches cartographiques et planétaires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2792 — conversion et normalisation de la stockage et diffusion : couches cartographiques et planétaires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2793 — analyse et contrôle de cohérence de la stockage et diffusion : couches cartographiques et planétaires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2794 — optimisation et exécution de la stockage et diffusion : couches cartographiques et planétaires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2795 — export et traçabilité de la stockage et diffusion : couches cartographiques et planétaires ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2796 — définition et validation du contrat de la tests et conformité : couches cartographiques et planétaires ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2797 — conversion et normalisation de la tests et conformité : couches cartographiques et planétaires ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2798 — analyse et contrôle de cohérence de la tests et conformité : couches cartographiques et planétaires ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2799 — optimisation et exécution de la tests et conformité : couches cartographiques et planétaires ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2800 — export et traçabilité de la tests et conformité : couches cartographiques et planétaires ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 73 · Mesures et unités physiques · ⚙ / ⌖
+
+Périmètre : dimensions et conversions.
+
+- **AX-2801 — définition et validation du contrat de la structure de données : dimensions et conversions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2802 — conversion et normalisation de la structure de données : dimensions et conversions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2803 — analyse et contrôle de cohérence de la structure de données : dimensions et conversions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2804 — optimisation et exécution de la structure de données : dimensions et conversions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2805 — export et traçabilité de la structure de données : dimensions et conversions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2806 — définition et validation du contrat de la métadonnées et provenance : dimensions et conversions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2807 — conversion et normalisation de la métadonnées et provenance : dimensions et conversions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2808 — analyse et contrôle de cohérence de la métadonnées et provenance : dimensions et conversions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2809 — optimisation et exécution de la métadonnées et provenance : dimensions et conversions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2810 — export et traçabilité de la métadonnées et provenance : dimensions et conversions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2811 — définition et validation du contrat de la paramètres et unités : dimensions et conversions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2812 — conversion et normalisation de la paramètres et unités : dimensions et conversions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2813 — analyse et contrôle de cohérence de la paramètres et unités : dimensions et conversions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2814 — optimisation et exécution de la paramètres et unités : dimensions et conversions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2815 — export et traçabilité de la paramètres et unités : dimensions et conversions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2816 — définition et validation du contrat de la géométrie et repérage : dimensions et conversions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2817 — conversion et normalisation de la géométrie et repérage : dimensions et conversions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2818 — analyse et contrôle de cohérence de la géométrie et repérage : dimensions et conversions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2819 — optimisation et exécution de la géométrie et repérage : dimensions et conversions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2820 — export et traçabilité de la géométrie et repérage : dimensions et conversions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2821 — définition et validation du contrat de la qualité et incertitude : dimensions et conversions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2822 — conversion et normalisation de la qualité et incertitude : dimensions et conversions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2823 — analyse et contrôle de cohérence de la qualité et incertitude : dimensions et conversions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2824 — optimisation et exécution de la qualité et incertitude : dimensions et conversions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2825 — export et traçabilité de la qualité et incertitude : dimensions et conversions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2826 — définition et validation du contrat de la index et recherche : dimensions et conversions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2827 — conversion et normalisation de la index et recherche : dimensions et conversions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2828 — analyse et contrôle de cohérence de la index et recherche : dimensions et conversions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2829 — optimisation et exécution de la index et recherche : dimensions et conversions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2830 — export et traçabilité de la index et recherche : dimensions et conversions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2831 — définition et validation du contrat de la échantillonnage et interpolation : dimensions et conversions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2832 — conversion et normalisation de la échantillonnage et interpolation : dimensions et conversions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2833 — analyse et contrôle de cohérence de la échantillonnage et interpolation : dimensions et conversions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2834 — optimisation et exécution de la échantillonnage et interpolation : dimensions et conversions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2835 — export et traçabilité de la échantillonnage et interpolation : dimensions et conversions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2836 — définition et validation du contrat de la visualisation et niveaux de détail : dimensions et conversions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2837 — conversion et normalisation de la visualisation et niveaux de détail : dimensions et conversions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2838 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : dimensions et conversions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2839 — optimisation et exécution de la visualisation et niveaux de détail : dimensions et conversions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2840 — export et traçabilité de la visualisation et niveaux de détail : dimensions et conversions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2841 — définition et validation du contrat de la stockage et diffusion : dimensions et conversions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2842 — conversion et normalisation de la stockage et diffusion : dimensions et conversions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2843 — analyse et contrôle de cohérence de la stockage et diffusion : dimensions et conversions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2844 — optimisation et exécution de la stockage et diffusion : dimensions et conversions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2845 — export et traçabilité de la stockage et diffusion : dimensions et conversions ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2846 — définition et validation du contrat de la tests et conformité : dimensions et conversions ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2847 — conversion et normalisation de la tests et conformité : dimensions et conversions ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2848 — analyse et contrôle de cohérence de la tests et conformité : dimensions et conversions ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2849 — optimisation et exécution de la tests et conformité : dimensions et conversions ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2850 — export et traçabilité de la tests et conformité : dimensions et conversions ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 74 · Séries temporelles · ⏱ / ∿ / ⧉
+
+Périmètre : horodatages et analyses temporelles.
+
+- **AX-2851 — définition et validation du contrat de la structure de données : horodatages et analyses temporelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2852 — conversion et normalisation de la structure de données : horodatages et analyses temporelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2853 — analyse et contrôle de cohérence de la structure de données : horodatages et analyses temporelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2854 — optimisation et exécution de la structure de données : horodatages et analyses temporelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2855 — export et traçabilité de la structure de données : horodatages et analyses temporelles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2856 — définition et validation du contrat de la métadonnées et provenance : horodatages et analyses temporelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2857 — conversion et normalisation de la métadonnées et provenance : horodatages et analyses temporelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2858 — analyse et contrôle de cohérence de la métadonnées et provenance : horodatages et analyses temporelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2859 — optimisation et exécution de la métadonnées et provenance : horodatages et analyses temporelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2860 — export et traçabilité de la métadonnées et provenance : horodatages et analyses temporelles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2861 — définition et validation du contrat de la paramètres et unités : horodatages et analyses temporelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2862 — conversion et normalisation de la paramètres et unités : horodatages et analyses temporelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2863 — analyse et contrôle de cohérence de la paramètres et unités : horodatages et analyses temporelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2864 — optimisation et exécution de la paramètres et unités : horodatages et analyses temporelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2865 — export et traçabilité de la paramètres et unités : horodatages et analyses temporelles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2866 — définition et validation du contrat de la géométrie et repérage : horodatages et analyses temporelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2867 — conversion et normalisation de la géométrie et repérage : horodatages et analyses temporelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2868 — analyse et contrôle de cohérence de la géométrie et repérage : horodatages et analyses temporelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2869 — optimisation et exécution de la géométrie et repérage : horodatages et analyses temporelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2870 — export et traçabilité de la géométrie et repérage : horodatages et analyses temporelles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2871 — définition et validation du contrat de la qualité et incertitude : horodatages et analyses temporelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2872 — conversion et normalisation de la qualité et incertitude : horodatages et analyses temporelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2873 — analyse et contrôle de cohérence de la qualité et incertitude : horodatages et analyses temporelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2874 — optimisation et exécution de la qualité et incertitude : horodatages et analyses temporelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2875 — export et traçabilité de la qualité et incertitude : horodatages et analyses temporelles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2876 — définition et validation du contrat de la index et recherche : horodatages et analyses temporelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2877 — conversion et normalisation de la index et recherche : horodatages et analyses temporelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2878 — analyse et contrôle de cohérence de la index et recherche : horodatages et analyses temporelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2879 — optimisation et exécution de la index et recherche : horodatages et analyses temporelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2880 — export et traçabilité de la index et recherche : horodatages et analyses temporelles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2881 — définition et validation du contrat de la échantillonnage et interpolation : horodatages et analyses temporelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2882 — conversion et normalisation de la échantillonnage et interpolation : horodatages et analyses temporelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2883 — analyse et contrôle de cohérence de la échantillonnage et interpolation : horodatages et analyses temporelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2884 — optimisation et exécution de la échantillonnage et interpolation : horodatages et analyses temporelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2885 — export et traçabilité de la échantillonnage et interpolation : horodatages et analyses temporelles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2886 — définition et validation du contrat de la visualisation et niveaux de détail : horodatages et analyses temporelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2887 — conversion et normalisation de la visualisation et niveaux de détail : horodatages et analyses temporelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2888 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : horodatages et analyses temporelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2889 — optimisation et exécution de la visualisation et niveaux de détail : horodatages et analyses temporelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2890 — export et traçabilité de la visualisation et niveaux de détail : horodatages et analyses temporelles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2891 — définition et validation du contrat de la stockage et diffusion : horodatages et analyses temporelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2892 — conversion et normalisation de la stockage et diffusion : horodatages et analyses temporelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2893 — analyse et contrôle de cohérence de la stockage et diffusion : horodatages et analyses temporelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2894 — optimisation et exécution de la stockage et diffusion : horodatages et analyses temporelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2895 — export et traçabilité de la stockage et diffusion : horodatages et analyses temporelles ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2896 — définition et validation du contrat de la tests et conformité : horodatages et analyses temporelles ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2897 — conversion et normalisation de la tests et conformité : horodatages et analyses temporelles ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2898 — analyse et contrôle de cohérence de la tests et conformité : horodatages et analyses temporelles ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2899 — optimisation et exécution de la tests et conformité : horodatages et analyses temporelles ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2900 — export et traçabilité de la tests et conformité : horodatages et analyses temporelles ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 75 · Recherche et découverte · ⧉ / ⌖
+
+Périmètre : catalogues et métadonnées.
+
+- **AX-2901 — définition et validation du contrat de la structure de données : catalogues et métadonnées ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2902 — conversion et normalisation de la structure de données : catalogues et métadonnées ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2903 — analyse et contrôle de cohérence de la structure de données : catalogues et métadonnées ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2904 — optimisation et exécution de la structure de données : catalogues et métadonnées ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2905 — export et traçabilité de la structure de données : catalogues et métadonnées ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2906 — définition et validation du contrat de la métadonnées et provenance : catalogues et métadonnées ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2907 — conversion et normalisation de la métadonnées et provenance : catalogues et métadonnées ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2908 — analyse et contrôle de cohérence de la métadonnées et provenance : catalogues et métadonnées ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2909 — optimisation et exécution de la métadonnées et provenance : catalogues et métadonnées ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2910 — export et traçabilité de la métadonnées et provenance : catalogues et métadonnées ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2911 — définition et validation du contrat de la paramètres et unités : catalogues et métadonnées ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2912 — conversion et normalisation de la paramètres et unités : catalogues et métadonnées ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2913 — analyse et contrôle de cohérence de la paramètres et unités : catalogues et métadonnées ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2914 — optimisation et exécution de la paramètres et unités : catalogues et métadonnées ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2915 — export et traçabilité de la paramètres et unités : catalogues et métadonnées ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2916 — définition et validation du contrat de la géométrie et repérage : catalogues et métadonnées ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2917 — conversion et normalisation de la géométrie et repérage : catalogues et métadonnées ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2918 — analyse et contrôle de cohérence de la géométrie et repérage : catalogues et métadonnées ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2919 — optimisation et exécution de la géométrie et repérage : catalogues et métadonnées ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2920 — export et traçabilité de la géométrie et repérage : catalogues et métadonnées ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2921 — définition et validation du contrat de la qualité et incertitude : catalogues et métadonnées ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2922 — conversion et normalisation de la qualité et incertitude : catalogues et métadonnées ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2923 — analyse et contrôle de cohérence de la qualité et incertitude : catalogues et métadonnées ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2924 — optimisation et exécution de la qualité et incertitude : catalogues et métadonnées ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2925 — export et traçabilité de la qualité et incertitude : catalogues et métadonnées ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2926 — définition et validation du contrat de la index et recherche : catalogues et métadonnées ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2927 — conversion et normalisation de la index et recherche : catalogues et métadonnées ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2928 — analyse et contrôle de cohérence de la index et recherche : catalogues et métadonnées ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2929 — optimisation et exécution de la index et recherche : catalogues et métadonnées ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2930 — export et traçabilité de la index et recherche : catalogues et métadonnées ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2931 — définition et validation du contrat de la échantillonnage et interpolation : catalogues et métadonnées ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2932 — conversion et normalisation de la échantillonnage et interpolation : catalogues et métadonnées ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2933 — analyse et contrôle de cohérence de la échantillonnage et interpolation : catalogues et métadonnées ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2934 — optimisation et exécution de la échantillonnage et interpolation : catalogues et métadonnées ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2935 — export et traçabilité de la échantillonnage et interpolation : catalogues et métadonnées ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2936 — définition et validation du contrat de la visualisation et niveaux de détail : catalogues et métadonnées ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2937 — conversion et normalisation de la visualisation et niveaux de détail : catalogues et métadonnées ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2938 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : catalogues et métadonnées ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2939 — optimisation et exécution de la visualisation et niveaux de détail : catalogues et métadonnées ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2940 — export et traçabilité de la visualisation et niveaux de détail : catalogues et métadonnées ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2941 — définition et validation du contrat de la stockage et diffusion : catalogues et métadonnées ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2942 — conversion et normalisation de la stockage et diffusion : catalogues et métadonnées ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2943 — analyse et contrôle de cohérence de la stockage et diffusion : catalogues et métadonnées ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2944 — optimisation et exécution de la stockage et diffusion : catalogues et métadonnées ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2945 — export et traçabilité de la stockage et diffusion : catalogues et métadonnées ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2946 — définition et validation du contrat de la tests et conformité : catalogues et métadonnées ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2947 — conversion et normalisation de la tests et conformité : catalogues et métadonnées ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2948 — analyse et contrôle de cohérence de la tests et conformité : catalogues et métadonnées ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2949 — optimisation et exécution de la tests et conformité : catalogues et métadonnées ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2950 — export et traçabilité de la tests et conformité : catalogues et métadonnées ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 76 · Documentation et gouvernance · ⧉ / ⚙
+
+Périmètre : capabilités et décisions d'architecture.
+
+- **AX-2951 — définition et validation du contrat de la structure de données : capabilités et décisions d'architecture ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2952 — conversion et normalisation de la structure de données : capabilités et décisions d'architecture ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2953 — analyse et contrôle de cohérence de la structure de données : capabilités et décisions d'architecture ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2954 — optimisation et exécution de la structure de données : capabilités et décisions d'architecture ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2955 — export et traçabilité de la structure de données : capabilités et décisions d'architecture ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2956 — définition et validation du contrat de la métadonnées et provenance : capabilités et décisions d'architecture ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2957 — conversion et normalisation de la métadonnées et provenance : capabilités et décisions d'architecture ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2958 — analyse et contrôle de cohérence de la métadonnées et provenance : capabilités et décisions d'architecture ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2959 — optimisation et exécution de la métadonnées et provenance : capabilités et décisions d'architecture ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2960 — export et traçabilité de la métadonnées et provenance : capabilités et décisions d'architecture ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2961 — définition et validation du contrat de la paramètres et unités : capabilités et décisions d'architecture ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2962 — conversion et normalisation de la paramètres et unités : capabilités et décisions d'architecture ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2963 — analyse et contrôle de cohérence de la paramètres et unités : capabilités et décisions d'architecture ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2964 — optimisation et exécution de la paramètres et unités : capabilités et décisions d'architecture ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2965 — export et traçabilité de la paramètres et unités : capabilités et décisions d'architecture ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2966 — définition et validation du contrat de la géométrie et repérage : capabilités et décisions d'architecture ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2967 — conversion et normalisation de la géométrie et repérage : capabilités et décisions d'architecture ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2968 — analyse et contrôle de cohérence de la géométrie et repérage : capabilités et décisions d'architecture ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2969 — optimisation et exécution de la géométrie et repérage : capabilités et décisions d'architecture ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2970 — export et traçabilité de la géométrie et repérage : capabilités et décisions d'architecture ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2971 — définition et validation du contrat de la qualité et incertitude : capabilités et décisions d'architecture ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2972 — conversion et normalisation de la qualité et incertitude : capabilités et décisions d'architecture ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2973 — analyse et contrôle de cohérence de la qualité et incertitude : capabilités et décisions d'architecture ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2974 — optimisation et exécution de la qualité et incertitude : capabilités et décisions d'architecture ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2975 — export et traçabilité de la qualité et incertitude : capabilités et décisions d'architecture ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2976 — définition et validation du contrat de la index et recherche : capabilités et décisions d'architecture ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2977 — conversion et normalisation de la index et recherche : capabilités et décisions d'architecture ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2978 — analyse et contrôle de cohérence de la index et recherche : capabilités et décisions d'architecture ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2979 — optimisation et exécution de la index et recherche : capabilités et décisions d'architecture ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2980 — export et traçabilité de la index et recherche : capabilités et décisions d'architecture ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2981 — définition et validation du contrat de la échantillonnage et interpolation : capabilités et décisions d'architecture ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2982 — conversion et normalisation de la échantillonnage et interpolation : capabilités et décisions d'architecture ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2983 — analyse et contrôle de cohérence de la échantillonnage et interpolation : capabilités et décisions d'architecture ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2984 — optimisation et exécution de la échantillonnage et interpolation : capabilités et décisions d'architecture ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2985 — export et traçabilité de la échantillonnage et interpolation : capabilités et décisions d'architecture ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2986 — définition et validation du contrat de la visualisation et niveaux de détail : capabilités et décisions d'architecture ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2987 — conversion et normalisation de la visualisation et niveaux de détail : capabilités et décisions d'architecture ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2988 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : capabilités et décisions d'architecture ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2989 — optimisation et exécution de la visualisation et niveaux de détail : capabilités et décisions d'architecture ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2990 — export et traçabilité de la visualisation et niveaux de détail : capabilités et décisions d'architecture ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2991 — définition et validation du contrat de la stockage et diffusion : capabilités et décisions d'architecture ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2992 — conversion et normalisation de la stockage et diffusion : capabilités et décisions d'architecture ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2993 — analyse et contrôle de cohérence de la stockage et diffusion : capabilités et décisions d'architecture ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2994 — optimisation et exécution de la stockage et diffusion : capabilités et décisions d'architecture ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-2995 — export et traçabilité de la stockage et diffusion : capabilités et décisions d'architecture ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-2996 — définition et validation du contrat de la tests et conformité : capabilités et décisions d'architecture ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-2997 — conversion et normalisation de la tests et conformité : capabilités et décisions d'architecture ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-2998 — analyse et contrôle de cohérence de la tests et conformité : capabilités et décisions d'architecture ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-2999 — optimisation et exécution de la tests et conformité : capabilités et décisions d'architecture ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3000 — export et traçabilité de la tests et conformité : capabilités et décisions d'architecture ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 77 · Cartographie géologique · 地 / ⌖
+
+Périmètre : unités géologiques et contacts.
+
+- **AX-3001 — définition et validation du contrat de la structure de données : unités géologiques et contacts ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3002 — conversion et normalisation de la structure de données : unités géologiques et contacts ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3003 — analyse et contrôle de cohérence de la structure de données : unités géologiques et contacts ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3004 — optimisation et exécution de la structure de données : unités géologiques et contacts ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3005 — export et traçabilité de la structure de données : unités géologiques et contacts ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3006 — définition et validation du contrat de la métadonnées et provenance : unités géologiques et contacts ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3007 — conversion et normalisation de la métadonnées et provenance : unités géologiques et contacts ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3008 — analyse et contrôle de cohérence de la métadonnées et provenance : unités géologiques et contacts ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3009 — optimisation et exécution de la métadonnées et provenance : unités géologiques et contacts ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3010 — export et traçabilité de la métadonnées et provenance : unités géologiques et contacts ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3011 — définition et validation du contrat de la paramètres et unités : unités géologiques et contacts ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3012 — conversion et normalisation de la paramètres et unités : unités géologiques et contacts ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3013 — analyse et contrôle de cohérence de la paramètres et unités : unités géologiques et contacts ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3014 — optimisation et exécution de la paramètres et unités : unités géologiques et contacts ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3015 — export et traçabilité de la paramètres et unités : unités géologiques et contacts ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3016 — définition et validation du contrat de la géométrie et repérage : unités géologiques et contacts ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3017 — conversion et normalisation de la géométrie et repérage : unités géologiques et contacts ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3018 — analyse et contrôle de cohérence de la géométrie et repérage : unités géologiques et contacts ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3019 — optimisation et exécution de la géométrie et repérage : unités géologiques et contacts ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3020 — export et traçabilité de la géométrie et repérage : unités géologiques et contacts ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3021 — définition et validation du contrat de la qualité et incertitude : unités géologiques et contacts ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3022 — conversion et normalisation de la qualité et incertitude : unités géologiques et contacts ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3023 — analyse et contrôle de cohérence de la qualité et incertitude : unités géologiques et contacts ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3024 — optimisation et exécution de la qualité et incertitude : unités géologiques et contacts ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3025 — export et traçabilité de la qualité et incertitude : unités géologiques et contacts ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3026 — définition et validation du contrat de la index et recherche : unités géologiques et contacts ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3027 — conversion et normalisation de la index et recherche : unités géologiques et contacts ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3028 — analyse et contrôle de cohérence de la index et recherche : unités géologiques et contacts ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3029 — optimisation et exécution de la index et recherche : unités géologiques et contacts ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3030 — export et traçabilité de la index et recherche : unités géologiques et contacts ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3031 — définition et validation du contrat de la échantillonnage et interpolation : unités géologiques et contacts ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3032 — conversion et normalisation de la échantillonnage et interpolation : unités géologiques et contacts ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3033 — analyse et contrôle de cohérence de la échantillonnage et interpolation : unités géologiques et contacts ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3034 — optimisation et exécution de la échantillonnage et interpolation : unités géologiques et contacts ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3035 — export et traçabilité de la échantillonnage et interpolation : unités géologiques et contacts ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3036 — définition et validation du contrat de la visualisation et niveaux de détail : unités géologiques et contacts ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3037 — conversion et normalisation de la visualisation et niveaux de détail : unités géologiques et contacts ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3038 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : unités géologiques et contacts ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3039 — optimisation et exécution de la visualisation et niveaux de détail : unités géologiques et contacts ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3040 — export et traçabilité de la visualisation et niveaux de détail : unités géologiques et contacts ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3041 — définition et validation du contrat de la stockage et diffusion : unités géologiques et contacts ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3042 — conversion et normalisation de la stockage et diffusion : unités géologiques et contacts ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3043 — analyse et contrôle de cohérence de la stockage et diffusion : unités géologiques et contacts ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3044 — optimisation et exécution de la stockage et diffusion : unités géologiques et contacts ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3045 — export et traçabilité de la stockage et diffusion : unités géologiques et contacts ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3046 — définition et validation du contrat de la tests et conformité : unités géologiques et contacts ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3047 — conversion et normalisation de la tests et conformité : unités géologiques et contacts ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3048 — analyse et contrôle de cohérence de la tests et conformité : unités géologiques et contacts ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3049 — optimisation et exécution de la tests et conformité : unités géologiques et contacts ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3050 — export et traçabilité de la tests et conformité : unités géologiques et contacts ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 78 · Données de missions spatiales · ☉ / ☾ / ⧉
+
+Périmètre : missions, instruments et produits.
+
+- **AX-3051 — définition et validation du contrat de la structure de données : missions, instruments et produits ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3052 — conversion et normalisation de la structure de données : missions, instruments et produits ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3053 — analyse et contrôle de cohérence de la structure de données : missions, instruments et produits ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3054 — optimisation et exécution de la structure de données : missions, instruments et produits ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3055 — export et traçabilité de la structure de données : missions, instruments et produits ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3056 — définition et validation du contrat de la métadonnées et provenance : missions, instruments et produits ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3057 — conversion et normalisation de la métadonnées et provenance : missions, instruments et produits ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3058 — analyse et contrôle de cohérence de la métadonnées et provenance : missions, instruments et produits ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3059 — optimisation et exécution de la métadonnées et provenance : missions, instruments et produits ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3060 — export et traçabilité de la métadonnées et provenance : missions, instruments et produits ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3061 — définition et validation du contrat de la paramètres et unités : missions, instruments et produits ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3062 — conversion et normalisation de la paramètres et unités : missions, instruments et produits ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3063 — analyse et contrôle de cohérence de la paramètres et unités : missions, instruments et produits ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3064 — optimisation et exécution de la paramètres et unités : missions, instruments et produits ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3065 — export et traçabilité de la paramètres et unités : missions, instruments et produits ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3066 — définition et validation du contrat de la géométrie et repérage : missions, instruments et produits ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3067 — conversion et normalisation de la géométrie et repérage : missions, instruments et produits ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3068 — analyse et contrôle de cohérence de la géométrie et repérage : missions, instruments et produits ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3069 — optimisation et exécution de la géométrie et repérage : missions, instruments et produits ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3070 — export et traçabilité de la géométrie et repérage : missions, instruments et produits ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3071 — définition et validation du contrat de la qualité et incertitude : missions, instruments et produits ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3072 — conversion et normalisation de la qualité et incertitude : missions, instruments et produits ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3073 — analyse et contrôle de cohérence de la qualité et incertitude : missions, instruments et produits ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3074 — optimisation et exécution de la qualité et incertitude : missions, instruments et produits ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3075 — export et traçabilité de la qualité et incertitude : missions, instruments et produits ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3076 — définition et validation du contrat de la index et recherche : missions, instruments et produits ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3077 — conversion et normalisation de la index et recherche : missions, instruments et produits ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3078 — analyse et contrôle de cohérence de la index et recherche : missions, instruments et produits ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3079 — optimisation et exécution de la index et recherche : missions, instruments et produits ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3080 — export et traçabilité de la index et recherche : missions, instruments et produits ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3081 — définition et validation du contrat de la échantillonnage et interpolation : missions, instruments et produits ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3082 — conversion et normalisation de la échantillonnage et interpolation : missions, instruments et produits ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3083 — analyse et contrôle de cohérence de la échantillonnage et interpolation : missions, instruments et produits ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3084 — optimisation et exécution de la échantillonnage et interpolation : missions, instruments et produits ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3085 — export et traçabilité de la échantillonnage et interpolation : missions, instruments et produits ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3086 — définition et validation du contrat de la visualisation et niveaux de détail : missions, instruments et produits ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3087 — conversion et normalisation de la visualisation et niveaux de détail : missions, instruments et produits ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3088 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : missions, instruments et produits ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3089 — optimisation et exécution de la visualisation et niveaux de détail : missions, instruments et produits ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3090 — export et traçabilité de la visualisation et niveaux de détail : missions, instruments et produits ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3091 — définition et validation du contrat de la stockage et diffusion : missions, instruments et produits ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3092 — conversion et normalisation de la stockage et diffusion : missions, instruments et produits ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3093 — analyse et contrôle de cohérence de la stockage et diffusion : missions, instruments et produits ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3094 — optimisation et exécution de la stockage et diffusion : missions, instruments et produits ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3095 — export et traçabilité de la stockage et diffusion : missions, instruments et produits ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3096 — définition et validation du contrat de la tests et conformité : missions, instruments et produits ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3097 — conversion et normalisation de la tests et conformité : missions, instruments et produits ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3098 — analyse et contrôle de cohérence de la tests et conformité : missions, instruments et produits ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3099 — optimisation et exécution de la tests et conformité : missions, instruments et produits ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3100 — export et traçabilité de la tests et conformité : missions, instruments et produits ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 79 · Planification d'observation · ☉ / ⏱ / ⚙
+
+Périmètre : fenêtres et contraintes d'observation.
+
+- **AX-3101 — définition et validation du contrat de la structure de données : fenêtres et contraintes d'observation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3102 — conversion et normalisation de la structure de données : fenêtres et contraintes d'observation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3103 — analyse et contrôle de cohérence de la structure de données : fenêtres et contraintes d'observation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3104 — optimisation et exécution de la structure de données : fenêtres et contraintes d'observation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3105 — export et traçabilité de la structure de données : fenêtres et contraintes d'observation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3106 — définition et validation du contrat de la métadonnées et provenance : fenêtres et contraintes d'observation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3107 — conversion et normalisation de la métadonnées et provenance : fenêtres et contraintes d'observation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3108 — analyse et contrôle de cohérence de la métadonnées et provenance : fenêtres et contraintes d'observation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3109 — optimisation et exécution de la métadonnées et provenance : fenêtres et contraintes d'observation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3110 — export et traçabilité de la métadonnées et provenance : fenêtres et contraintes d'observation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3111 — définition et validation du contrat de la paramètres et unités : fenêtres et contraintes d'observation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3112 — conversion et normalisation de la paramètres et unités : fenêtres et contraintes d'observation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3113 — analyse et contrôle de cohérence de la paramètres et unités : fenêtres et contraintes d'observation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3114 — optimisation et exécution de la paramètres et unités : fenêtres et contraintes d'observation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3115 — export et traçabilité de la paramètres et unités : fenêtres et contraintes d'observation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3116 — définition et validation du contrat de la géométrie et repérage : fenêtres et contraintes d'observation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3117 — conversion et normalisation de la géométrie et repérage : fenêtres et contraintes d'observation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3118 — analyse et contrôle de cohérence de la géométrie et repérage : fenêtres et contraintes d'observation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3119 — optimisation et exécution de la géométrie et repérage : fenêtres et contraintes d'observation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3120 — export et traçabilité de la géométrie et repérage : fenêtres et contraintes d'observation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3121 — définition et validation du contrat de la qualité et incertitude : fenêtres et contraintes d'observation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3122 — conversion et normalisation de la qualité et incertitude : fenêtres et contraintes d'observation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3123 — analyse et contrôle de cohérence de la qualité et incertitude : fenêtres et contraintes d'observation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3124 — optimisation et exécution de la qualité et incertitude : fenêtres et contraintes d'observation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3125 — export et traçabilité de la qualité et incertitude : fenêtres et contraintes d'observation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3126 — définition et validation du contrat de la index et recherche : fenêtres et contraintes d'observation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3127 — conversion et normalisation de la index et recherche : fenêtres et contraintes d'observation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3128 — analyse et contrôle de cohérence de la index et recherche : fenêtres et contraintes d'observation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3129 — optimisation et exécution de la index et recherche : fenêtres et contraintes d'observation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3130 — export et traçabilité de la index et recherche : fenêtres et contraintes d'observation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3131 — définition et validation du contrat de la échantillonnage et interpolation : fenêtres et contraintes d'observation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3132 — conversion et normalisation de la échantillonnage et interpolation : fenêtres et contraintes d'observation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3133 — analyse et contrôle de cohérence de la échantillonnage et interpolation : fenêtres et contraintes d'observation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3134 — optimisation et exécution de la échantillonnage et interpolation : fenêtres et contraintes d'observation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3135 — export et traçabilité de la échantillonnage et interpolation : fenêtres et contraintes d'observation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3136 — définition et validation du contrat de la visualisation et niveaux de détail : fenêtres et contraintes d'observation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3137 — conversion et normalisation de la visualisation et niveaux de détail : fenêtres et contraintes d'observation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3138 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : fenêtres et contraintes d'observation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3139 — optimisation et exécution de la visualisation et niveaux de détail : fenêtres et contraintes d'observation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3140 — export et traçabilité de la visualisation et niveaux de détail : fenêtres et contraintes d'observation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3141 — définition et validation du contrat de la stockage et diffusion : fenêtres et contraintes d'observation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3142 — conversion et normalisation de la stockage et diffusion : fenêtres et contraintes d'observation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3143 — analyse et contrôle de cohérence de la stockage et diffusion : fenêtres et contraintes d'observation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3144 — optimisation et exécution de la stockage et diffusion : fenêtres et contraintes d'observation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3145 — export et traçabilité de la stockage et diffusion : fenêtres et contraintes d'observation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3146 — définition et validation du contrat de la tests et conformité : fenêtres et contraintes d'observation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3147 — conversion et normalisation de la tests et conformité : fenêtres et contraintes d'observation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3148 — analyse et contrôle de cohérence de la tests et conformité : fenêtres et contraintes d'observation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3149 — optimisation et exécution de la tests et conformité : fenêtres et contraintes d'observation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3150 — export et traçabilité de la tests et conformité : fenêtres et contraintes d'observation ; produire un résultat versionné avec paramètres, source et limites.**
+
+### 80 · Analyse de trajectoires · ⇄ / ⚙ / ⏱
+
+Périmètre : trajectoires, événements et interpolation.
+
+- **AX-3151 — définition et validation du contrat de la structure de données : trajectoires, événements et interpolation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3152 — conversion et normalisation de la structure de données : trajectoires, événements et interpolation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3153 — analyse et contrôle de cohérence de la structure de données : trajectoires, événements et interpolation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3154 — optimisation et exécution de la structure de données : trajectoires, événements et interpolation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3155 — export et traçabilité de la structure de données : trajectoires, événements et interpolation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3156 — définition et validation du contrat de la métadonnées et provenance : trajectoires, événements et interpolation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3157 — conversion et normalisation de la métadonnées et provenance : trajectoires, événements et interpolation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3158 — analyse et contrôle de cohérence de la métadonnées et provenance : trajectoires, événements et interpolation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3159 — optimisation et exécution de la métadonnées et provenance : trajectoires, événements et interpolation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3160 — export et traçabilité de la métadonnées et provenance : trajectoires, événements et interpolation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3161 — définition et validation du contrat de la paramètres et unités : trajectoires, événements et interpolation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3162 — conversion et normalisation de la paramètres et unités : trajectoires, événements et interpolation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3163 — analyse et contrôle de cohérence de la paramètres et unités : trajectoires, événements et interpolation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3164 — optimisation et exécution de la paramètres et unités : trajectoires, événements et interpolation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3165 — export et traçabilité de la paramètres et unités : trajectoires, événements et interpolation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3166 — définition et validation du contrat de la géométrie et repérage : trajectoires, événements et interpolation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3167 — conversion et normalisation de la géométrie et repérage : trajectoires, événements et interpolation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3168 — analyse et contrôle de cohérence de la géométrie et repérage : trajectoires, événements et interpolation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3169 — optimisation et exécution de la géométrie et repérage : trajectoires, événements et interpolation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3170 — export et traçabilité de la géométrie et repérage : trajectoires, événements et interpolation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3171 — définition et validation du contrat de la qualité et incertitude : trajectoires, événements et interpolation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3172 — conversion et normalisation de la qualité et incertitude : trajectoires, événements et interpolation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3173 — analyse et contrôle de cohérence de la qualité et incertitude : trajectoires, événements et interpolation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3174 — optimisation et exécution de la qualité et incertitude : trajectoires, événements et interpolation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3175 — export et traçabilité de la qualité et incertitude : trajectoires, événements et interpolation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3176 — définition et validation du contrat de la index et recherche : trajectoires, événements et interpolation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3177 — conversion et normalisation de la index et recherche : trajectoires, événements et interpolation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3178 — analyse et contrôle de cohérence de la index et recherche : trajectoires, événements et interpolation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3179 — optimisation et exécution de la index et recherche : trajectoires, événements et interpolation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3180 — export et traçabilité de la index et recherche : trajectoires, événements et interpolation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3181 — définition et validation du contrat de la échantillonnage et interpolation : trajectoires, événements et interpolation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3182 — conversion et normalisation de la échantillonnage et interpolation : trajectoires, événements et interpolation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3183 — analyse et contrôle de cohérence de la échantillonnage et interpolation : trajectoires, événements et interpolation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3184 — optimisation et exécution de la échantillonnage et interpolation : trajectoires, événements et interpolation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3185 — export et traçabilité de la échantillonnage et interpolation : trajectoires, événements et interpolation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3186 — définition et validation du contrat de la visualisation et niveaux de détail : trajectoires, événements et interpolation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3187 — conversion et normalisation de la visualisation et niveaux de détail : trajectoires, événements et interpolation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3188 — analyse et contrôle de cohérence de la visualisation et niveaux de détail : trajectoires, événements et interpolation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3189 — optimisation et exécution de la visualisation et niveaux de détail : trajectoires, événements et interpolation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3190 — export et traçabilité de la visualisation et niveaux de détail : trajectoires, événements et interpolation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3191 — définition et validation du contrat de la stockage et diffusion : trajectoires, événements et interpolation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3192 — conversion et normalisation de la stockage et diffusion : trajectoires, événements et interpolation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3193 — analyse et contrôle de cohérence de la stockage et diffusion : trajectoires, événements et interpolation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3194 — optimisation et exécution de la stockage et diffusion : trajectoires, événements et interpolation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3195 — export et traçabilité de la stockage et diffusion : trajectoires, événements et interpolation ; produire un résultat versionné avec paramètres, source et limites.**
+- **AX-3196 — définition et validation du contrat de la tests et conformité : trajectoires, événements et interpolation ; définir les champs obligatoires, types, unités et contraintes.**
+- **AX-3197 — conversion et normalisation de la tests et conformité : trajectoires, événements et interpolation ; convertir les représentations compatibles sans perdre les conventions.**
+- **AX-3198 — analyse et contrôle de cohérence de la tests et conformité : trajectoires, événements et interpolation ; détecter les valeurs incohérentes, lacunes et cas limites.**
+- **AX-3199 — optimisation et exécution de la tests et conformité : trajectoires, événements et interpolation ; réduire le coût de calcul, mémoire ou transfert avec mesure.**
+- **AX-3200 — export et traçabilité de la tests et conformité : trajectoires, événements et interpolation ; produire un résultat versionné avec paramètres, source et limites.**
+
+## Répartition et statut
+
+- Domaines : 60.
+- Axes par domaine : 10 facettes × 5 opérations = 50.
+- Total ajouté : 60 × 50 = 3000.
+- Identifiants : AX-0201 à AX-3200.
+- Statut initial : à spécifier / implémenter ; aucune fonction n'est considérée comme acquise sans preuve dans le code et les tests.
+
+## Critères de validation avant implémentation
+
+1. Définir le schéma d'entrée et de sortie, les unités, les repères et les préconditions.
+2. Formaliser les invariants, les erreurs, les cas limites et les tolérances numériques.
+3. Identifier les sources, versions, licences et limites des données externes.
+4. Écrire des tests unitaires, des tests de propriétés et des tests de référence scientifique.
+5. Mesurer les coûts CPU, GPU, mémoire et réseau lorsque cela s'applique.
+6. Exposer les opérations avec les clés logographiques existantes uniquement si leur sens correspond exactement.
+7. Documenter les formats réellement pris en charge et les fallbacks.
+8. Mettre à jour le registre des capacités pour distinguer implémenté, partiel, expérimental et planifié.
