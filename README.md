@@ -1,78 +1,91 @@
 # SpacereaNode
 
-**Static-first JavaScript engine for scientific 3D, planetary rendering, geospatial data and LiDAR.**
+**Moteur JavaScript statique en priorité pour le calcul scientifique 3D, le rendu planétaire, les données géospatiales et le LiDAR.**
 
-SpacereaNode is an independent browser runtime. React or vanilla JavaScript can build the interface; SpacereaNode provides data, spatial, compute and rendering primitives.
+SpacereaNode est un runtime navigateur indépendant. React ou JavaScript natif peuvent construire l'interface ; SpacereaNode fournit les primitives de données, d'espace, de calcul et de rendu.
 
-## Core principles
+## Principes fondamentaux
 
-- Static-first delivery and immutable assets.
-- Browser computing with workers and GPU acceleration as later runtime layers.
-- Offline preprocessing for expensive conversion, indexing and compression.
-- Progressive rendering through culling, LOD and prioritized streaming.
-- Scientific traceability for source, licence, CRS, units, epoch and uncertainty.
-- Framework-agnostic modules with graceful fallbacks.
+- Livraison statique en priorité et ressources immuables.
+- Calcul dans le navigateur ; workers et accélération GPU comme couches d'exécution.
+- Prétraitement hors ligne des conversions, indexations et compressions coûteuses.
+- Rendu progressif par élimination, niveaux de détail et diffusion priorisée.
+- Traçabilité scientifique des sources, licences, systèmes de coordonnées, unités, époques et incertitudes.
+- Modules indépendants des frameworks avec solutions de repli.
 
-## Logographic axioms
+## Langage logographique
 
-The API and documentation use only the established vocabulary:
+Le vocabulaire fermé du moteur est l'interface conceptuelle de ses opérations. Chaque signe correspond à une fonction précise. Les API publiques utilisent les signes comme clés de chaîne JavaScript : `api["点"](...)`. Les noms de fichiers, fonctions internes, variables et paquets npm restent ASCII pour garantir la compatibilité des outils.
 
-| Sign | Canonical identifier | Concept |
+| Signe | Identifiant interne | Fonction |
 |---|---|---|
-| ☉ | SOLAR_BODY | Solar body |
-| ☾ | LUNAR_BODY | Lunar body |
-| ◎ | SPHERICAL_BODY | Spherical body |
-| ⌖ | COORDINATE | Coordinate |
+| ☉ | SOLAR_BODY | Corps solaire |
+| ☾ | LUNAR_BODY | Corps lunaire |
+| ◎ | SPHERICAL_BODY | Géométrie sphérique |
+| ⌖ | COORDINATE | Coordonnées |
 | 地 | TERRAIN | Terrain |
-| 点 | POINT_CLOUD | Point cloud |
-| ▦ | TILE | Tile |
-| ⇄ | TRANSFORM | Transform |
-| ∿ | WAVE | Wave / signal |
-| ◈ | SHADER | Shader |
+| 点 | POINT_CLOUD | Nuage de points |
+| ▦ | TILE | Tuile spatiale |
+| ⇄ | TRANSFORM | Transformation |
+| ∿ | WAVE | Onde ou signal |
+| ◈ | SHADER | Programme shader |
 | ⧉ | CACHE | Cache |
-| ⇣ | COMPRESS | Compression |
-| ⚙ | COMPUTE | Compute |
-| ◉ | RENDER | Render |
-| ⏱ | PERFORMANCE | Performance |
+| ⇣ | COMPRESS | Compression ou quantification |
+| ⚙ | COMPUTE | Calcul |
+| ◉ | RENDER | Rendu |
+| ⏱ | PERFORMANCE | Mesure de performance |
 
-No new logographic sign may be used in a module before it is added to the central registry and documented. JavaScript identifiers and file paths remain ASCII for compatibility. Symbolic API access uses string keys such as `api["点"](...)`.
+Aucun nouveau signe ne peut être utilisé avant son ajout explicite au registre central et sa définition sémantique. Les alias de langue facilitent la recherche, mais ne modifient pas le sens canonique.
 
-## Repository layout
+La spécification du langage et de la sémantique du runtime se trouve dans [docs/language/runtime-semantics.md](docs/language/runtime-semantics.md).
+
+## Organisation du dépôt
 
 ```text
 packages/
-  core/       runtime and logograph registry
-  geo/        coordinate validation and spherical conversion
-  compute/    4x4 matrix operations and point transforms
-  static/     bounded LRU cache
-  tiles/      Web Mercator tile addressing
-  lidar/      point-cloud inspection and Int32 quantization
-  planetary/ planned
-  compression/ planned codecs and chunk formats
-  renderer/   planned rendering runtime
-  shaders/    planned shader library
-  perf/       planned performance instrumentation
-  science/    planned provenance and uncertainty metadata
+  core/       runtime et registre logographique
+  geo/        validation et conversions de coordonnées
+  compute/    matrices 4×4 et transformations de points
+  static/     cache LRU borné
+  tiles/      adresses et bornes de tuiles Web Mercator
+  lidar/      inspection de nuages de points et quantification Int32
+  han/        parseurs de métadonnées Unihan et IDS CJKVI
+  react/      contexte React et hooks d'accès au runtime
 docs/
   architecture/
+  data/
   language/
   roadmap/
 ```
 
-## Current implementation
+## État fonctionnel actuel
 
-The initial functional foundation includes the six packages above. The modules are intentionally small and dependency-free so that the runtime can evolve toward browser workers, GPU execution, scientific datasets and static deployment.
+Les modules réellement présents fournissent les opérations suivantes :
 
-The LiDAR module currently accepts already-decoded point arrays. It does not yet parse LAS, LAZ or COPC files. Quantization is a preparation primitive, not a complete compression codec. Geographic conversion currently uses a configurable sphere rather than a full ellipsoidal geodesy implementation. Tile addressing uses Web Mercator.
+- **⌖ / ◎ / ⇄ — géométrie** : validation de coordonnées, normalisation de longitude et conversions sphériques/cartésiennes.
+- **⚙ / ⇄ — calcul** : matrice identité, multiplication matricielle 4×4 et transformation de points.
+- **点 / ⇣ — LiDAR** : inspection des bornes d'un tableau de points décodés et quantification Int32.
+- **▦ / ⌖ — tuiles** : adresse et bornes de tuiles Web Mercator.
+- **⧉ — cache** : cache LRU à capacité bornée.
+- **React** : provider de runtime et hooks d'intégration.
+- **Han** : parseurs de propriétés Unihan et de décompositions IDS CJKVI, avec sources et révisions documentées.
 
-## Development
+Les signes ☉, ☾, 地, ∿, ◈, ◉ et ⏱ sont définis dans le vocabulaire, mais ne constituent pas à eux seuls la preuve que des moteurs complets d'éphémérides, de terrain, de simulation d'ondes, de shaders, de rendu ou de profilage sont déjà disponibles.
 
-Requires Node.js 20+.
+### Limites scientifiques et formats
+
+Le module LiDAR accepte actuellement des tableaux de points déjà décodés. Il ne lit pas directement les fichiers LAS, LAZ ou COPC. La quantification est une primitive préparatoire, pas un codec complet. Les conversions géographiques actuelles utilisent une sphère configurable et ne constituent pas une géodésie ellipsoïdale complète. Le tuilage utilise Web Mercator.
+
+## Développement
+
+Node.js 20.19 ou supérieur.
 
 ```bash
 npm test
 ```
 
-## License
+Les scripts Vite sont déclarés dans le workspace ; une application de démonstration avec son point d'entrée devra être ajoutée avant de considérer `dev`, `build` et `preview` comme des commandes d'application prêtes à l'emploi.
 
-MIT, subject to separate third-party dataset and codec licences.
+## Licence
+
+MIT, sous réserve des licences distinctes des jeux de données, codecs et dépendances tierces.
