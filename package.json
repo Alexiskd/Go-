@@ -1,0 +1,15 @@
+{
+  "name": "spacereanode",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Static-first JavaScript engine for scientific 3D, geospatial and LiDAR computing",
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "test": "node --test packages/*/test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
