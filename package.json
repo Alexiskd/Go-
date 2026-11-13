@@ -4,12 +4,29 @@
   "private": true,
   "type": "module",
   "description": "Static-first JavaScript engine for scientific 3D, geospatial and LiDAR computing",
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "test": "node --test packages/*/test/*.test.js"
+    "test": "node --test packages/*/test/*.test.js",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20.19.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@react-three/fiber": "^9.8.2",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.0",
+    "typescript": "^6.0.0",
+    "vite": "^8.3.8",
+    "vitest": "^4.1.0"
+  }
 }
