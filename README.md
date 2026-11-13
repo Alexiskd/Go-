@@ -41,6 +41,8 @@ La spécification du langage et de la sémantique du runtime se trouve dans [doc
 
 Le programme de formalisation des **200 axes fonctionnels** est décrit dans [docs/architecture/200-axes-logographiques.md](docs/architecture/200-axes-logographiques.md).
 
+L'extension ajoute **3 000 axes supplémentaires** (AX-0201 à AX-3200), répartis en 60 domaines dans [docs/architecture/3000-axes-logographiques.md](docs/architecture/3000-axes-logographiques.md), soit 3 200 axes formalisés au total.
+
 ## Organisation du dépôt
 
 ```text
