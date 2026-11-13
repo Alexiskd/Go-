@@ -39,6 +39,8 @@ Aucun nouveau signe ne peut être utilisé avant son ajout explicite au registre
 
 La spécification du langage et de la sémantique du runtime se trouve dans [docs/language/runtime-semantics.md](docs/language/runtime-semantics.md).
 
+Le programme de formalisation des **200 axes fonctionnels** est décrit dans [docs/architecture/200-axes-logographiques.md](docs/architecture/200-axes-logographiques.md).
+
 ## Organisation du dépôt
 
 ```text
