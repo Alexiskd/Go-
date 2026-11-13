@@ -2,70 +2,68 @@
 
 **Static-first JavaScript engine for scientific 3D, planetary rendering, geospatial data and LiDAR.**
 
-SpacereaNode is an independent browser runtime. It is inspired by the composability of React, but it is not a UI framework and does not replace React. React (or vanilla JavaScript) can build the interface; SpacereaNode handles static data delivery, spatial streaming, 3D rendering, LiDAR point clouds, compression-aware datasets, shaders and performance budgets.
+SpacereaNode is an independent browser runtime. React or vanilla JavaScript can build the interface; SpacereaNode provides data, spatial, compute and rendering primitives.
 
 ## Core principles
 
-- Static-first: immutable, versioned assets served by static hosting/CDN.
-- Browser computing: workers and GPU perform runtime work when supported.
-- Preprocessing pipeline: expensive conversion, indexing and compression happen offline/build-time.
-- Progressive rendering: camera-aware culling, LOD and prioritized streaming.
-- Scientific traceability: source, licence, CRS, units, epoch and uncertainty travel with data.
-- Framework-agnostic: no dependency on React, Next.js or a backend framework in the core.
-- Graceful fallback: WebGL2 baseline, WebGPU optional, CPU fallback where practical.
+- Static-first delivery and immutable assets.
+- Browser computing with workers and GPU acceleration as later runtime layers.
+- Offline preprocessing for expensive conversion, indexing and compression.
+- Progressive rendering through culling, LOD and prioritized streaming.
+- Scientific traceability for source, licence, CRS, units, epoch and uncertainty.
+- Framework-agnostic modules with graceful fallbacks.
 
-## Planned subsystems
+## Logographic axioms
 
-| Subsystem | Purpose |
-|---|---|
-| Core | lifecycle, modules, events, capabilities |
-| Static | manifests, immutable assets, browser cache |
-| Compute | worker pool, task graph, transferable buffers |
-| Geo | CRS metadata, bounds, transforms |
-| Tiles | quadtree, octree, cube-sphere, screen-space LOD |
-| Planetary | body metadata, coordinates, imagery/elevation tiles |
-| LiDAR | LAS/LAZ/COPC adapters, hierarchy traversal, point rendering |
-| Compression | quantization, chunking, codec adapters, integrity |
-| Renderer | Three.js adapter, camera, geometry and resource lifecycle |
-| Shaders | terrain, hillshade, imagery blend, point classification |
-| Performance | frame metrics, memory/network budgets, adaptive quality |
-| Science | provenance, uncertainty, measured vs derived vs simulated data |
+The API and documentation use only the established vocabulary:
+
+| Sign | Canonical identifier | Concept |
+|---|---|---|
+| ☉ | SOLAR_BODY | Solar body |
+| ☾ | LUNAR_BODY | Lunar body |
+| ◎ | SPHERICAL_BODY | Spherical body |
+| ⌖ | COORDINATE | Coordinate |
+| 地 | TERRAIN | Terrain |
+| 点 | POINT_CLOUD | Point cloud |
+| ▦ | TILE | Tile |
+| ⇄ | TRANSFORM | Transform |
+| ∿ | WAVE | Wave / signal |
+| ◈ | SHADER | Shader |
+| ⧉ | CACHE | Cache |
+| ⇣ | COMPRESS | Compression |
+| ⚙ | COMPUTE | Compute |
+| ◉ | RENDER | Render |
+| ⏱ | PERFORMANCE | Performance |
+
+No new logographic sign may be used in a module before it is added to the central registry and documented. JavaScript identifiers and file paths remain ASCII for compatibility. Symbolic API access uses string keys such as `api["点"](...)`.
 
 ## Repository layout
 
 ```text
 packages/
-  core/
-  static/
-  compute/
-  geo/
-  tiles/
-  planetary/
-  lidar/
-  compression/
-  renderer/
-  shaders/
-  perf/
-  science/
-tools/
-  ingest/
-  validate/
+  core/       runtime and logograph registry
+  geo/        coordinate validation and spherical conversion
+  compute/    4x4 matrix operations and point transforms
+  static/     bounded LRU cache
+  tiles/      Web Mercator tile addressing
+  lidar/      point-cloud inspection and Int32 quantization
+  planetary/ planned
+  compression/ planned codecs and chunk formats
+  renderer/   planned rendering runtime
+  shaders/    planned shader library
+  perf/       planned performance instrumentation
+  science/    planned provenance and uncertainty metadata
 docs/
   architecture/
-  formats/
+  language/
   roadmap/
-examples/
-  static-globe/
-  lidar-viewer/
 ```
 
-## Current status
+## Current implementation
 
-This repository is the dedicated home of SpacereaNode. Initial commits establish the API and engineering contracts. The complete COPC/LAZ decoder, full 3D renderer, shader suite, worker pipeline and production compression codecs are staged for subsequent implementation; they are not implied to be complete by the initial scaffold.
+The initial functional foundation includes the six packages above. The modules are intentionally small and dependency-free so that the runtime can evolve toward browser workers, GPU execution, scientific datasets and static deployment.
 
-## Naming and international text
-
-Source files and identifiers use stable ASCII names for tooling compatibility. Documentation and metadata support Unicode, multilingual text, combining marks, symbols, scientific notation and historic/dead-language scripts when encoded in UTF-8. Dataset labels must preserve their original Unicode text; normalization is explicit and must not destroy source spelling.
+The LiDAR module currently accepts already-decoded point arrays. It does not yet parse LAS, LAZ or COPC files. Quantization is a preparation primitive, not a complete compression codec. Geographic conversion currently uses a configurable sphere rather than a full ellipsoidal geodesy implementation. Tile addressing uses Web Mercator.
 
 ## Development
 
@@ -77,4 +75,4 @@ npm test
 
 ## License
 
-MIT (subject to third-party dataset and codec licences; those remain separate).
+MIT, subject to separate third-party dataset and codec licences.
