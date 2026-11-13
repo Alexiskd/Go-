@@ -23,15 +23,11 @@ export function inspectPointCloud(points) {
 export function quantizePointCloud(points, { scale = 0.01, origin } = {}) {
   if (!Array.isArray(points)) throw new TypeError("Point cloud must be an array");
   if (!Number.isFinite(scale) || scale <= 0) throw new RangeError("Scale must be positive");
-  const base = origin ?? (points.length ? {
-    x: Math.min(...points.map(p => p.x)),
-    y: Math.min(...points.map(p => p.y)),
-    z: Math.min(...points.map(p => p.z))
-  } : { x: 0, y: 0, z: 0 });
+  const bounds = inspectPointCloud(points).bounds;
+  const base = origin ?? (bounds ? { x: bounds.min.x, y: bounds.min.y, z: bounds.min.z } : { x: 0, y: 0, z: 0 });
   if (!finitePoint(base)) throw new TypeError("Origin must contain finite x, y and z");
   const values = new Int32Array(points.length * 3);
   points.forEach((point, index) => {
-    if (!finitePoint(point)) throw new TypeError("Every point must contain finite x, y and z");
     for (const [offset, axis] of ["x", "y", "z"].entries()) {
       const value = Math.round((point[axis] - base[axis]) / scale);
       if (value < -2147483648 || value > 2147483647) throw new RangeError("Quantized coordinate exceeds Int32 range");
