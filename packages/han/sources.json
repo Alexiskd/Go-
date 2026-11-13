@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "unihan-review",
+      "repository": "https://github.com/unicode-org/unihan-database",
+      "branch": "main",
+      "role": "provisional-property-review",
+      "format": "tab-separated-text",
+      "license": "Unicode Terms of Use; see upstream LICENSE",
+      "note": "Review repository for provisional property changes, not the canonical complete Unihan release."
+    },
+    {
+      "id": "unihan-release",
+      "repository": "https://www.unicode.org/Public/UNIDATA/Unihan.zip",
+      "role": "official-release",
+      "format": "Unihan text files in ZIP",
+      "license": "Unicode license; verify the release-specific terms"
+    },
+    {
+      "id": "cjkvi-ids",
+      "repository": "https://github.com/cjkvi/cjkvi-ids",
+      "branch": "master",
+      "role": "ideographic-description-sequences",
+      "format": "tab-separated-text",
+      "license": "GPL-2.0 for most data; ids.txt follows CHISE terms; ids-ext-cdef.txt has a separate stated exception",
+      "note": "Preserve source file identity and licensing per file."
+    }
+  ]
+}
