@@ -5,9 +5,11 @@
       "id": "unihan-review",
       "repository": "https://github.com/unicode-org/unihan-database",
       "branch": "main",
+      "revision": "ac2495f629b2a75d045054c648ee7cabebd5f668",
       "role": "provisional-property-review",
       "format": "tab-separated-text",
       "license": "Unicode Terms of Use; see upstream LICENSE",
+      "specification": "https://www.unicode.org/reports/tr38/",
       "note": "Review repository for provisional property changes, not the canonical complete Unihan release."
     },
     {
@@ -15,12 +17,14 @@
       "repository": "https://www.unicode.org/Public/UNIDATA/Unihan.zip",
       "role": "official-release",
       "format": "Unihan text files in ZIP",
-      "license": "Unicode license; verify the release-specific terms"
+      "license": "Unicode license; verify the release-specific terms",
+      "specification": "https://www.unicode.org/reports/tr38/"
     },
     {
       "id": "cjkvi-ids",
       "repository": "https://github.com/cjkvi/cjkvi-ids",
       "branch": "master",
+      "revision": "86b4d16159f0079437870408f0ca186e529015db",
       "role": "ideographic-description-sequences",
       "format": "tab-separated-text",
       "license": "GPL-2.0 for most data; ids.txt follows CHISE terms; ids-ext-cdef.txt has a separate stated exception",
