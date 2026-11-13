@@ -26,11 +26,11 @@ Catalogue et représentation des corps du système solaire
 - **AX-001 — Identité canonique du corps.** Statut : À spécifier / implémenter.
 - **AX-002 — Hiérarchie étoile-planète-satellite.** Statut : À spécifier / implémenter.
 - **AX-003 — Paramètres physiques versionnés.** Statut : À spécifier / implémenter.
-- **AX-004 — Masse et paramètres gravitationnels.** Statut : Existant partiel.
-- **AX-005 — Rayon moyen et rayons de référence.** Statut : Existant partiel.
-- **AX-006 — Rotation et période sidérale.** Statut : Existant partiel.
-- **AX-007 — Orientation de l'axe de rotation.** Statut : Existant partiel.
-- **AX-008 — Système de référence du corps.** Statut : Existant partiel.
+- **AX-004 — Masse et paramètres gravitationnels.** Statut : À spécifier / implémenter.
+- **AX-005 — Rayon moyen et rayons de référence.** Statut : À spécifier / implémenter.
+- **AX-006 — Rotation et période sidérale.** Statut : À spécifier / implémenter.
+- **AX-007 — Orientation de l'axe de rotation.** Statut : À spécifier / implémenter.
+- **AX-008 — Système de référence du corps.** Statut : À spécifier / implémenter.
 - **AX-009 — Métadonnées de découverte et de nomenclature.** Statut : À spécifier / implémenter.
 - **AX-010 — Validation de cohérence des paramètres.** Statut : À spécifier / implémenter.
 
@@ -38,9 +38,9 @@ Catalogue et représentation des corps du système solaire
 
 Modélisation spécifique des lunes et de leurs relations
 
-- **AX-011 — Identité canonique du satellite.** Statut : Existant partiel.
-- **AX-012 — Corps parent et hiérarchie orbitale.** Statut : Existant partiel.
-- **AX-013 — Forme et dimensions de référence.** Statut : Existant partiel.
+- **AX-011 — Identité canonique du satellite.** Statut : À spécifier / implémenter.
+- **AX-012 — Corps parent et hiérarchie orbitale.** Statut : À spécifier / implémenter.
+- **AX-013 — Forme et dimensions de référence.** Statut : À spécifier / implémenter.
 - **AX-014 — Rotation synchrone ou non synchrone.** Statut : À spécifier / implémenter.
 - **AX-015 — Libration physique et optique.** Statut : À spécifier / implémenter.
 - **AX-016 — Repères sélénographiques.** Statut : À spécifier / implémenter.
@@ -53,8 +53,8 @@ Modélisation spécifique des lunes et de leurs relations
 
 Géométrie des surfaces et des corps approximés par une sphère
 
-- **AX-021 — Définition du rayon de référence.** Statut : Existant partiel.
-- **AX-022 — Conversion latitude-longitude-vecteur.** Statut : À spécifier / implémenter.
+- **AX-021 — Définition du rayon de référence.** Statut : À spécifier / implémenter.
+- **AX-022 — Conversion latitude-longitude-vecteur.** Statut : Existant partiel.
 - **AX-023 — Distance angulaire sur grand cercle.** Statut : À spécifier / implémenter.
 - **AX-024 — Calcul d'azimut et de site.** Statut : À spécifier / implémenter.
 - **AX-025 — Interpolation sur sphère.** Statut : À spécifier / implémenter.
@@ -70,7 +70,7 @@ Systèmes de coordonnées, référentiels et conversions
 
 - **AX-031 — Validation de latitude et longitude.** Statut : Existant partiel.
 - **AX-032 — Normalisation des longitudes.** Statut : Existant partiel.
-- **AX-033 — Conversion degrés-radians.** Statut : Existant partiel.
+- **AX-033 — Conversion degrés-radians.** Statut : À spécifier / implémenter.
 - **AX-034 — Transformation entre repères locaux.** Statut : À spécifier / implémenter.
 - **AX-035 — Transformation repère corps-inertiel.** Statut : À spécifier / implémenter.
 - **AX-036 — Gestion des époques de référence.** Statut : À spécifier / implémenter.
@@ -83,9 +83,9 @@ Systèmes de coordonnées, référentiels et conversions
 
 Surfaces, modèles numériques de terrain et topographie
 
-- **AX-041 — Chargement de modèles numériques de terrain.** Statut : Existant partiel.
-- **AX-042 — Échantillonnage d'altitude.** Statut : Existant partiel.
-- **AX-043 — Calcul de pente.** Statut : Existant partiel.
+- **AX-041 — Chargement de modèles numériques de terrain.** Statut : À spécifier / implémenter.
+- **AX-042 — Échantillonnage d'altitude.** Statut : À spécifier / implémenter.
+- **AX-043 — Calcul de pente.** Statut : À spécifier / implémenter.
 - **AX-044 — Calcul d'exposition.** Statut : À spécifier / implémenter.
 - **AX-045 — Calcul de normales de surface.** Statut : À spécifier / implémenter.
 - **AX-046 — Détection de ruptures de pente.** Statut : À spécifier / implémenter.
@@ -99,12 +99,12 @@ Surfaces, modèles numériques de terrain et topographie
 Traitement spatial de points et données LiDAR
 
 - **AX-051 — Validation du schéma XYZ.** Statut : À spécifier / implémenter.
-- **AX-052 — Inspection des bornes spatiales.** Statut : À spécifier / implémenter.
+- **AX-052 — Inspection des bornes spatiales.** Statut : Existant partiel.
 - **AX-053 — Comptage et statistiques de points.** Statut : À spécifier / implémenter.
 - **AX-054 — Filtrage par emprise spatiale.** Statut : À spécifier / implémenter.
 - **AX-055 — Filtrage par classe et attribut.** Statut : À spécifier / implémenter.
 - **AX-056 — Voxelisation et agrégation spatiale.** Statut : À spécifier / implémenter.
-- **AX-057 — Quantification entière avec échelle et offset.** Statut : À spécifier / implémenter.
+- **AX-057 — Quantification entière avec échelle et offset.** Statut : Existant partiel.
 - **AX-058 — Indexation spatiale des points.** Statut : À spécifier / implémenter.
 - **AX-059 — Décimation contrôlée par erreur.** Statut : À spécifier / implémenter.
 - **AX-060 — Préparation des lots pour rendu progressif.** Statut : À spécifier / implémenter.
@@ -113,8 +113,8 @@ Traitement spatial de points et données LiDAR
 
 Découpage, adressage et diffusion de données spatiales
 
-- **AX-061 — Adressage XYZ de tuiles.** Statut : À spécifier / implémenter.
-- **AX-062 — Calcul des bornes géographiques d'une tuile.** Statut : À spécifier / implémenter.
+- **AX-061 — Adressage XYZ de tuiles.** Statut : Existant partiel.
+- **AX-062 — Calcul des bornes géographiques d'une tuile.** Statut : Existant partiel.
 - **AX-063 — Conversion niveau de zoom-colonne-ligne.** Statut : À spécifier / implémenter.
 - **AX-064 — Découpage d'une emprise en tuiles.** Statut : À spécifier / implémenter.
 - **AX-065 — Gestion des limites et débordements.** Statut : À spécifier / implémenter.
@@ -130,7 +130,7 @@ Transformations géométriques et changements de repères
 
 - **AX-071 — Matrice identité.** Statut : Existant partiel.
 - **AX-072 — Multiplication de matrices homogènes.** Statut : Existant partiel.
-- **AX-073 — Transformation de points 3D.** Statut : À spécifier / implémenter.
+- **AX-073 — Transformation de points 3D.** Statut : Existant partiel.
 - **AX-074 — Transformation de directions et vecteurs.** Statut : À spécifier / implémenter.
 - **AX-075 — Composition de transformations.** Statut : À spécifier / implémenter.
 - **AX-076 — Inversion contrôlée de matrice.** Statut : À spécifier / implémenter.
@@ -143,9 +143,9 @@ Transformations géométriques et changements de repères
 
 Représentation et analyse de signaux physiques
 
-- **AX-081 — Représentation temporelle d'un signal.** Statut : Existant partiel.
-- **AX-082 — Échantillonnage et fréquence.** Statut : Existant partiel.
-- **AX-083 — Interpolation temporelle.** Statut : Existant partiel.
+- **AX-081 — Représentation temporelle d'un signal.** Statut : À spécifier / implémenter.
+- **AX-082 — Échantillonnage et fréquence.** Statut : À spécifier / implémenter.
+- **AX-083 — Interpolation temporelle.** Statut : À spécifier / implémenter.
 - **AX-084 — Transformée de Fourier discrète.** Statut : À spécifier / implémenter.
 - **AX-085 — Analyse spectrale.** Statut : À spécifier / implémenter.
 - **AX-086 — Filtrage passe-bas et passe-haut.** Statut : À spécifier / implémenter.
@@ -173,7 +173,7 @@ Contrats de shaders et préparation des ressources GPU
 
 Mise en cache déterministe et cycle de vie des ressources
 
-- **AX-101 — Cache LRU à capacité bornée.** Statut : À spécifier / implémenter.
+- **AX-101 — Cache LRU à capacité bornée.** Statut : Existant partiel.
 - **AX-102 — Clés de cache canoniques.** Statut : À spécifier / implémenter.
 - **AX-103 — Politique d'expiration temporelle.** Statut : À spécifier / implémenter.
 - **AX-104 — Invalidation par version de ressource.** Statut : À spécifier / implémenter.
@@ -188,7 +188,7 @@ Mise en cache déterministe et cycle de vie des ressources
 
 Réduction de volume, quantification et sérialisation
 
-- **AX-111 — Quantification XYZ avec précision déclarée.** Statut : Existant partiel.
+- **AX-111 — Quantification XYZ avec précision déclarée.** Statut : À spécifier / implémenter.
 - **AX-112 — Choix d'échelle et d'offset.** Statut : À spécifier / implémenter.
 - **AX-113 — Encodage delta de séquences.** Statut : À spécifier / implémenter.
 - **AX-114 — Compression de blocs indépendants.** Statut : À spécifier / implémenter.
@@ -218,8 +218,8 @@ Primitives numériques et calculs déterministes
 
 Pipeline de rendu, visibilité et présentation
 
-- **AX-131 — Initialisation du contexte de rendu.** Statut : Existant partiel.
-- **AX-132 — Gestion de la caméra et du frustum.** Statut : Existant partiel.
+- **AX-131 — Initialisation du contexte de rendu.** Statut : À spécifier / implémenter.
+- **AX-132 — Gestion de la caméra et du frustum.** Statut : À spécifier / implémenter.
 - **AX-133 — Tri des objets par visibilité.** Statut : À spécifier / implémenter.
 - **AX-134 — Élimination des objets hors champ.** Statut : À spécifier / implémenter.
 - **AX-135 — Gestion des matériaux et textures.** Statut : À spécifier / implémenter.
