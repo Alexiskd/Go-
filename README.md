@@ -41,7 +41,7 @@ La spécification du langage et de la sémantique du runtime se trouve dans [doc
 
 Le programme de formalisation des **200 axes fonctionnels** est décrit dans [docs/architecture/200-axes-logographiques.md](docs/architecture/200-axes-logographiques.md).
 
-L'extension ajoute **3 000 axes supplémentaires** (AX-0201 à AX-3200), répartis en 60 domaines dans [docs/architecture/3000-axes-logographiques.md](docs/architecture/3000-axes-logographiques.md), soit 3 200 axes formalisés au total.
+Le catalogue de conception est désormais porté à **100 000 éléments** : 60 000 petites fonctions (L1), 19 995 grandes fonctions (L2), 15 000 petits axes (L3) et 5 005 grands axes (L4). Les 15 familles sémantiques et leurs noms de fonctions JavaScript sont indexés dans [docs/architecture/100000-elements-logographiques.md](docs/architecture/100000-elements-logographiques.md) et détaillés dans [docs/logographic-catalog/](docs/logographic-catalog/). Les anciens catalogues de 200 et 3 000 axes sont conservés comme historique de conception.
 
 ## Organisation du dépôt
 
