@@ -1,20 +1,35 @@
-# Blueprint Render : déploie l'API de référence GO- (apps/playground).
+# Blueprint Render : déploie l'API de référence GO- (apps/playground) une seule fois.
+# Ensuite, @go-/hot met le service à jour à chaud à chaque fusion dans main et lance une preview
+# par PR, sans redéploiement Render (autoDeployTrigger: off). Voir docs/live.md.
 # Les submodules de stacks/ ne sont pas clonés : le build n'en dépend pas.
 services:
   - type: web
     name: go-playground-api
     runtime: node
-    plan: free
-    buildCommand: npm install --no-audit --no-fund --include=dev && npm run build
-    startCommand: node apps/playground/dist/main.js
+    # Starter minimum : les mises à jour compilent sur l'instance (mémoire) et la bascule exige qu'elle reste allumée.
+    plan: starter
+    autoDeployTrigger: off
+    buildCommand: npm install --include=dev --no-audit --no-fund && npm run build
+    startCommand: node packages/hot/dist/bin.js
     healthCheckPath: /api/v1/health
+    maxShutdownDelaySeconds: 30
     envVars:
       - key: NODE_ENV
         value: production
       - key: NODE_VERSION
         value: "22"
-      - key: API_PORT
-        value: "10000"
+      # Superviseur @go-/hot
+      - key: GO_HOT_START
+        value: node apps/playground/dist/main.js
+      - key: GO_HOT_WEBHOOK_SECRET
+        generateValue: true
+      # Jeton GitHub en lecture seule (Contents: read), obligatoire si le dépôt est privé.
+      - key: GO_HOT_GIT_TOKEN
+        sync: false
+      # Auteurs dont les PR ont une preview (ex. Alexiskd). Vide : tous les auteurs du dépôt (jamais les forks).
+      - key: GO_HOT_ALLOWED_AUTHORS
+        sync: false
+      # Application
       - key: API_JWT_SECRET
         generateValue: true
       - key: API_ADMIN_EMAIL

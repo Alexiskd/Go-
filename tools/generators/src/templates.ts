@@ -2,7 +2,7 @@ import { camelCase, constantCase, kebabCase, pascalCase } from '@go-/shared';
 import { toJson, type GeneratedFile } from './fs.js';
 
 export const GO_VERSION = '^0.1.0';
-export const GO_PACKAGES = ['types', 'shared', 'core', 'config', 'contracts', 'runtime', 'security', 'api-client', 'testing', 'generators', 'cli'] as const;
+export const GO_PACKAGES = ['types', 'shared', 'core', 'config', 'contracts', 'runtime', 'security', 'api-client', 'testing', 'hot', 'generators', 'cli'] as const;
 export type GoPackage = (typeof GO_PACKAGES)[number];
 
 /** Résout la version d'un package GO- (registre npm par défaut, chemin local pour le développement). */
@@ -77,13 +77,38 @@ export function workspaceTemplate({ name, resolve = npmResolver }: WorkspaceTemp
           start: 'node apps/api/dist/main.js',
           doctor: 'go- doctor',
         },
-        devDependencies: { '@go-/cli': resolve('cli'), '@types/node': '^22.10.0', typescript: '^7.0.2' },
+        devDependencies: { '@go-/cli': resolve('cli'), '@go-/hot': resolve('hot'), '@types/node': '^22.10.0', typescript: '^7.0.2' },
       }),
     },
     { path: 'tsconfig.base.json', content: toJson(TSCONFIG_BASE) },
     { path: 'tsconfig.json', content: toJson({ files: [], references: [{ path: 'packages/contracts' }, { path: 'apps/api' }] }) },
     { path: '.gitignore', content: 'node_modules/\ndist/\n*.tsbuildinfo\n.env\n.env.local\n.env.*.local\n' },
     { path: '.nvmrc', content: '22\n' },
+    {
+      path: 'render.yaml',
+      content: `# Render : un seul déploiement, ensuite mises à jour à chaud par @go-/hot (voir README GO-, docs/live.md).
+services:
+  - type: web
+    name: ${slug}
+    runtime: node
+    plan: starter
+    autoDeployTrigger: off
+    buildCommand: npm install --include=dev --no-audit --no-fund && npm run build
+    startCommand: npx go-hot
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "22"
+      - key: GO_HOT_START
+        value: node apps/api/dist/main.js
+      - key: GO_HOT_WEBHOOK_SECRET
+        generateValue: true
+      - key: GO_HOT_GIT_TOKEN
+        sync: false
+`,
+    },
     {
       path: 'README.md',
       content: `# ${slug}
@@ -186,6 +211,8 @@ export function createModules(options: { port: number; host: string }): GoModule
       host: options.host,
       server: () => ({
         contract,
+        // Rechargement automatique des pages ouvertes à chaque nouvelle version en ligne.
+        live: true,
         handlers: {
           health: () => ({ status: 'ok' as const }),
           hello: ({ query }) => ({ message: \`Bonjour, \${query.name} !\` }),

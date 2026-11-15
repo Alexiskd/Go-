@@ -1,6 +1,6 @@
 import { GoError, NotFoundError, type App, type GoModule } from '@go-/core';
 import { apiV1, pageMeta, toOpenApi } from '@go-/contracts';
-import { httpModule, type ContractHandlers } from '@go-/runtime';
+import { deploymentInfo, httpModule, type ContractHandlers } from '@go-/runtime';
 import { createCorsPolicy, createRateLimiter, generateSecret, securityHeaders } from '@go-/security';
 import type { Infer } from '@go-/shared';
 import type { Environment } from '@go-/types';
@@ -10,7 +10,8 @@ import { USER_SERVICE, toUserDto, usersModule } from './users.js';
 
 export type ApiConfig = Infer<(typeof apiConfig)['schema']>;
 
-const VERSION = '0.1.0';
+/** Version déployée (commit Git sur Render, ou fixée par @go-/hot). */
+const deployment = deploymentInfo();
 
 /** Implémentation du contrat v1 : chaque handler reçoit des entrées déjà validées. */
 export function createHandlers(app: App): ContractHandlers<typeof apiV1> {
@@ -18,7 +19,7 @@ export function createHandlers(app: App): ContractHandlers<typeof apiV1> {
   const auth = () => app.container.resolve(AUTH_SERVICE);
   const startedAt = Date.now();
   return {
-    health: () => ({ status: 'ok', version: VERSION, uptime: Math.round((Date.now() - startedAt) / 1000), checks: [{ name: 'users', ok: true }] }),
+    health: () => ({ status: 'ok', version: deployment.version, uptime: Math.round((Date.now() - startedAt) / 1000), checks: [{ name: 'users', ok: true }] }),
     login: ({ body }) => auth().login(body.email, body.password),
     me: async (_input, ctx) => {
       const user = await users().get(ctx.principal!.id);
@@ -74,6 +75,8 @@ export function apiModules(config: ApiConfig, env: Environment, warn: (msg: stri
           }
         },
         extraRoutes: { 'GET /openapi.json': () => openapi },
+        // Les pages ouvertes se rechargent dès qu'une nouvelle version est en ligne.
+        live: deployment,
       }),
     }),
   ];
