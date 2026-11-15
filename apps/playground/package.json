@@ -1,0 +1,34 @@
+{
+  "name": "@go-/playground",
+  "version": "0.1.0",
+  "description": "Application de référence GO- : API v1 complète (auth, utilisateurs, permissions) sur le runtime GO-",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/main.js",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexiskd/Go-.git",
+    "directory": "apps/playground"
+  },
+  "dependencies": {
+    "@go-/types": "^0.1.0",
+    "@go-/shared": "^0.1.0",
+    "@go-/core": "^0.1.0",
+    "@go-/config": "^0.1.0",
+    "@go-/contracts": "^0.1.0",
+    "@go-/runtime": "^0.1.0",
+    "@go-/security": "^0.1.0"
+  },
+  "private": true,
+  "scripts": {
+    "start": "node dist/main.js",
+    "dev": "node --watch dist/main.js"
+  },
+  "devDependencies": {
+    "@go-/api-client": "^0.1.0",
+    "@go-/testing": "^0.1.0"
+  }
+}
