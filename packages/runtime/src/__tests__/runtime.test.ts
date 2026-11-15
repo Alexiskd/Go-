@@ -237,3 +237,14 @@ test('live : version déployée, flux SSE, en-tête X-Go-Version, fermeture des 
   }
   assert.match(rest, /event: shutdown/);
 });
+
+test('serveur HTTP : HEAD répond comme GET, sans corps', async (t) => {
+  const c = defineContract({ name: 'h', version: 'v1', basePath: '', endpoints: { ping: defineEndpoint({ method: 'GET', path: '/ping', summary: 'p', response: s.object({ ok: s.boolean() }) }) } });
+  const http = createHttpServer({ contract: c, logger: silent().logger, handlers: { ping: () => ({ ok: true }) } });
+  const { url } = await http.listen(0, '127.0.0.1');
+  t.after(() => http.close());
+  const res = await fetch(url + '/ping', { method: 'HEAD' });
+  assert.equal(res.status, 200);
+  assert.equal(res.headers.get('content-length'), String(JSON.stringify({ ok: true }).length));
+  assert.equal(await res.text(), '');
+});

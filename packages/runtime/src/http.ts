@@ -203,7 +203,9 @@ export function createHttpServer<C extends ContractSpec>(options: HttpServerOpti
     const incomingId = req.headers['x-request-id'];
     const requestId = typeof incomingId === 'string' && SAFE_REQUEST_ID.test(incomingId) ? incomingId : randomUUID();
     const url = new URL(req.url ?? '/', 'http://localhost');
-    const method = (req.method ?? 'GET').toUpperCase();
+    // HEAD est traité comme GET, sans corps (sondes de santé, vérifications de liens).
+    const isHead = (req.method ?? '').toUpperCase() === 'HEAD';
+    const method = isHead ? 'GET' : (req.method ?? 'GET').toUpperCase();
     const origin = req.headers.origin;
     const abort = new AbortController();
     res.on('close', () => !res.writableFinished && abort.abort());
@@ -262,7 +264,7 @@ export function createHttpServer<C extends ContractSpec>(options: HttpServerOpti
       }
       if (vary.size) headers.Vary = [...vary].join(', ');
       if (payload) headers['Content-Length'] = String(payload.length);
-      res.writeHead(status, headers).end(payload);
+      res.writeHead(status, headers).end(isHead ? undefined : payload);
       if (reqLogger.isEnabled('info')) {
         reqLogger.info(`${method} ${url.pathname} ${status}`, { durationMs: Math.round(performance.now() - started) });
       }
