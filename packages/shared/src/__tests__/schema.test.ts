@@ -60,3 +60,12 @@ test('les défauts mutables ne sont pas partagés entre deux parse', () => {
   a.list.push('x');
   assert.deepEqual(S.parse({}).list, []);
 });
+
+test('coerceFromString convertit selon le schéma', async () => {
+  const { coerceFromString } = await import('../index.js');
+  assert.equal(coerceFromString('42', s.number().int().default(1)), 42);
+  assert.equal(coerceFromString('abc', s.number()), 'abc');
+  assert.equal(coerceFromString('off', s.boolean().optional()), false);
+  assert.deepEqual(coerceFromString('a, b,', s.array(s.string())), ['a', 'b']);
+  assert.equal(coerceFromString('x', s.string()), 'x');
+});

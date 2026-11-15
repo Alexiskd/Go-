@@ -416,3 +416,38 @@ export const s = {
   object: <S extends Shape>(shape: S) => new ObjectSchema(shape),
   union: <const T extends readonly Schema<any>[]>(...options: T) => new UnionSchema(options),
 };
+
+/** Retire les enveloppes optional / nullable / default pour obtenir le schéma porteur du type. */
+export function innerSchema(schema: Schema<unknown>): Schema<unknown> {
+  return schema instanceof OptionalSchema || schema instanceof NullableSchema || schema instanceof DefaultSchema
+    ? innerSchema(schema.inner as Schema<unknown>)
+    : schema;
+}
+
+/**
+ * Convertit une valeur texte (variable d'environnement, paramètre d'URL) selon le type attendu.
+ * Une valeur non convertible est renvoyée telle quelle : la validation produira l'erreur.
+ */
+export function coerceFromString(raw: string, schema: Schema<unknown>): unknown {
+  const inner = innerSchema(schema);
+  switch (inner.kind) {
+    case 'number': {
+      const n = Number(raw);
+      return raw.trim() === '' || Number.isNaN(n) ? raw : n;
+    }
+    case 'boolean':
+      if (/^(true|1|yes|on)$/i.test(raw)) return true;
+      if (/^(false|0|no|off)$/i.test(raw)) return false;
+      return raw;
+    case 'array':
+      return raw.split(',').map((x) => x.trim()).filter(Boolean);
+    case 'object':
+      try {
+        return JSON.parse(raw);
+      } catch {
+        return raw;
+      }
+    default:
+      return raw;
+  }
+}

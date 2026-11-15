@@ -1,7 +1,5 @@
 import { ConfigError } from '@go-/core';
-import {
-  DefaultSchema, NullableSchema, ObjectSchema, OptionalSchema, constantCase, deepFreeze, type Infer, type Schema, type Shape,
-} from '@go-/shared';
+import { ObjectSchema, coerceFromString, constantCase, deepFreeze, type Infer, type Shape } from '@go-/shared';
 import { isEnvironment, type Environment } from '@go-/types';
 
 export interface LoadConfigOptions {
@@ -20,36 +18,6 @@ export interface ConfigDefinition<S extends Shape> {
   load(options?: LoadConfigOptions): Readonly<Infer<ObjectSchema<S>>>;
   /** Nom de variable d'environnement associé à chaque clé. */
   envKeys(prefix?: string): Record<keyof S & string, string>;
-}
-
-const unwrap = (schema: Schema<unknown>): Schema<unknown> =>
-  schema instanceof OptionalSchema || schema instanceof NullableSchema || schema instanceof DefaultSchema
-    ? unwrap(schema.inner as Schema<unknown>)
-    : schema;
-
-/** Convertit une variable texte selon le type attendu par le schéma. */
-function coerce(raw: string, schema: Schema<unknown>): unknown {
-  const inner = unwrap(schema);
-  switch (inner.kind) {
-    case 'number': {
-      const n = Number(raw);
-      return raw.trim() === '' || Number.isNaN(n) ? raw : n;
-    }
-    case 'boolean':
-      if (/^(true|1|yes|on)$/i.test(raw)) return true;
-      if (/^(false|0|no|off)$/i.test(raw)) return false;
-      return raw;
-    case 'array':
-      return raw.split(',').map((x) => x.trim()).filter(Boolean);
-    case 'object':
-      try {
-        return JSON.parse(raw);
-      } catch {
-        return raw;
-      }
-    default:
-      return raw;
-  }
 }
 
 /**
@@ -74,7 +42,7 @@ export function defineConfig<S extends Shape>(shape: S, options: { secrets?: Rea
       const input: Record<string, unknown> = {};
       for (const [key, sub] of Object.entries(shape)) {
         const raw = env[keys[key as keyof S & string]];
-        if (raw !== undefined) input[key] = coerce(raw, sub);
+        if (raw !== undefined) input[key] = coerceFromString(raw, sub);
       }
       Object.assign(input, loadOptions.overrides);
       const result = schema.safeParse(input);
