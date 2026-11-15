@@ -19,6 +19,11 @@ export interface EndpointSpec {
   readonly response: Schema<any>;
   /** Statut HTTP de succès (défaut 200). */
   readonly status?: number;
+  /**
+   * En-tête Cache-Control de la réponse réussie, ex. `public, max-age=60, stale-while-revalidate=300`
+   * pour des données publiques peu changeantes. Défaut : `no-store` (`private, no-store` si authentifié).
+   */
+  readonly cacheControl?: string;
 }
 
 type InputPart<K extends string, S> = S extends Schema<any> ? { [P in K]: Infer<S> } : {};

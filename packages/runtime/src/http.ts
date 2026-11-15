@@ -1,5 +1,8 @@
 import { randomUUID } from 'node:crypto';
+import { createHash } from 'node:crypto';
 import { createServer, type IncomingMessage, type Server, type ServerResponse } from 'node:http';
+import { promisify } from 'node:util';
+import { brotliCompress, constants as zlib, gzip } from 'node:zlib';
 import type { AddressInfo } from 'node:net';
 import { ForbiddenError, GoError, UnauthorizedError, ValidationError, toGoError, type Logger } from '@go-/core';
 import type { ContractSpec, EndpointInput, EndpointOutput, EndpointSpec } from '@go-/contracts';
@@ -54,16 +57,69 @@ export interface HttpServerOptions<C extends ContractSpec> {
   extraRoutes?: Record<string, (ctx: RequestContext) => Awaitable<unknown>>;
   /** Appelé avant chaque requête (limitation de débit…) ; lever une GoError pour refuser. */
   beforeRequest?: (req: IncomingMessage, ctx: RequestContext) => Awaitable<void>;
+  /**
+   * Compression des réponses JSON (brotli ou gzip selon Accept-Encoding) au-delà de `threshold` octets.
+   * Défaut : activée, seuil 1 024 octets. `false` pour la désactiver (ex. derrière un proxy qui compresse).
+   */
+  compression?: boolean | { threshold?: number };
+  /** ETag faible + réponse 304 sur les GET réussis (défaut true). */
+  etag?: boolean;
 }
 
 interface Route {
   name: string;
   endpoint: EndpointSpec;
+  /** Chemin complet (basePath + path). */
+  path: string;
   regex: RegExp;
   keys: string[];
 }
 
 const SAFE_REQUEST_ID = /^[A-Za-z0-9._-]{1,128}$/;
+const brotli = promisify(brotliCompress);
+const gzipAsync = promisify(gzip);
+
+/** Choix de l'encodage : brotli (qualité 4, rapide) en priorité, sinon gzip. */
+function pickEncoding(accept: string | undefined): 'br' | 'gzip' | undefined {
+  if (!accept) return undefined;
+  if (/\bbr\b/.test(accept)) return 'br';
+  if (/\bgzip\b/.test(accept)) return 'gzip';
+  return undefined;
+}
+
+const etagOf = (body: Buffer) => `W/"${createHash('sha1').update(body).digest('base64url')}"`;
+
+function etagMatches(header: string | undefined, etag: string): boolean {
+  if (!header) return false;
+  return header.split(',').some((t) => {
+    const v = t.trim();
+    return v === '*' || v === etag || v.replace(/^W\//, '') === etag.replace(/^W\//, '');
+  });
+}
+
+/** Index des routes : accès direct pour les chemins fixes, liste par méthode pour les chemins à paramètres. */
+function indexRoutes(routes: Route[]) {
+  const fixed = new Map<string, Route>();
+  const dynamic = new Map<string, Route[]>();
+  for (const r of routes) {
+    if (r.keys.length === 0) fixed.set(`${r.endpoint.method} ${r.path}`, r);
+    else {
+      const list = dynamic.get(r.endpoint.method) ?? [];
+      list.push(r);
+      dynamic.set(r.endpoint.method, list);
+    }
+  }
+  return (method: string, pathname: string): { route: Route; match: RegExpExecArray | null } | undefined => {
+    const normalized = pathname.length > 1 && pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
+    const direct = fixed.get(`${method} ${normalized}`);
+    if (direct) return { route: direct, match: null };
+    for (const r of dynamic.get(method) ?? []) {
+      const match = r.regex.exec(pathname);
+      if (match) return { route: r, match };
+    }
+    return undefined;
+  };
+}
 
 function compile(contract: ContractSpec): Route[] {
   return Object.entries(contract.endpoints).map(([name, endpoint]) => {
@@ -74,7 +130,7 @@ function compile(contract: ContractSpec): Route[] {
         keys.push(k);
         return '([^/]+)';
       });
-    return { name, endpoint, keys, regex: new RegExp(`^${pattern}/?$`) };
+    return { name, endpoint, keys, path: contract.basePath + endpoint.path, regex: new RegExp(`^${pattern}/?$`) };
   });
 }
 
@@ -125,7 +181,9 @@ export interface GoHttpServer {
  */
 export function createHttpServer<C extends ContractSpec>(options: HttpServerOptions<C>): GoHttpServer {
   const routes = compile(options.contract);
-  const { logger, bodyLimitBytes = 1_048_576, validateResponses = true } = options;
+  const findRoute = indexRoutes(routes);
+  const { logger, bodyLimitBytes = 1_048_576, validateResponses = true, etag = true } = options;
+  const threshold = options.compression === false ? Infinity : (typeof options.compression === 'object' ? options.compression.threshold : undefined) ?? 1024;
   const needsAuthorize = routes.some((r) => typeof r.endpoint.auth === 'string');
   if (needsAuthorize && !options.authorize) throw new Error('Le contrat déclare des permissions : fournir `authorize`');
   if (routes.some((r) => r.endpoint.auth) && !options.authenticate) throw new Error('Le contrat exige une authentification : fournir `authenticate`');
@@ -157,40 +215,58 @@ export function createHttpServer<C extends ContractSpec>(options: HttpServerOpti
       setHeader: (name, value) => void (extraHeaders[name] = value),
     };
 
-    const send = (status: number, body: unknown, preflight = false) => {
+    const send = async (status: number, body: unknown, preflight = false, cacheControl = 'no-store') => {
+      const cors = options.cors?.headers(origin, preflight);
       const headers: Record<string, string> = {
         ...options.headers,
-        ...options.cors?.headers(origin, preflight),
+        ...cors,
         ...extraHeaders,
         'X-Request-Id': requestId,
-        'Cache-Control': 'no-store',
+        'Cache-Control': cacheControl,
       };
-      if (body === undefined) {
-        res.writeHead(status, headers).end();
-      } else {
-        res.writeHead(status, { ...headers, 'Content-Type': 'application/json; charset=utf-8' }).end(JSON.stringify(body));
+      const vary = new Set((headers.Vary ?? '').split(',').map((v) => v.trim()).filter(Boolean));
+      let payload: Buffer | undefined;
+      if (body !== undefined) {
+        payload = Buffer.from(JSON.stringify(body));
+        headers['Content-Type'] = 'application/json; charset=utf-8';
+        if (etag && method === 'GET' && status === 200) {
+          const tag = etagOf(payload);
+          headers.ETag = tag;
+          if (etagMatches(req.headers['if-none-match'] as string | undefined, tag)) {
+            status = 304;
+            payload = undefined;
+            delete headers['Content-Type'];
+          }
+        }
+        if (payload && payload.length >= threshold) {
+          vary.add('Accept-Encoding');
+          const encoding = pickEncoding(req.headers['accept-encoding'] as string | undefined);
+          if (encoding) {
+            payload = encoding === 'br'
+              ? await brotli(payload, { params: { [zlib.BROTLI_PARAM_QUALITY]: 4, [zlib.BROTLI_PARAM_SIZE_HINT]: payload.length } })
+              : await gzipAsync(payload, { level: 5 });
+            headers['Content-Encoding'] = encoding;
+          }
+        }
       }
-      reqLogger.info(`${method} ${url.pathname} ${status}`, { durationMs: Math.round(performance.now() - started) });
+      if (vary.size) headers.Vary = [...vary].join(', ');
+      if (payload) headers['Content-Length'] = String(payload.length);
+      res.writeHead(status, headers).end(payload);
+      if (reqLogger.isEnabled('info')) {
+        reqLogger.info(`${method} ${url.pathname} ${status}`, { durationMs: Math.round(performance.now() - started) });
+      }
     };
 
     try {
-      if (method === 'OPTIONS') return send(204, undefined, true);
+      if (method === 'OPTIONS') return await send(204, undefined, true);
       await options.beforeRequest?.(req, ctx);
 
       const extra = options.extraRoutes?.[`${method} ${url.pathname}`];
-      if (extra) return send(200, await extra(ctx));
+      if (extra) return await send(200, await extra(ctx));
 
-      let route: Route | undefined;
-      let match: RegExpExecArray | null = null;
-      for (const r of routes) {
-        if (r.endpoint.method !== method) continue;
-        match = r.regex.exec(url.pathname);
-        if (match) {
-          route = r;
-          break;
-        }
-      }
-      if (!route || !match) throw new GoError('NOT_FOUND', `Route introuvable : ${method} ${url.pathname}`);
+      const found = findRoute(method, url.pathname);
+      if (!found) throw new GoError('NOT_FOUND', `Route introuvable : ${method} ${url.pathname}`);
+      const { route, match } = found;
       const { endpoint } = route;
 
       if (endpoint.auth) {
@@ -205,7 +281,7 @@ export function createHttpServer<C extends ContractSpec>(options: HttpServerOpti
 
       const input: Record<string, unknown> = {};
       if (endpoint.params) {
-        const raw = Object.fromEntries(route.keys.map((k, i) => [k, decodeURIComponent(match![i + 1]!)]));
+        const raw = Object.fromEntries(route.keys.map((k, i) => [k, decodeURIComponent(match?.[i + 1] ?? '')]));
         const r = endpoint.params.safeParse(parseStrings(raw, endpoint.params));
         if (!r.ok) throw validationError('params', r.error);
         input.params = r.value;
@@ -232,17 +308,20 @@ export function createHttpServer<C extends ContractSpec>(options: HttpServerOpti
         }
         body = r.value;
       }
-      send(endpoint.status ?? 200, body);
+      await send(endpoint.status ?? 200, body, false, endpoint.cacheControl ?? (endpoint.auth ? 'private, no-store' : 'no-store'));
     } catch (error) {
       const goError = toGoError(error);
       if (goError.status >= 500) reqLogger.error('erreur serveur', { error });
-      if (!res.headersSent) send(goError.status, goError.toPayload(requestId));
+      if (!res.headersSent) await send(goError.status, goError.toPayload(requestId));
       else res.destroy();
     }
   };
 
   const server = createServer((req, res) => void handle(req, res));
-  server.headersTimeout = 30_000;
+  // Keep-alive plus long que celui des répartiteurs de charge (Render, AWS ALB : 60 s)
+  // pour éviter les 502 dus à une connexion fermée côté serveur pendant sa réutilisation.
+  server.keepAliveTimeout = 65_000;
+  server.headersTimeout = 66_000;
   server.requestTimeout = 60_000;
 
   return {

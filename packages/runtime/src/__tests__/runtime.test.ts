@@ -135,3 +135,73 @@ test('bootstrap + httpModule : configuration depuis .env, démarrage et arrêt',
   await app.stop();
   assert.equal(app.container.resolve(HTTP_SERVER).server.listening, false);
 });
+
+test('serveur HTTP : compression, ETag/304, Cache-Control, chemins avec / final', async (t) => {
+  const { gunzipSync, brotliDecompressSync } = await import('node:zlib');
+  const { request } = await import('node:http');
+  const big = { items: Array.from({ length: 300 }, (_, i) => ({ name: `astre-${i}` })) };
+  const c = defineContract({
+    name: 'perf', version: 'v1', basePath: '/api',
+    endpoints: {
+      list: defineEndpoint({ method: 'GET', path: '/list', summary: 'l', response: s.object({ items: s.array(s.object({ name: s.string() })) }), cacheControl: 'public, max-age=60' }),
+      small: defineEndpoint({ method: 'GET', path: '/small', summary: 's', response: s.object({ ok: s.boolean() }) }),
+    },
+  });
+  const http = createHttpServer({ contract: c, logger: silent().logger, handlers: { list: () => big, small: () => ({ ok: true }) } });
+  const { port } = await http.listen(0, '127.0.0.1');
+  t.after(() => http.close());
+  // Requête brute : fetch décompresserait automatiquement.
+  const raw = (path: string, headers: Record<string, string> = {}) =>
+    new Promise<{ status: number; headers: Record<string, string | string[] | undefined>; body: Buffer }>((resolve, reject) => {
+      request({ host: '127.0.0.1', port, path, headers }, (res) => {
+        const chunks: Buffer[] = [];
+        res.on('data', (x: Buffer) => chunks.push(x));
+        res.on('end', () => resolve({ status: res.statusCode!, headers: res.headers, body: Buffer.concat(chunks) }));
+      }).on('error', reject).end();
+    });
+
+  const br = await raw('/api/list', { 'accept-encoding': 'gzip, deflate, br' });
+  assert.equal(br.headers['content-encoding'], 'br');
+  assert.equal(br.headers['vary'], 'Accept-Encoding');
+  assert.equal(br.headers['cache-control'], 'public, max-age=60');
+  assert.deepEqual(JSON.parse(brotliDecompressSync(br.body).toString()), big);
+  assert.ok(br.body.length < JSON.stringify(big).length / 4);
+
+  const gz = await raw('/api/list', { 'accept-encoding': 'gzip' });
+  assert.equal(gz.headers['content-encoding'], 'gzip');
+  assert.deepEqual(JSON.parse(gunzipSync(gz.body).toString()), big);
+
+  const plain = await raw('/api/list');
+  assert.equal(plain.headers['content-encoding'], undefined);
+  assert.equal(Number(plain.headers['content-length']), JSON.stringify(big).length);
+
+  const small = await raw('/api/small/', { 'accept-encoding': 'br' });
+  assert.equal(small.status, 200, 'le / final est accepté');
+  assert.equal(small.headers['content-encoding'], undefined, 'pas de compression sous le seuil');
+  assert.equal(small.headers['cache-control'], 'no-store');
+
+  const etag = plain.headers['etag'] as string;
+  assert.match(etag, /^W\/"/);
+  const notModified = await raw('/api/list', { 'if-none-match': etag });
+  assert.equal(notModified.status, 304);
+  assert.equal(notModified.body.length, 0);
+  assert.equal((await raw('/api/list', { 'if-none-match': 'W/"autre"' })).status, 200);
+});
+
+test('serveur HTTP : compression désactivable, endpoints authentifiés en private', async (t) => {
+  const c = defineContract({
+    name: 'p', version: 'v1', basePath: '',
+    endpoints: { me: defineEndpoint({ method: 'GET', path: '/me', summary: 'me', auth: true, response: s.object({ blob: s.string() }) }) },
+  });
+  const http = createHttpServer({
+    contract: c, logger: silent().logger, compression: false, etag: false,
+    authenticate: () => ({ id: 'u' }),
+    handlers: { me: () => ({ blob: 'x'.repeat(5000) }) },
+  });
+  const { url } = await http.listen(0, '127.0.0.1');
+  t.after(() => http.close());
+  const res = await fetch(url + '/me', { headers: { 'accept-encoding': 'br' } });
+  assert.equal(res.headers.get('content-encoding'), null);
+  assert.equal(res.headers.get('etag'), null);
+  assert.equal(res.headers.get('cache-control'), 'private, no-store');
+});
