@@ -1,0 +1,39 @@
+{
+  "name": "@go-/hot",
+  "version": "0.1.0",
+  "description": "Mise à jour à chaud GO- : webhook GitHub, build et bascule sans coupure, previews de PR, sans redéploiement",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!dist/__tests__",
+    "!dist/**/*.tsbuildinfo"
+  ],
+  "sideEffects": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexiskd/Go-.git",
+    "directory": "packages/hot"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@go-/types": "^0.1.0",
+    "@go-/core": "^0.1.0"
+  },
+  "bin": {
+    "go-hot": "./dist/bin.js"
+  }
+}

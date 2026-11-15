@@ -39,6 +39,9 @@
     },
     {
       "path": "tools/create-go-"
+    },
+    {
+      "path": "packages/hot"
     }
   ]
 }
