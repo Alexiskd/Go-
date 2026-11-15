@@ -1,0 +1,36 @@
+{
+  "name": "@go-/security",
+  "version": "0.1.0",
+  "description": "Sécurité GO- : mots de passe scrypt, JWT HS256, RBAC, CORS, en-têtes, limitation de débit, secrets",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!dist/__tests__",
+    "!dist/**/*.tsbuildinfo"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexiskd/Go-.git",
+    "directory": "packages/security"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@go-/types": "^0.1.0",
+    "@go-/shared": "^0.1.0"
+  }
+}
