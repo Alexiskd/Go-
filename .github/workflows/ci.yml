@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main, 'openia/**']
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Build et tests (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [22, 24]
+    steps:
+      # Les submodules de stacks/ (références officielles) ne sont pas nécessaires au build.
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install --no-audit --no-fund
+      - run: npm run build
+      - run: npm test
+      - name: Vérification de l'environnement
+        run: node tools/cli/dist/bin.js doctor
+      - name: Archives npm valides
+        run: node tools/scripts/publish.mjs --dry-run

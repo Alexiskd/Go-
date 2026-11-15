@@ -1,0 +1,25 @@
+# Blueprint Render : déploie l'API de référence GO- (apps/playground).
+# Les submodules de stacks/ ne sont pas clonés : le build n'en dépend pas.
+services:
+  - type: web
+    name: go-playground-api
+    runtime: node
+    plan: free
+    buildCommand: npm install --no-audit --no-fund --include=dev && npm run build
+    startCommand: node apps/playground/dist/main.js
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "22"
+      - key: API_PORT
+        value: "10000"
+      - key: API_JWT_SECRET
+        generateValue: true
+      - key: API_ADMIN_EMAIL
+        sync: false
+      - key: API_ADMIN_PASSWORD
+        sync: false
+      - key: API_CORS_ORIGINS
+        sync: false
