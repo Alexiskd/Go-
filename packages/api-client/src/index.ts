@@ -32,6 +32,11 @@ export interface ApiClientOptions {
   validateResponses?: boolean;
   /** Mode credentials de fetch (ex. 'include' pour des cookies de session). */
   credentials?: 'omit' | 'same-origin' | 'include';
+  /**
+   * Fusionne les GET identiques lancés en même temps (même URL, même jeton) en une seule requête réseau.
+   * Chaque appelant reçoit sa propre copie des données. Défaut : true.
+   */
+  dedupe?: boolean;
 }
 
 export interface CallOptions {
@@ -61,6 +66,8 @@ export function createApiClient<C extends ContractSpec>(contract: C, options: Ap
   const doFetch = options.fetch ?? globalThis.fetch.bind(globalThis);
   const base = options.baseUrl.replace(/\/$/, '') + contract.basePath;
   const validate = options.validateResponses ?? true;
+  const dedupe = options.dedupe ?? true;
+  const inflight = new Map<string, Promise<{ ok: boolean; status: number; text: string }>>();
 
   const client: Record<string, unknown> = {};
   for (const [name, endpoint] of Object.entries(contract.endpoints)) {
@@ -71,14 +78,28 @@ export function createApiClient<C extends ContractSpec>(contract: C, options: Ap
       const token = endpoint.auth || options.getToken ? await options.getToken?.() : undefined;
       if (token) headers.Authorization = `Bearer ${token}`;
 
-      const res = await doFetch(url, {
-        method: endpoint.method,
-        headers,
-        ...(endpoint.body !== undefined && { body: JSON.stringify(input.body) }),
-        ...(call.signal && { signal: call.signal }),
-        ...(options.credentials && { credentials: options.credentials }),
-      });
-      const text = await res.text();
+      const send = async () => {
+        const r = await doFetch(url, {
+          method: endpoint.method,
+          headers,
+          ...(endpoint.body !== undefined && { body: JSON.stringify(input.body) }),
+          ...(call.signal && { signal: call.signal }),
+          ...(options.credentials && { credentials: options.credentials }),
+        });
+        return { ok: r.ok, status: r.status, text: await r.text() };
+      };
+      // Un appel avec son propre signal d'annulation n'est jamais partagé.
+      const key = dedupe && endpoint.method === 'GET' && !call.signal ? `${url}\u0000${token ?? ''}\u0000${JSON.stringify(call.headers ?? {})}` : undefined;
+      let pending = key ? inflight.get(key) : undefined;
+      if (!pending) {
+        pending = send();
+        if (key) {
+          inflight.set(key, pending);
+          void pending.finally(() => inflight.delete(key)).catch(() => undefined);
+        }
+      }
+      const res = await pending;
+      const text = res.text;
       let data: unknown;
       try {
         data = text ? JSON.parse(text) : undefined;

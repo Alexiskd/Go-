@@ -42,3 +42,20 @@ test('erreurs normalisées et réponses non conformes', async () => {
   const html = createApiClient(apiV1, { baseUrl: 'http://x', fetch: (async () => new Response('<html>', { status: 502 })) as typeof fetch });
   await assert.rejects(html.health(), (e: unknown) => e instanceof ApiClientError && e.code === 'BAD_RESPONSE');
 });
+
+test('GET simultanés identiques : une seule requête réseau, copies indépendantes', async () => {
+  const calls: Call[] = [];
+  const health = { status: 'ok', version: '1', uptime: 1, checks: [] };
+  const api = createApiClient(apiV1, { baseUrl: 'http://x', fetch: fakeFetch(200, health, calls) });
+  const [a, b, c] = await Promise.all([api.health(), api.health(), api.health()]);
+  assert.equal(calls.length, 1);
+  assert.notEqual(a, b);
+  a.checks.push({ name: 'x', ok: true });
+  assert.equal(b.checks.length, 0);
+  assert.deepEqual(c, health);
+  await api.health();
+  assert.equal(calls.length, 2, 'les appels successifs ne sont pas mis en cache');
+  const noDedupe = createApiClient(apiV1, { baseUrl: 'http://x', fetch: fakeFetch(200, health, calls), dedupe: false });
+  await Promise.all([noDedupe.health(), noDedupe.health()]);
+  assert.equal(calls.length, 4);
+});
