@@ -1,0 +1,48 @@
+{
+  "name": "create-go-",
+  "version": "0.1.0",
+  "description": "Crée un projet GO- en une commande : npm create go-@latest mon-projet",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!dist/__tests__",
+    "!dist/**/*.tsbuildinfo"
+  ],
+  "sideEffects": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexiskd/Go-.git",
+    "directory": "tools/create-go-"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@go-/cli": "^0.1.0"
+  },
+  "bin": {
+    "create-go-": "./dist/bin.js"
+  },
+  "keywords": [
+    "go-",
+    "create",
+    "scaffold",
+    "typescript",
+    "nestjs",
+    "nextjs",
+    "react",
+    "angular"
+  ]
+}
