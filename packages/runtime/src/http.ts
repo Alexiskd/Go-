@@ -141,7 +141,7 @@ export function createHttpServer<C extends ContractSpec>(options: HttpServerOpti
     res.on('close', () => !res.writableFinished && abort.abort());
     const extraHeaders: Record<string, string> = {};
     let principal: Principal | undefined;
-    const reqLogger = logger.child('http', { requestId });
+    const reqLogger = logger.child('req', { requestId });
 
     const ctx: RequestContext = {
       requestId,

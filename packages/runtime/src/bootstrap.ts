@@ -2,7 +2,7 @@ import { createApp, createLogger, defineModule, token, type App, type GoModule, 
 import { loadEnvFiles, redactConfig, resolveEnvironment, type ConfigDefinition } from '@go-/config';
 import type { ContractSpec } from '@go-/contracts';
 import type { Infer, ObjectSchema, Shape } from '@go-/shared';
-import { isLogLevel, type LogLevel } from '@go-/types';
+import { isLogLevel, type Environment, type LogLevel } from '@go-/types';
 import { createHttpServer, type GoHttpServer, type HttpServerOptions } from './http.js';
 import { assertNodeVersion } from './process.js';
 
@@ -11,7 +11,7 @@ export interface BootstrapOptions<S extends Shape> {
   config: ConfigDefinition<S>;
   /** Préfixe des variables d'environnement (ex. `API`). */
   envPrefix?: string;
-  modules?: (config: Readonly<Infer<ObjectSchema<S>>>) => readonly GoModule[];
+  modules?: (config: Readonly<Infer<ObjectSchema<S>>>, environment: Environment, logger: Logger) => readonly GoModule[];
   plugins?: readonly GoPlugin[];
   cwd?: string;
   env?: Record<string, string | undefined>;
@@ -36,7 +36,7 @@ export function bootstrap<S extends Shape>(options: BootstrapOptions<S>): { app:
     env: environment,
     logger,
     config: config as Record<string, unknown>,
-    modules: options.modules?.(config) ?? [],
+    modules: options.modules?.(config, environment, logger) ?? [],
     ...(options.plugins && { plugins: options.plugins }),
   });
   return { app, config };
