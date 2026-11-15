@@ -21,6 +21,9 @@
     },
     {
       "path": "packages/runtime"
+    },
+    {
+      "path": "packages/api-client"
     }
   ]
 }
