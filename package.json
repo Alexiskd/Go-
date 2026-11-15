@@ -18,7 +18,8 @@
     "typecheck": "tsc -b --noEmit false",
     "test": "node --test --test-reporter=spec \"packages/*/dist/__tests__/*.test.js\" \"tools/*/dist/__tests__/*.test.js\" \"apps/*/dist/__tests__/*.test.js\"",
     "check": "npm run build && npm test",
-    "go-": "node tools/cli/dist/bin.js"
+    "go-": "node tools/cli/dist/bin.js",
+    "bench": "node tools/scripts/bench.mjs"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

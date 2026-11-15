@@ -85,7 +85,7 @@ npm run go- -- doctor
 
 Prérequis : Node.js ≥ 22.12. Voir [docs/](docs) : [architecture](docs/architecture.md), [démarrage](docs/demarrage.md),
 [CLI](docs/cli.md), [packages](docs/packages.md), [décisions techniques](docs/decisions.md),
-[déploiement](docs/deploiement.md), [feuille de route](docs/feuille-de-route.md).
+[déploiement](docs/deploiement.md), [performances](docs/performances.md), [feuille de route](docs/feuille-de-route.md).
 
 ## Références officielles (`stacks/`)
 

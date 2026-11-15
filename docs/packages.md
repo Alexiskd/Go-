@@ -39,6 +39,15 @@ Clés inconnues supprimées, valeurs par défaut clonées, `extend` / `pick` / `
 `bootstrap`, `runApp` (signaux, erreurs fatales, arrêt borné), `createHttpServer` (contrat → HTTP), `httpModule`,
 `assertNodeVersion`.
 
+Le serveur compresse les réponses JSON de plus de 1 Ko (brotli, sinon gzip), ajoute un ETag faible et répond `304`
+aux GET inchangés, et applique le `cacheControl` déclaré par l'endpoint :
+
+```ts
+listBodies: defineEndpoint({ method: 'GET', path: '/bodies', summary: 'Astres', response: BodyList,
+  cacheControl: 'public, max-age=60, stale-while-revalidate=300' }),
+```
+Options : `compression: false | { threshold }`, `etag: false`.
+
 ## @go-/security
 
 `hashPassword` / `verifyPassword` / `needsRehash` (scrypt), `signJwt` / `verifyJwt` / `bearerToken` (HS256 uniquement,
@@ -47,8 +56,9 @@ Clés inconnues supprimées, valeurs par défaut clonées, `extend` / `pick` / `
 
 ## @go-/api-client
 
-`createApiClient(contract, { baseUrl, getToken, fetch, credentials })` : une méthode typée par endpoint,
-réponses validées, `ApiClientError` normalisée. Aucune dépendance : navigateur, Next.js, Angular, Node.
+`createApiClient(contract, { baseUrl, getToken, fetch, credentials, dedupe })` : une méthode typée par endpoint,
+réponses validées, `ApiClientError` normalisée. Les GET identiques lancés en même temps partagent une seule requête
+réseau (`dedupe`, activé par défaut). Aucune dépendance : navigateur, Next.js, Angular, Node.
 
 ## @go-/testing
 
