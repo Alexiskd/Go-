@@ -24,6 +24,9 @@
     },
     {
       "path": "packages/api-client"
+    },
+    {
+      "path": "packages/testing"
     }
   ]
 }
