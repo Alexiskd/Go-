@@ -1,0 +1,39 @@
+{
+  "name": "@go-/runtime",
+  "version": "0.1.0",
+  "description": "Runtime Node.js GO- : démarrage, signaux, arrêt propre, serveur HTTP piloté par les contrats",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!dist/__tests__",
+    "!dist/**/*.tsbuildinfo"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexiskd/Go-.git",
+    "directory": "packages/runtime"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@go-/types": "^0.1.0",
+    "@go-/shared": "^0.1.0",
+    "@go-/core": "^0.1.0",
+    "@go-/config": "^0.1.0",
+    "@go-/contracts": "^0.1.0"
+  }
+}
