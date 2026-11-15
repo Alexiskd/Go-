@@ -9,6 +9,18 @@ import type { Result, Simplify } from '@go-/types';
 
 export type Path = ReadonlyArray<string | number>;
 
+/**
+ * Chemin construit paresseusement (liste chaînée) : aucune allocation de tableau
+ * pendant une validation réussie, le chemin n'est matérialisé qu'en cas d'erreur.
+ */
+type Trail = { readonly key: string | number; readonly parent: Trail } | undefined;
+
+function toPath(trail: Trail): Path {
+  const out: (string | number)[] = [];
+  for (let t = trail; t; t = t.parent) out.push(t.key);
+  return out.reverse();
+}
+
 export interface Issue {
   readonly path: Path;
   readonly code: string;
@@ -41,7 +53,7 @@ export abstract class Schema<T> {
   protected meta: { description?: string; title?: string } = {};
 
   /** @internal */
-  abstract _run(value: unknown, path: Path, ctx: Ctx): T | Invalid;
+  abstract _run(value: unknown, path: Trail, ctx: Ctx): T | Invalid;
   protected abstract jsonSchema(): JsonSchema;
 
   toJSONSchema(): JsonSchema {
@@ -50,7 +62,7 @@ export abstract class Schema<T> {
 
   safeParse(value: unknown): Result<T, SchemaError> {
     const ctx: Ctx = { issues: [] };
-    const out = this._run(value, [], ctx);
+    const out = this._run(value, undefined, ctx);
     if (out === INVALID || ctx.issues.length) return { ok: false, error: new SchemaError(ctx.issues) };
     return { ok: true, value: out };
   }
@@ -105,11 +117,11 @@ abstract class CheckedSchema<T> extends Schema<T> {
     copy.checks = [...this.checks, check];
     return copy;
   }
-  protected runChecks(value: T, path: Path, ctx: Ctx): T | Invalid {
+  protected runChecks(value: T, path: Trail, ctx: Ctx): T | Invalid {
     let valid = true;
     for (const c of this.checks) {
       if (!c.test(value)) {
-        ctx.issues.push({ path, code: c.code, message: c.message });
+        ctx.issues.push({ path: toPath(path), code: c.code, message: c.message });
         valid = false;
       }
     }
@@ -126,9 +138,9 @@ const ISO_DATETIME = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[+-]\d{2}:\
 
 export class StringSchema extends CheckedSchema<string> {
   readonly kind = 'string';
-  _run(value: unknown, path: Path, ctx: Ctx) {
+  _run(value: unknown, path: Trail, ctx: Ctx) {
     if (typeof value !== 'string') {
-      ctx.issues.push({ path, code: 'invalid_type', message: 'chaîne attendue' });
+      ctx.issues.push({ path: toPath(path), code: 'invalid_type', message: 'chaîne attendue' });
       return INVALID;
     }
     return this.runChecks(value, path, ctx);
@@ -170,9 +182,9 @@ export class StringSchema extends CheckedSchema<string> {
 export class NumberSchema extends CheckedSchema<number> {
   readonly kind = 'number';
   private integer = false;
-  _run(value: unknown, path: Path, ctx: Ctx) {
+  _run(value: unknown, path: Trail, ctx: Ctx) {
     if (typeof value !== 'number' || !Number.isFinite(value)) {
-      ctx.issues.push({ path, code: 'invalid_type', message: 'nombre attendu' });
+      ctx.issues.push({ path: toPath(path), code: 'invalid_type', message: 'nombre attendu' });
       return INVALID;
     }
     return this.runChecks(value, path, ctx);
@@ -198,9 +210,9 @@ export class NumberSchema extends CheckedSchema<number> {
 
 export class BooleanSchema extends Schema<boolean> {
   readonly kind = 'boolean';
-  _run(value: unknown, path: Path, ctx: Ctx) {
+  _run(value: unknown, path: Trail, ctx: Ctx) {
     if (typeof value !== 'boolean') {
-      ctx.issues.push({ path, code: 'invalid_type', message: 'booléen attendu' });
+      ctx.issues.push({ path: toPath(path), code: 'invalid_type', message: 'booléen attendu' });
       return INVALID;
     }
     return value;
@@ -227,9 +239,9 @@ export class LiteralSchema<T extends Primitive> extends Schema<T> {
   constructor(readonly value: T) {
     super();
   }
-  _run(value: unknown, path: Path, ctx: Ctx) {
+  _run(value: unknown, path: Trail, ctx: Ctx) {
     if (value !== this.value) {
-      ctx.issues.push({ path, code: 'invalid_literal', message: `valeur attendue : ${JSON.stringify(this.value)}` });
+      ctx.issues.push({ path: toPath(path), code: 'invalid_literal', message: `valeur attendue : ${JSON.stringify(this.value)}` });
       return INVALID;
     }
     return this.value;
@@ -244,9 +256,9 @@ export class EnumSchema<T extends string> extends Schema<T> {
   constructor(readonly values: readonly T[]) {
     super();
   }
-  _run(value: unknown, path: Path, ctx: Ctx) {
+  _run(value: unknown, path: Trail, ctx: Ctx) {
     if (typeof value !== 'string' || !(this.values as readonly string[]).includes(value)) {
-      ctx.issues.push({ path, code: 'invalid_enum', message: `valeurs possibles : ${this.values.join(', ')}` });
+      ctx.issues.push({ path: toPath(path), code: 'invalid_enum', message: `valeurs possibles : ${this.values.join(', ')}` });
       return INVALID;
     }
     return value as T;
@@ -261,18 +273,18 @@ export class ArraySchema<T> extends CheckedSchema<T[]> {
   constructor(readonly item: Schema<T>) {
     super();
   }
-  _run(value: unknown, path: Path, ctx: Ctx) {
+  _run(value: unknown, path: Trail, ctx: Ctx) {
     if (!Array.isArray(value)) {
-      ctx.issues.push({ path, code: 'invalid_type', message: 'tableau attendu' });
+      ctx.issues.push({ path: toPath(path), code: 'invalid_type', message: 'tableau attendu' });
       return INVALID;
     }
-    const out: T[] = [];
+    const out: T[] = new Array(value.length);
     let valid = true;
-    value.forEach((v, i) => {
-      const r = this.item._run(v, [...path, i], ctx);
+    for (let i = 0; i < value.length; i++) {
+      const r = this.item._run(value[i], { key: i, parent: path }, ctx);
       if (r === INVALID) valid = false;
-      else out.push(r);
-    });
+      else out[i] = r;
+    }
     return valid ? this.runChecks(out, path, ctx) : INVALID;
   }
   protected jsonSchema() {
@@ -292,7 +304,7 @@ export class OptionalSchema<T> extends Schema<T | undefined> {
     super();
     this.kind = inner.kind;
   }
-  _run(value: unknown, path: Path, ctx: Ctx) {
+  _run(value: unknown, path: Trail, ctx: Ctx) {
     return value === undefined ? undefined : this.inner._run(value, path, ctx);
   }
   protected jsonSchema() {
@@ -306,7 +318,7 @@ export class NullableSchema<T> extends Schema<T | null> {
     super();
     this.kind = inner.kind;
   }
-  _run(value: unknown, path: Path, ctx: Ctx) {
+  _run(value: unknown, path: Trail, ctx: Ctx) {
     return value === null ? null : this.inner._run(value, path, ctx);
   }
   protected jsonSchema() {
@@ -321,8 +333,10 @@ export class DefaultSchema<T> extends Schema<T> {
     super();
     this.kind = inner.kind;
   }
-  _run(value: unknown, path: Path, ctx: Ctx) {
-    return this.inner._run(value === undefined ? structuredClone(this.defaultValue) : value, path, ctx);
+  _run(value: unknown, path: Trail, ctx: Ctx) {
+    if (value !== undefined) return this.inner._run(value, path, ctx);
+    const d = this.defaultValue;
+    return this.inner._run(d !== null && typeof d === 'object' ? structuredClone(d) : d, path, ctx);
   }
   protected jsonSchema() {
     return { ...this.inner.toJSONSchema(), default: this.defaultValue };
@@ -338,19 +352,22 @@ export type InferShape<S extends Shape> = Simplify<
 
 export class ObjectSchema<S extends Shape> extends Schema<InferShape<S>> {
   readonly kind = 'object';
+  /** Entrées du shape calculées une fois (évite Object.entries à chaque validation). */
+  private readonly fields: ReadonlyArray<readonly [string, Schema<any>]>;
   constructor(readonly shape: S) {
     super();
+    this.fields = Object.entries(shape);
   }
-  _run(value: unknown, path: Path, ctx: Ctx) {
+  _run(value: unknown, path: Trail, ctx: Ctx) {
     if (value === null || typeof value !== 'object' || Array.isArray(value)) {
-      ctx.issues.push({ path, code: 'invalid_type', message: 'objet attendu' });
+      ctx.issues.push({ path: toPath(path), code: 'invalid_type', message: 'objet attendu' });
       return INVALID;
     }
     const input = value as Record<string, unknown>;
     const out: Record<string, unknown> = {};
     let valid = true;
-    for (const [key, schema] of Object.entries(this.shape)) {
-      const r = schema._run(input[key], [...path, key], ctx);
+    for (const [key, schema] of this.fields) {
+      const r = schema._run(input[key], { key, parent: path }, ctx);
       if (r === INVALID) valid = false;
       else if (r !== undefined) out[key] = r;
     }
@@ -390,13 +407,13 @@ export class UnionSchema<T extends readonly Schema<any>[]> extends Schema<Infer<
   constructor(readonly options: T) {
     super();
   }
-  _run(value: unknown, path: Path, ctx: Ctx) {
+  _run(value: unknown, path: Trail, ctx: Ctx) {
     for (const option of this.options) {
       const sub: Ctx = { issues: [] };
       const r = option._run(value, path, sub);
       if (r !== INVALID && !sub.issues.length) return r;
     }
-    ctx.issues.push({ path, code: 'invalid_union', message: 'ne correspond à aucune variante autorisée' });
+    ctx.issues.push({ path: toPath(path), code: 'invalid_union', message: 'ne correspond à aucune variante autorisée' });
     return INVALID;
   }
   protected jsonSchema() {
