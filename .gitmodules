@@ -1,0 +1,40 @@
+[submodule "stacks/nodejs/node"]
+	path = stacks/nodejs/node
+	url = https://github.com/nodejs/node.git
+	branch = main
+	shallow = true
+[submodule "stacks/nodejs/hackathon-starter"]
+	path = stacks/nodejs/hackathon-starter
+	url = https://github.com/sahat/hackathon-starter.git
+	branch = master
+	shallow = true
+[submodule "stacks/nestjs/nest"]
+	path = stacks/nestjs/nest
+	url = https://github.com/nestjs/nest.git
+	branch = master
+	shallow = true
+[submodule "stacks/nestjs/typescript-starter"]
+	path = stacks/nestjs/typescript-starter
+	url = https://github.com/nestjs/typescript-starter.git
+	branch = master
+	shallow = true
+[submodule "stacks/angular/angular"]
+	path = stacks/angular/angular
+	url = https://github.com/angular/angular.git
+	branch = main
+	shallow = true
+[submodule "stacks/react/react"]
+	path = stacks/react/react
+	url = https://github.com/facebook/react.git
+	branch = main
+	shallow = true
+[submodule "stacks/react/vite"]
+	path = stacks/react/vite
+	url = https://github.com/vitejs/vite.git
+	branch = main
+	shallow = true
+[submodule "stacks/nextjs/next.js"]
+	path = stacks/nextjs/next.js
+	url = https://github.com/vercel/next.js.git
+	branch = canary
+	shallow = true
