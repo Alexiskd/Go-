@@ -30,6 +30,11 @@ npx go- doctor
 > La publication npm de `@go-/*` et `create-go-` se fait par le workflow `release.yml` (tag `v*`).
 > Avant la première publication, la commande ci-dessus n'est pas encore disponible : voir [docs/deploiement.md](docs/deploiement.md).
 
+## En direct, sans redéploiement
+
+Une PR ouverte par Claude est en ligne sur `https://<site>/pr/<numéro>` ; sa fusion met la production à jour
+sans coupure ni redéploiement Render, et les pages ouvertes se rechargent seules. Voir [docs/live.md](docs/live.md).
+
 ## Ce que contient GO-
 
 | Package | Rôle |
@@ -43,6 +48,7 @@ npx go- doctor
 | [`@go-/security`](packages/security) | scrypt, JWT HS256, RBAC, CORS, en-têtes, limitation de débit, secrets |
 | [`@go-/api-client`](packages/api-client) | Client HTTP typé et validé pour React, Next.js, Angular et Node |
 | [`@go-/testing`](packages/testing) | Logger mémoire, horloge, application de test |
+| [`@go-/hot`](packages/hot) | Mises à jour à chaud depuis GitHub, previews de PR, sans redéploiement (`go-hot`) |
 | [`@go-/generators`](tools/generators) | Templates de projet / package / module, OpenAPI → TypeScript |
 | [`@go-/cli`](tools/cli) | Commande `go-` |
 | [`create-go-`](tools/create-go-) | `npm create go-@latest` |

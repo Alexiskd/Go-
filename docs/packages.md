@@ -63,3 +63,11 @@ réseau (`dedupe`, activé par défaut). Aucune dépendance : navigateur, Next.j
 ## @go-/testing
 
 `createMemoryLogger`, `createClock`, `startTestApp`, `createTempDir`.
+
+## @go-/hot
+
+Superviseur `go-hot` : reçoit le trafic, applique les webhooks GitHub signés (production à la fusion,
+preview par PR), compile chaque version à côté de la précédente et bascule sans coupure. Voir [live.md](live.md).
+
+Côté navigateur, `watchDeployments()` (`@go-/api-client`) recharge la page quand la version change ;
+côté serveur, l'option `live` de `createHttpServer` expose `/__go/version` et `/__go/live`.

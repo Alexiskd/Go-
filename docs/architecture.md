@@ -13,7 +13,8 @@ Go-/
 │   ├── runtime        → types, shared, core, config, contracts
 │   ├── security       → types, shared
 │   ├── api-client     → types, shared, contracts
-│   └── testing        → types, core
+│   ├── testing        → types, core
+│   └── hot            → types, core   (superviseur go-hot)
 ├── tools/             Outils de développement
 │   ├── generators     templates, OpenAPI → TypeScript
 │   ├── cli            commande go-

@@ -21,6 +21,8 @@ Les submodules `stacks/` ne sont jamais nécessaires.
 
 ### Render
 
+Après le premier déploiement, les mises à jour se font à chaud, sans redéploiement : voir [live.md](live.md).
+
 `render.yaml` déploie l'API de référence (`apps/playground`) : secret JWT généré par Render,
 `API_ADMIN_EMAIL`, `API_ADMIN_PASSWORD` et `API_CORS_ORIGINS` à renseigner dans le tableau de bord,
 health check sur `/api/v1/health`.
