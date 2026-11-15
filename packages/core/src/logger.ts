@@ -58,25 +58,27 @@ export function prettySink(stream: NodeJS.WritableStream = process.stdout): LogS
 
 export function createLogger(options: LoggerOptions = {}): Logger {
   const level = options.level ?? 'info';
-  const name = options.name ?? 'go-';
+  const threshold = rank(level);
   const sink = options.sink ?? (options.format === 'pretty' ? prettySink() : jsonSink());
   const redact = new Set((options.redact ?? DEFAULT_REDACT).map((k) => k.toLowerCase()));
-  const base = options.fields ?? {};
 
-  const write = (lvl: LogRecord['level'], msg: string, fields?: Record<string, unknown>) => {
-    if (rank(lvl) < rank(level)) return;
-    const extra = redactValue({ ...base, ...fields }, redact) as Record<string, unknown>;
-    sink({ ...extra, level: lvl, time: new Date().toISOString(), name, msg });
+  // Les loggers enfants partagent sink, niveau et liste de masquage : en créer un
+  // (par requête, par module) ne coûte qu'une fermeture.
+  const make = (name: string, base: Record<string, unknown>): Logger => {
+    const write = (lvl: LogRecord['level'], msg: string, fields?: Record<string, unknown>) => {
+      if (rank(lvl) < threshold) return;
+      const extra = redactValue(fields ? { ...base, ...fields } : base, redact) as Record<string, unknown>;
+      sink({ ...extra, level: lvl, time: new Date().toISOString(), name, msg });
+    };
+    return {
+      level,
+      debug: (m, f) => write('debug', m, f),
+      info: (m, f) => write('info', m, f),
+      warn: (m, f) => write('warn', m, f),
+      error: (m, f) => write('error', m, f),
+      isEnabled: (lvl) => lvl !== 'silent' && rank(lvl) >= threshold,
+      child: (childName, fields) => make(`${name}:${childName}`, fields ? { ...base, ...fields } : base),
+    };
   };
-
-  return {
-    level,
-    debug: (m, f) => write('debug', m, f),
-    info: (m, f) => write('info', m, f),
-    warn: (m, f) => write('warn', m, f),
-    error: (m, f) => write('error', m, f),
-    isEnabled: (lvl) => lvl !== 'silent' && rank(lvl) >= rank(level),
-    child: (childName, fields) =>
-      createLogger({ ...options, sink, name: `${name}:${childName}`, fields: { ...base, ...fields } }),
-  };
+  return make(options.name ?? 'go-', options.fields ?? {});
 }
