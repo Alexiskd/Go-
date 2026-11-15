@@ -205,3 +205,35 @@ test('serveur HTTP : compression désactivable, endpoints authentifiés en priva
   assert.equal(res.headers.get('etag'), null);
   assert.equal(res.headers.get('cache-control'), 'private, no-store');
 });
+
+test('live : version déployée, flux SSE, en-tête X-Go-Version, fermeture des flux', async () => {
+  const { deploymentInfo } = await import('../index.js');
+  const info = deploymentInfo({ RENDER_GIT_COMMIT: '0123456789abcdef0123', RENDER_GIT_BRANCH: 'main', IS_PULL_REQUEST: 'false' });
+  assert.equal(info.version, '0123456789ab');
+  assert.equal(deploymentInfo({}).version, 'dev');
+  assert.equal(deploymentInfo({ GO_VERSION: 'pr-12', RENDER_GIT_COMMIT: 'x' }).version, 'pr-12');
+
+  const c = defineContract({ name: 'l', version: 'v1', basePath: '', endpoints: { ping: defineEndpoint({ method: 'GET', path: '/ping', summary: 'p', response: s.object({ ok: s.boolean() }) }) } });
+  const http = createHttpServer({ contract: c, logger: silent().logger, live: info, handlers: { ping: () => ({ ok: true }) } });
+  const { url } = await http.listen(0, '127.0.0.1');
+  const ping = await fetch(url + '/ping');
+  assert.equal(ping.headers.get('x-go-version'), '0123456789ab');
+  assert.equal(((await (await fetch(url + '/__go/version')).json()) as { version: string }).version, '0123456789ab');
+
+  const stream = await fetch(url + '/__go/live');
+  assert.equal(stream.headers.get('content-type'), 'text/event-stream; charset=utf-8');
+  const reader = stream.body!.getReader();
+  const first = new TextDecoder().decode((await reader.read()).value);
+  assert.match(first, /event: version\ndata: \{"version":"0123456789ab"/);
+  assert.equal(http.live!.size, 1);
+  const started = Date.now();
+  await http.close();
+  assert.ok(Date.now() - started < 2000, 'les flux ne bloquent pas l’arrêt');
+  let rest = '';
+  for (;;) {
+    const { value, done } = await reader.read();
+    if (done) break;
+    rest += new TextDecoder().decode(value);
+  }
+  assert.match(rest, /event: shutdown/);
+});

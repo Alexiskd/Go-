@@ -8,6 +8,7 @@ import { ForbiddenError, GoError, UnauthorizedError, ValidationError, toGoError,
 import type { ContractSpec, EndpointInput, EndpointOutput, EndpointSpec } from '@go-/contracts';
 import { coerceFromString, type Schema, type SchemaError } from '@go-/shared';
 import type { Awaitable } from '@go-/types';
+import { LIVE_EVENTS_PATH, LIVE_VERSION_PATH, LiveChannel, deploymentInfo, type DeploymentInfo } from './deployment.js';
 
 export interface Principal {
   readonly id: string;
@@ -64,6 +65,12 @@ export interface HttpServerOptions<C extends ContractSpec> {
   compression?: boolean | { threshold?: number };
   /** ETag faible + réponse 304 sur les GET réussis (défaut true). */
   etag?: boolean;
+  /**
+   * Rechargement en direct après redéploiement : expose `GET /__go/version` et le flux
+   * `GET /__go/live` (Server-Sent Events), et ajoute l'en-tête `X-Go-Version` à chaque réponse.
+   * `true` lit la version depuis l'environnement Render ; défaut : désactivé.
+   */
+  live?: boolean | DeploymentInfo;
 }
 
 interface Route {
@@ -171,6 +178,8 @@ async function readJson(req: IncomingMessage, limit: number): Promise<unknown> {
 
 export interface GoHttpServer {
   readonly server: Server;
+  /** Canal de rechargement en direct (si `live` est activé). */
+  readonly live: LiveChannel | undefined;
   listen(port?: number, host?: string): Promise<{ port: number; url: string }>;
   close(timeoutMs?: number): Promise<void>;
 }
@@ -183,6 +192,7 @@ export function createHttpServer<C extends ContractSpec>(options: HttpServerOpti
   const routes = compile(options.contract);
   const findRoute = indexRoutes(routes);
   const { logger, bodyLimitBytes = 1_048_576, validateResponses = true, etag = true } = options;
+  const live = options.live ? new LiveChannel(options.live === true ? deploymentInfo() : options.live) : undefined;
   const threshold = options.compression === false ? Infinity : (typeof options.compression === 'object' ? options.compression.threshold : undefined) ?? 1024;
   const needsAuthorize = routes.some((r) => typeof r.endpoint.auth === 'string');
   if (needsAuthorize && !options.authorize) throw new Error('Le contrat déclare des permissions : fournir `authorize`');
@@ -223,6 +233,7 @@ export function createHttpServer<C extends ContractSpec>(options: HttpServerOpti
         ...extraHeaders,
         'X-Request-Id': requestId,
         'Cache-Control': cacheControl,
+        ...(live && { 'X-Go-Version': live.info.version }),
       };
       const vary = new Set((headers.Vary ?? '').split(',').map((v) => v.trim()).filter(Boolean));
       let payload: Buffer | undefined;
@@ -261,6 +272,11 @@ export function createHttpServer<C extends ContractSpec>(options: HttpServerOpti
       if (method === 'OPTIONS') return await send(204, undefined, true);
       await options.beforeRequest?.(req, ctx);
 
+      if (live && method === 'GET' && url.pathname === LIVE_EVENTS_PATH) {
+        live.attach(req, res, { ...options.headers, ...options.cors?.headers(origin), 'X-Request-Id': requestId, 'X-Go-Version': live.info.version });
+        return;
+      }
+      if (live && method === 'GET' && url.pathname === LIVE_VERSION_PATH) return await send(200, live.info);
       const extra = options.extraRoutes?.[`${method} ${url.pathname}`];
       if (extra) return await send(200, await extra(ctx));
 
@@ -326,6 +342,7 @@ export function createHttpServer<C extends ContractSpec>(options: HttpServerOpti
 
   return {
     server,
+    live,
     listen(port = 0, host = '0.0.0.0') {
       return new Promise((resolve, reject) => {
         server.once('error', reject);
@@ -338,6 +355,8 @@ export function createHttpServer<C extends ContractSpec>(options: HttpServerOpti
       });
     },
     close(timeoutMs = 5_000) {
+      // Les flux live sont des connexions longues : on les termine d'abord pour un arrêt immédiat.
+      live?.close();
       return new Promise((resolve, reject) => {
         if (!server.listening) return resolve();
         const timer = setTimeout(() => server.closeAllConnections(), timeoutMs);
