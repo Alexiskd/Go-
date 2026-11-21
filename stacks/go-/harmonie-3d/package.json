@@ -1,0 +1,17 @@
+{
+  "name": "@go-/harmonie-3d",
+  "version": "0.1.0",
+  "description": "Disposition harmonieuse d'une arborescence en 3D : couronnes proportionnelles, collerettes de fichiers, angle d'or. Sans dépendance.",
+  "type": "module",
+  "main": "src/harmonie.js",
+  "exports": "./src/harmonie.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
