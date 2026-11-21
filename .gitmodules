@@ -38,3 +38,8 @@
 	url = https://github.com/vercel/next.js.git
 	branch = canary
 	shallow = true
+[submodule "stacks/threejs/three.js"]
+	path = stacks/threejs/three.js
+	url = https://github.com/mrdoob/three.js.git
+	branch = dev
+	shallow = true

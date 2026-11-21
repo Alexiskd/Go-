@@ -15,6 +15,8 @@ les trois **N** (**N**ode.js, **N**estJS, **N**ext.js), plus **R**eact et **A**n
 | UI | **R**eact | Composants d'interface (moteur de Next.js, SPA via Vite) | `stacks/react/react` | `stacks/react/vite` (`npm create vite@latest`) |
 | App d'entreprise | **A**ngular | Back-office, dashboards et applis métier complexes | `stacks/angular/angular` | `npx @angular/cli new mon-app` |
 
+En complément de N3RA, la bibliothèque 3D **Three.js** (rendu WebGL/WebGPU dans le navigateur) est importée dans `stacks/threejs/three.js` ; ses exemples sont dans `stacks/threejs/three.js/examples`.
+
 ## Architecture type
 
 ```
@@ -48,7 +50,8 @@ stacks/
 ├── nestjs/   nest · typescript-starter
 ├── angular/  angular
 ├── react/    react · vite
-└── nextjs/   next.js (examples/)
+├── nextjs/   next.js (examples/)
+└── threejs/  three.js (examples/)
 ```
 
 ## Récupérer le code
