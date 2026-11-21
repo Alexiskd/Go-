@@ -43,93 +43,73 @@
 	url = https://github.com/mrdoob/three.js.git
 	branch = dev
 	shallow = true
-[submodule "stacks/react/vite-plugin-react"]
-	path = stacks/react/vite-plugin-react
-	url = https://github.com/vitejs/vite-plugin-react.git
+[submodule "stacks/threejs/three-mesh-bvh"]
+	path = stacks/threejs/three-mesh-bvh
+	url = https://github.com/gkjohnson/three-mesh-bvh.git
+	branch = master
+	shallow = true
+[submodule "stacks/threejs/troika"]
+	path = stacks/threejs/troika
+	url = https://github.com/protectwise/troika.git
 	branch = main
 	shallow = true
-[submodule "stacks/mui/material-ui"]
-	path = stacks/mui/material-ui
-	url = https://github.com/mui/material-ui.git
-	branch = master
-	shallow = true
-[submodule "stacks/emotion/emotion"]
-	path = stacks/emotion/emotion
-	url = https://github.com/emotion-js/emotion.git
+[submodule "stacks/threejs/stats-gl"]
+	path = stacks/threejs/stats-gl
+	url = https://github.com/RenaudRohlinger/stats-gl.git
 	branch = main
 	shallow = true
-[submodule "stacks/typescript/TypeScript"]
-	path = stacks/typescript/TypeScript
-	url = https://github.com/microsoft/TypeScript.git
+[submodule "stacks/gpu/detect-gpu"]
+	path = stacks/gpu/detect-gpu
+	url = https://github.com/pmndrs/detect-gpu.git
+	branch = master
+	shallow = true
+[submodule "stacks/gpu/Spector.js"]
+	path = stacks/gpu/Spector.js
+	url = https://github.com/BabylonJS/Spector.js.git
+	branch = master
+	shallow = true
+[submodule "stacks/assets/meshoptimizer"]
+	path = stacks/assets/meshoptimizer
+	url = https://github.com/zeux/meshoptimizer.git
+	branch = master
+	shallow = true
+[submodule "stacks/assets/basis_universal"]
+	path = stacks/assets/basis_universal
+	url = https://github.com/BinomialLLC/basis_universal.git
+	branch = master
+	shallow = true
+[submodule "stacks/assets/glTF-Transform"]
+	path = stacks/assets/glTF-Transform
+	url = https://github.com/donmccurdy/glTF-Transform.git
 	branch = main
 	shallow = true
-[submodule "stacks/typescript/tsx"]
-	path = stacks/typescript/tsx
-	url = https://github.com/privatenumber/tsx.git
-	branch = master
-	shallow = true
-[submodule "stacks/typescript/reflect-metadata"]
-	path = stacks/typescript/reflect-metadata
-	url = https://github.com/rbuckton/reflect-metadata.git
+[submodule "stacks/ecs/bitECS"]
+	path = stacks/ecs/bitECS
+	url = https://github.com/NateTheGreatt/bitECS.git
 	branch = main
 	shallow = true
-[submodule "stacks/nestjs/swagger"]
-	path = stacks/nestjs/swagger
-	url = https://github.com/nestjs/swagger.git
-	branch = master
-	shallow = true
-[submodule "stacks/nestjs/throttler"]
-	path = stacks/nestjs/throttler
-	url = https://github.com/nestjs/throttler.git
-	branch = master
-	shallow = true
-[submodule "stacks/nestjs/nest-cli"]
-	path = stacks/nestjs/nest-cli
-	url = https://github.com/nestjs/nest-cli.git
-	branch = master
-	shallow = true
-[submodule "stacks/typestack/class-validator"]
-	path = stacks/typestack/class-validator
-	url = https://github.com/typestack/class-validator.git
-	branch = develop
-	shallow = true
-[submodule "stacks/typestack/class-transformer"]
-	path = stacks/typestack/class-transformer
-	url = https://github.com/typestack/class-transformer.git
-	branch = develop
-	shallow = true
-[submodule "stacks/rxjs/rxjs"]
-	path = stacks/rxjs/rxjs
-	url = https://github.com/ReactiveX/rxjs.git
-	branch = master
-	shallow = true
-[submodule "stacks/express/express"]
-	path = stacks/express/express
-	url = https://github.com/expressjs/express.git
-	branch = master
-	shallow = true
-[submodule "stacks/postgres/node-postgres"]
-	path = stacks/postgres/node-postgres
-	url = https://github.com/brianc/node-postgres.git
-	branch = master
-	shallow = true
-[submodule "stacks/sharp/sharp"]
-	path = stacks/sharp/sharp
-	url = https://github.com/lovell/sharp.git
+[submodule "stacks/ecs/miniplex"]
+	path = stacks/ecs/miniplex
+	url = https://github.com/hmans/miniplex.git
 	branch = main
 	shallow = true
-[submodule "stacks/nodejs/dotenv"]
-	path = stacks/nodejs/dotenv
-	url = https://github.com/motdotla/dotenv.git
-	branch = master
-	shallow = true
-[submodule "stacks/jest/jest"]
-	path = stacks/jest/jest
-	url = https://github.com/jestjs/jest.git
+[submodule "stacks/engine/comlink"]
+	path = stacks/engine/comlink
+	url = https://github.com/GoogleChromeLabs/comlink.git
 	branch = main
 	shallow = true
-[submodule "stacks/jest/ts-jest"]
-	path = stacks/jest/ts-jest
-	url = https://github.com/kulshekhar/ts-jest.git
+[submodule "stacks/engine/p-queue"]
+	path = stacks/engine/p-queue
+	url = https://github.com/sindresorhus/p-queue.git
+	branch = main
+	shallow = true
+[submodule "stacks/engine/mitt"]
+	path = stacks/engine/mitt
+	url = https://github.com/developit/mitt.git
+	branch = main
+	shallow = true
+[submodule "stacks/react/zustand"]
+	path = stacks/react/zustand
+	url = https://github.com/pmndrs/zustand.git
 	branch = main
 	shallow = true

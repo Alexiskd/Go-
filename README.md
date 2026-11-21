@@ -17,30 +17,26 @@ les trois **N** (**N**ode.js, **N**estJS, **N**ext.js), plus **R**eact et **A**n
 
 En complément de N3RA, la bibliothèque 3D **Three.js** (rendu WebGL/WebGPU dans le navigateur) est importée dans `stacks/threejs/three.js` ; ses exemples sont dans `stacks/threejs/three.js/examples`.
 
-## Stacks utiles à Gobai
+## Stacks pour les images par seconde et la gestion des moteurs
 
-En plus de N3RA et de Three.js, `stacks/` importe les dépôts officiels des dépendances directes de GobaiWebService (`frontend/package.json` et `backend/package.json`).
+Dépôts importés pour optimiser le rendu 3D de Gobai et la gestion de ses moteurs. Aucun n'est encore utilisé par GobaiWebService.
 
-| Paquet npm | Rôle dans Gobai | Dépôt officiel |
-|---|---|---|
-| `@vitejs/plugin-react` | Frontend : React dans Vite | `stacks/react/vite-plugin-react` |
-| `@mui/material, @mui/icons-material` | Frontend : composants d'interface | `stacks/mui/material-ui` |
-| `@emotion/react, @emotion/styled` | Frontend : styles de MUI | `stacks/emotion/emotion` |
-| `typescript` | Langage (frontend et backend) | `stacks/typescript/TypeScript` |
-| `tsx` | Frontend : lance les tests | `stacks/typescript/tsx` |
-| `reflect-metadata` | Backend : décorateurs NestJS | `stacks/typescript/reflect-metadata` |
-| `@nestjs/swagger` | Backend : documentation de l'API | `stacks/nestjs/swagger` |
-| `@nestjs/throttler` | Backend : limite de requêtes | `stacks/nestjs/throttler` |
-| `@nestjs/cli` | Backend : build (`nest build`) | `stacks/nestjs/nest-cli` |
-| `class-validator` | Backend : validation des DTO | `stacks/typestack/class-validator` |
-| `class-transformer` | Backend : conversion des DTO | `stacks/typestack/class-transformer` |
-| `rxjs` | Backend : flux de NestJS | `stacks/rxjs/rxjs` |
-| `@nestjs/platform-express` | Backend : serveur HTTP sous NestJS | `stacks/express/express` |
-| `pg` | Backend : base PostgreSQL de Render | `stacks/postgres/node-postgres` |
-| `sharp` | Backend : traitement des images et tuiles | `stacks/sharp/sharp` |
-| `dotenv` | Backend : variables d'environnement | `stacks/nodejs/dotenv` |
-| `jest` | Backend : tests | `stacks/jest/jest` |
-| `ts-jest` | Backend : tests en TypeScript | `stacks/jest/ts-jest` |
+| Usage | Dépôt officiel | Apport | Emplacement |
+|---|---|---|---|
+| FPS | `gkjohnson/three-mesh-bvh` | Clics et survols sur les astres et tuiles sans parcourir toute la géométrie | `stacks/threejs/three-mesh-bvh` |
+| FPS | `protectwise/troika` | `troika-three-text` : noms des astres et des rues dessinés par le GPU | `stacks/threejs/troika` |
+| FPS | `RenaudRohlinger/stats-gl` | Mesure en direct des images par seconde, du temps CPU et GPU | `stacks/threejs/stats-gl` |
+| FPS | `pmndrs/detect-gpu` | Qualité réglée d'après la puce de l'appareil | `stacks/gpu/detect-gpu` |
+| FPS | `BabylonJS/Spector.js` | Inspection de chaque appel de dessin WebGL | `stacks/gpu/Spector.js` |
+| FPS | `zeux/meshoptimizer` | Maillages allégés et simplifiés (relief, modèles 3D) | `stacks/assets/meshoptimizer` |
+| FPS | `BinomialLLC/basis_universal` | Textures KTX2 compressées sur le GPU | `stacks/assets/basis_universal` |
+| FPS | `donmccurdy/glTF-Transform` | Compression des fichiers `.glb` avant mise en ligne | `stacks/assets/glTF-Transform` |
+| Moteurs | `NateTheGreatt/bitECS` | Astres, tuiles et nuages de points gérés en tableaux de données | `stacks/ecs/bitECS` |
+| Moteurs | `hmans/miniplex` | ECS plus simple que bitECS | `stacks/ecs/miniplex` |
+| Moteurs | `GoogleChromeLabs/comlink` | Calculs des moteurs déplacés dans des Workers | `stacks/engine/comlink` |
+| Moteurs | `sindresorhus/p-queue` | File de chargement des tuiles avec priorités et limite de requêtes | `stacks/engine/p-queue` |
+| Moteurs | `developit/mitt` | Bus d'événements entre les moteurs et l'interface | `stacks/engine/mitt` |
+| Moteurs | `pmndrs/zustand` | État partagé entre le moteur et le HUD | `stacks/react/zustand` |
 
 ## Architecture type
 
@@ -71,21 +67,16 @@ Les dépôts officiels sont importés en submodules git dans `stacks/`, épingl�
 
 ```
 stacks/
-├── nodejs/   node · hackathon-starter · dotenv
-├── nestjs/   nest · typescript-starter · swagger · throttler · nest-cli
+├── nodejs/   node · hackathon-starter
+├── nestjs/   nest · typescript-starter
 ├── angular/  angular
-├── react/    react · vite · vite-plugin-react
+├── react/    react · vite · zustand
 ├── nextjs/   next.js (examples/)
-├── threejs/  three.js (examples/)
-├── mui/         material-ui
-├── emotion/     emotion
-├── typescript/  TypeScript · tsx · reflect-metadata
-├── typestack/   class-validator · class-transformer
-├── rxjs/        rxjs
-├── express/     express
-├── postgres/    node-postgres
-├── sharp/       sharp
-└── jest/        jest · ts-jest
+├── threejs/  three.js (examples/) · three-mesh-bvh · troika · stats-gl
+├── gpu/      detect-gpu · Spector.js
+├── assets/   meshoptimizer · basis_universal · glTF-Transform
+├── ecs/      bitECS · miniplex
+└── engine/   comlink · p-queue · mitt
 ```
 
 ## Récupérer le code
