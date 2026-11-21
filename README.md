@@ -38,6 +38,10 @@ Dépôts importés pour optimiser le rendu 3D de Gobai et la gestion de ses mote
 | Moteurs | `developit/mitt` | Bus d'événements entre les moteurs et l'interface | `stacks/engine/mitt` |
 | Moteurs | `pmndrs/zustand` | État partagé entre le moteur et le HUD | `stacks/react/zustand` |
 
+## Stack maison : @go-/harmonie-3d
+
+`stacks/go-/harmonie-3d` n'est pas un submodule : c'est une stack écrite pour GO-. Elle calcule une disposition harmonieuse d'une arborescence en 3D (couronnes proportionnelles à la taille des sous-arbres, collerettes de fichiers, angle d'or) et sert au plugin `go-tree-3d` pour afficher les projets. Sans dépendance ; tests : `cd stacks/go-/harmonie-3d && node --test`.
+
 ## Architecture type
 
 ```
@@ -76,7 +80,8 @@ stacks/
 ├── gpu/      detect-gpu · Spector.js
 ├── assets/   meshoptimizer · basis_universal · glTF-Transform
 ├── ecs/      bitECS · miniplex
-└── engine/   comlink · p-queue · mitt
+├── engine/   comlink · p-queue · mitt
+└── go-/      harmonie-3d (stack maison, pas un submodule)
 ```
 
 ## Récupérer le code
