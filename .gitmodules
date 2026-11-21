@@ -43,3 +43,73 @@
 	url = https://github.com/mrdoob/three.js.git
 	branch = dev
 	shallow = true
+[submodule "stacks/threejs/three-mesh-bvh"]
+	path = stacks/threejs/three-mesh-bvh
+	url = https://github.com/gkjohnson/three-mesh-bvh.git
+	branch = master
+	shallow = true
+[submodule "stacks/threejs/troika"]
+	path = stacks/threejs/troika
+	url = https://github.com/protectwise/troika.git
+	branch = main
+	shallow = true
+[submodule "stacks/threejs/stats-gl"]
+	path = stacks/threejs/stats-gl
+	url = https://github.com/RenaudRohlinger/stats-gl.git
+	branch = main
+	shallow = true
+[submodule "stacks/gpu/detect-gpu"]
+	path = stacks/gpu/detect-gpu
+	url = https://github.com/pmndrs/detect-gpu.git
+	branch = master
+	shallow = true
+[submodule "stacks/gpu/Spector.js"]
+	path = stacks/gpu/Spector.js
+	url = https://github.com/BabylonJS/Spector.js.git
+	branch = master
+	shallow = true
+[submodule "stacks/assets/meshoptimizer"]
+	path = stacks/assets/meshoptimizer
+	url = https://github.com/zeux/meshoptimizer.git
+	branch = master
+	shallow = true
+[submodule "stacks/assets/basis_universal"]
+	path = stacks/assets/basis_universal
+	url = https://github.com/BinomialLLC/basis_universal.git
+	branch = master
+	shallow = true
+[submodule "stacks/assets/glTF-Transform"]
+	path = stacks/assets/glTF-Transform
+	url = https://github.com/donmccurdy/glTF-Transform.git
+	branch = main
+	shallow = true
+[submodule "stacks/ecs/bitECS"]
+	path = stacks/ecs/bitECS
+	url = https://github.com/NateTheGreatt/bitECS.git
+	branch = main
+	shallow = true
+[submodule "stacks/ecs/miniplex"]
+	path = stacks/ecs/miniplex
+	url = https://github.com/hmans/miniplex.git
+	branch = main
+	shallow = true
+[submodule "stacks/engine/comlink"]
+	path = stacks/engine/comlink
+	url = https://github.com/GoogleChromeLabs/comlink.git
+	branch = main
+	shallow = true
+[submodule "stacks/engine/p-queue"]
+	path = stacks/engine/p-queue
+	url = https://github.com/sindresorhus/p-queue.git
+	branch = main
+	shallow = true
+[submodule "stacks/engine/mitt"]
+	path = stacks/engine/mitt
+	url = https://github.com/developit/mitt.git
+	branch = main
+	shallow = true
+[submodule "stacks/react/zustand"]
+	path = stacks/react/zustand
+	url = https://github.com/pmndrs/zustand.git
+	branch = main
+	shallow = true
