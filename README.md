@@ -17,6 +17,31 @@ les trois **N** (**N**ode.js, **N**estJS, **N**ext.js), plus **R**eact et **A**n
 
 En complément de N3RA, la bibliothèque 3D **Three.js** (rendu WebGL/WebGPU dans le navigateur) est importée dans `stacks/threejs/three.js` ; ses exemples sont dans `stacks/threejs/three.js/examples`.
 
+## Stacks utiles à Gobai
+
+En plus de N3RA et de Three.js, `stacks/` importe les dépôts officiels des dépendances directes de GobaiWebService (`frontend/package.json` et `backend/package.json`).
+
+| Paquet npm | Rôle dans Gobai | Dépôt officiel |
+|---|---|---|
+| `@vitejs/plugin-react` | Frontend : React dans Vite | `stacks/react/vite-plugin-react` |
+| `@mui/material, @mui/icons-material` | Frontend : composants d'interface | `stacks/mui/material-ui` |
+| `@emotion/react, @emotion/styled` | Frontend : styles de MUI | `stacks/emotion/emotion` |
+| `typescript` | Langage (frontend et backend) | `stacks/typescript/TypeScript` |
+| `tsx` | Frontend : lance les tests | `stacks/typescript/tsx` |
+| `reflect-metadata` | Backend : décorateurs NestJS | `stacks/typescript/reflect-metadata` |
+| `@nestjs/swagger` | Backend : documentation de l'API | `stacks/nestjs/swagger` |
+| `@nestjs/throttler` | Backend : limite de requêtes | `stacks/nestjs/throttler` |
+| `@nestjs/cli` | Backend : build (`nest build`) | `stacks/nestjs/nest-cli` |
+| `class-validator` | Backend : validation des DTO | `stacks/typestack/class-validator` |
+| `class-transformer` | Backend : conversion des DTO | `stacks/typestack/class-transformer` |
+| `rxjs` | Backend : flux de NestJS | `stacks/rxjs/rxjs` |
+| `@nestjs/platform-express` | Backend : serveur HTTP sous NestJS | `stacks/express/express` |
+| `pg` | Backend : base PostgreSQL de Render | `stacks/postgres/node-postgres` |
+| `sharp` | Backend : traitement des images et tuiles | `stacks/sharp/sharp` |
+| `dotenv` | Backend : variables d'environnement | `stacks/nodejs/dotenv` |
+| `jest` | Backend : tests | `stacks/jest/jest` |
+| `ts-jest` | Backend : tests en TypeScript | `stacks/jest/ts-jest` |
+
 ## Architecture type
 
 ```
@@ -46,12 +71,21 @@ Les dépôts officiels sont importés en submodules git dans `stacks/`, épingl�
 
 ```
 stacks/
-├── nodejs/   node · hackathon-starter
-├── nestjs/   nest · typescript-starter
+├── nodejs/   node · hackathon-starter · dotenv
+├── nestjs/   nest · typescript-starter · swagger · throttler · nest-cli
 ├── angular/  angular
-├── react/    react · vite
+├── react/    react · vite · vite-plugin-react
 ├── nextjs/   next.js (examples/)
-└── threejs/  three.js (examples/)
+├── threejs/  three.js (examples/)
+├── mui/         material-ui
+├── emotion/     emotion
+├── typescript/  TypeScript · tsx · reflect-metadata
+├── typestack/   class-validator · class-transformer
+├── rxjs/        rxjs
+├── express/     express
+├── postgres/    node-postgres
+├── sharp/       sharp
+└── jest/        jest · ts-jest
 ```
 
 ## Récupérer le code

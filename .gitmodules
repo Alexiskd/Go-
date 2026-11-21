@@ -43,3 +43,93 @@
 	url = https://github.com/mrdoob/three.js.git
 	branch = dev
 	shallow = true
+[submodule "stacks/react/vite-plugin-react"]
+	path = stacks/react/vite-plugin-react
+	url = https://github.com/vitejs/vite-plugin-react.git
+	branch = main
+	shallow = true
+[submodule "stacks/mui/material-ui"]
+	path = stacks/mui/material-ui
+	url = https://github.com/mui/material-ui.git
+	branch = master
+	shallow = true
+[submodule "stacks/emotion/emotion"]
+	path = stacks/emotion/emotion
+	url = https://github.com/emotion-js/emotion.git
+	branch = main
+	shallow = true
+[submodule "stacks/typescript/TypeScript"]
+	path = stacks/typescript/TypeScript
+	url = https://github.com/microsoft/TypeScript.git
+	branch = main
+	shallow = true
+[submodule "stacks/typescript/tsx"]
+	path = stacks/typescript/tsx
+	url = https://github.com/privatenumber/tsx.git
+	branch = master
+	shallow = true
+[submodule "stacks/typescript/reflect-metadata"]
+	path = stacks/typescript/reflect-metadata
+	url = https://github.com/rbuckton/reflect-metadata.git
+	branch = main
+	shallow = true
+[submodule "stacks/nestjs/swagger"]
+	path = stacks/nestjs/swagger
+	url = https://github.com/nestjs/swagger.git
+	branch = master
+	shallow = true
+[submodule "stacks/nestjs/throttler"]
+	path = stacks/nestjs/throttler
+	url = https://github.com/nestjs/throttler.git
+	branch = master
+	shallow = true
+[submodule "stacks/nestjs/nest-cli"]
+	path = stacks/nestjs/nest-cli
+	url = https://github.com/nestjs/nest-cli.git
+	branch = master
+	shallow = true
+[submodule "stacks/typestack/class-validator"]
+	path = stacks/typestack/class-validator
+	url = https://github.com/typestack/class-validator.git
+	branch = develop
+	shallow = true
+[submodule "stacks/typestack/class-transformer"]
+	path = stacks/typestack/class-transformer
+	url = https://github.com/typestack/class-transformer.git
+	branch = develop
+	shallow = true
+[submodule "stacks/rxjs/rxjs"]
+	path = stacks/rxjs/rxjs
+	url = https://github.com/ReactiveX/rxjs.git
+	branch = master
+	shallow = true
+[submodule "stacks/express/express"]
+	path = stacks/express/express
+	url = https://github.com/expressjs/express.git
+	branch = master
+	shallow = true
+[submodule "stacks/postgres/node-postgres"]
+	path = stacks/postgres/node-postgres
+	url = https://github.com/brianc/node-postgres.git
+	branch = master
+	shallow = true
+[submodule "stacks/sharp/sharp"]
+	path = stacks/sharp/sharp
+	url = https://github.com/lovell/sharp.git
+	branch = main
+	shallow = true
+[submodule "stacks/nodejs/dotenv"]
+	path = stacks/nodejs/dotenv
+	url = https://github.com/motdotla/dotenv.git
+	branch = master
+	shallow = true
+[submodule "stacks/jest/jest"]
+	path = stacks/jest/jest
+	url = https://github.com/jestjs/jest.git
+	branch = main
+	shallow = true
+[submodule "stacks/jest/ts-jest"]
+	path = stacks/jest/ts-jest
+	url = https://github.com/kulshekhar/ts-jest.git
+	branch = main
+	shallow = true
