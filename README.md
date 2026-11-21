@@ -40,7 +40,7 @@ Dépôts importés pour optimiser le rendu 3D de Gobai et la gestion de ses mote
 
 ## Stack maison : @go-/harmonie-3d
 
-`stacks/go-/harmonie-3d` n'est pas un submodule : c'est une stack écrite pour GO-. Elle calcule une disposition harmonieuse d'une arborescence en 3D (couronnes proportionnelles à la taille des sous-arbres, collerettes de fichiers, angle d'or) et sert au plugin `go-tree-3d` pour afficher les projets. Sans dépendance ; tests : `cd stacks/go-/harmonie-3d && node --test`.
+`stacks/go-/harmonie-3d` n'est pas un submodule : c'est une stack écrite pour GO-. Elle calcule une disposition harmonieuse d'une arborescence en 3D (couronnes proportionnelles à la taille des sous-arbres, collerettes de fichiers, angle d'or), donne à chaque branche d'un projet un score de désirabilité de 0 à 100, et sert au plugin `go-tree-3d` pour afficher les projets. Sans dépendance ; tests : `cd stacks/go-/harmonie-3d && node --test`.
 
 ## Architecture type
 
